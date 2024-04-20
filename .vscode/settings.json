@@ -1,5 +1,8 @@
 {
     "yaml.schemas": {
-        "https://json.schemastore.org/github-action.json": "file:///Users/ocado/IdeaProjects/reactapp/.github/pages/deploy.yml"
+        "https://json.schemastore.org/github-action.json": [
+            "file:///Users/ocado/IdeaProjects/reactapp/.github/pages/deploy.yml",
+            "file:///Users/ocado/IdeaProjects/reactapp/.github/workflows/deploy.yml"
+        ]
     }
 }
