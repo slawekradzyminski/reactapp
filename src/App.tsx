@@ -1,16 +1,14 @@
-import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 import Header from './components/Header';
-import TipsComponent from './components/TipsComponent';
+import AppRoutes from './AppRoutes';
 
 function App() {
-
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
-      <TipsComponent/>
-    </div>
+      <AppRoutes/>
+    </BrowserRouter>
   );
 }
 
 export default App;
-
