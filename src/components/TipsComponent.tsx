@@ -1,11 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Box, Divider, IconButton, useMediaQuery } from '@mui/material';
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Box, Divider, useMediaQuery } from '@mui/material';
 import { tipsData } from './tipsData';
-import { TipsList } from './TipsList';
 import { TipBody } from './TipBody';
+import MobileTipNavigation from './MobileTipNavigation';
+import { TipsList } from './TipsList';
 
 function TipsComponent() {
   const { tipId } = useParams<{ tipId: string }>();
@@ -34,18 +33,10 @@ function TipsComponent() {
     <>
       {isMobile ? (
         <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-            {tipsData.findIndex(tip => tip.id.toString() === tipId) > 0 && (
-              <IconButton onClick={() => handleNavigation('prev')}>
-                <ArrowBackIosNewIcon />
-              </IconButton>
-            )}
-            {tipsData.findIndex(tip => tip.id.toString() === tipId) < tipsData.length - 1 && (
-              <IconButton onClick={() => handleNavigation('next')}>
-                <ArrowForwardIosIcon />
-              </IconButton>
-            )}
-          </Box>
+          <MobileTipNavigation
+            tipId={tipId}
+            tipIds={tipsData.map(tip => ({ ...tip, id: tip.id.toString() }))}
+            onNavigate={handleNavigation} />
           <TipBody selectedTip={selectedTip} />
         </Box>
       ) : (

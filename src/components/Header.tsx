@@ -13,7 +13,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  { name: 'Tips for Seniors', path: '/tips' },
+  { name: 'Tips for Seniors', path: '/tips/1' },
   { name: 'Book Recommendations', path: '/books' }
 ];
 
