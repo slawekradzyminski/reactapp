@@ -5,7 +5,7 @@ function AppRoutes() {
     return (
         <Routes>
             <Route path="/tips" element={<TipsComponent />} />
-            <Route path="/" element={<Navigate replace to="/tips" />} />
+            <Route path="" element={<Navigate replace to="/tips" />} />
             <Route path="/tips/:tipId" element={<TipsComponent />} />
         </Routes>
     );
