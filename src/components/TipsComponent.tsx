@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Box, List, ListItem, ListItemButton, ListItemText, Typography, Divider } from '@mui/material';
+import { Box, Divider } from '@mui/material';
 import { tipsData } from './tipsData';
-import { Link } from 'react-router-dom';
+import { TipsList } from './TipsList';
+import { TipBody } from './TipBody';
 
 function TipsComponent() {
   const { tipId } = useParams<{ tipId: string }>();
@@ -20,33 +21,10 @@ function TipsComponent() {
   return (
     <Box sx={{ display: 'flex', p: 3 }}>
       <Box sx={{ width: '25%', mr: 2 }}>
-        <Typography variant="h6">Tips List</Typography>
-        <List>
-          {tipsData.map((tip) => (
-            <ListItem key={tip.id} disablePadding>
-              <ListItemButton component={Link} to={`/tips/${tip.id}`}>
-                <ListItemText 
-                  primary={tip.title} 
-                  primaryTypographyProps={{
-                    style: { fontWeight: tip.id.toString() === tipId || (!tipId && tipsData[0].id === tip.id) ? 'bold' : 'normal' }
-                  }} 
-                />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
+        <TipsList tipsData={tipsData} tipId={tipId} />
       </Box>
       <Divider orientation="vertical" flexItem />
-      <Box sx={{ width: '70%', ml: 2 }}>
-        {selectedTip ? (
-          <>
-            <Typography variant="h6">{selectedTip.title}</Typography>
-            <Typography variant="body1" sx={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: selectedTip.content }} />
-          </>
-        ) : (
-          <Typography variant="h6">Select a tip to view details</Typography>
-        )}
-      </Box>
+      <TipBody selectedTip={selectedTip} />
     </Box>
   );
 }
