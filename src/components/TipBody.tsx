@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 interface TipBodyProps {
     selectedTip: { title: string; content: string; };
@@ -6,7 +6,7 @@ interface TipBodyProps {
 
 export const TipBody = ({ selectedTip }: TipBodyProps) => {
     return (
-        <Box sx={{ width: '70%', ml: 2 }}>
+        <div>
             {selectedTip ? (
                 <>
                     <Typography variant="h6">{selectedTip.title}</Typography>
@@ -15,6 +15,6 @@ export const TipBody = ({ selectedTip }: TipBodyProps) => {
             ) : (
                 <Typography variant="h6">Select a tip to view details</Typography>
             )}
-        </Box>
+        </div>
     );
 };
