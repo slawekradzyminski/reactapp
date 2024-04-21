@@ -8,7 +8,7 @@ function TipsComponent() {
 
   return (
     <Box sx={{ display: 'flex', p: 3 }}>
-      <Box sx={{ width: '30%', mr: 2 }}>
+      <Box sx={{ width: '25%', mr: 2 }}>
         <Typography variant="h6">Tips List</Typography>
         <List>
           {tipsData.map((tip) => (
