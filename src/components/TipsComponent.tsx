@@ -12,6 +12,8 @@ function TipsComponent() {
     const tip = tipsData.find(tip => tip.id.toString() === tipId);
     if (tip) {
       setSelectedTip(tip);
+    } else {
+      setSelectedTip(tipsData[0]);
     }
   }, [tipId]);
 
@@ -23,7 +25,12 @@ function TipsComponent() {
           {tipsData.map((tip) => (
             <ListItem key={tip.id} disablePadding>
               <ListItemButton component={Link} to={`/tips/${tip.id}`}>
-                <ListItemText primary={tip.title} />
+                <ListItemText 
+                  primary={tip.title} 
+                  primaryTypographyProps={{
+                    style: { fontWeight: tip.id.toString() === tipId || (!tipId && tipsData[0].id === tip.id) ? 'bold' : 'normal' }
+                  }} 
+                />
               </ListItemButton>
             </ListItem>
           ))}
