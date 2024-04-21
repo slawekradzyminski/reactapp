@@ -8,6 +8,7 @@ function AppRoutes() {
             <Route path="" element={<Navigate replace to="/tips/1" />} />
             <Route path="/" element={<Navigate replace to="/tips/1" />} />
             <Route path="/reactapp" element={<Navigate replace to="/tips/1" />} />
+            <Route path="/reactapp/" element={<Navigate replace to="/tips/1" />} />
             <Route path="/tips/:tipId" element={<TipsComponent />} />
         </Routes>
     );

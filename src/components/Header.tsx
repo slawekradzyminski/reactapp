@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const pages = [
   { name: 'Tips for Seniors', path: '/tips/1' },
@@ -19,6 +19,7 @@ const pages = [
 
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -32,14 +33,16 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="/tips/1" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <IconButton
+            onClick={() => navigate('/tips/1')} 
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          </Link>
+          </IconButton>
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/tips/1"
+            onClick={() => navigate('/tips/1')} 
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -48,6 +51,7 @@ function Header() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
+              cursor: 'pointer', // Add cursor pointer for better UX
             }}
           >
             ftfs.it
@@ -84,9 +88,9 @@ function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                  <Link to={page.path} style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <Typography textAlign="center">{page.name}</Typography>
-                  </Link>
+                  <Typography textAlign="center" onClick={() => navigate(page.path)} style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}>
+                    {page.name}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -96,10 +100,8 @@ function Header() {
             {pages.map((page) => (
               <Button
                 key={page.name}
-                onClick={handleCloseNavMenu}
+                onClick={() => navigate(page.path)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
-                component={Link}
-                to={page.path}
               >
                 {page.name}
               </Button>
