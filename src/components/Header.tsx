@@ -32,14 +32,14 @@ function Header() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Link to="" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Link to="/tips/1" style={{ color: 'inherit', textDecoration: 'none' }}>
             <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           </Link>
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href=""
+            href="/tips/1"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },

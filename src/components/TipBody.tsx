@@ -9,7 +9,7 @@ export const TipBody = ({ selectedTip }: TipBodyProps) => {
         <div>
             {selectedTip ? (
                 <>
-                    <Typography variant="h6">{selectedTip.title}</Typography>
+                    <Typography variant="h5">{selectedTip.title}</Typography>
                     <Typography variant="body1" sx={{ textAlign: 'justify' }} dangerouslySetInnerHTML={{ __html: selectedTip.content }} />
                 </>
             ) : (

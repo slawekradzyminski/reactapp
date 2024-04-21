@@ -29,14 +29,19 @@ function TipsComponent() {
     }
   };
 
+  const onNavigateToTip = (selectedTipId: string) => {
+    navigate(`/tips/${selectedTipId}`);
+  };
+
   return (
     <>
       {isMobile ? (
         <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
           <MobileTipNavigation
             tipId={tipId}
-            tipIds={tipsData.map(tip => ({ ...tip, id: tip.id.toString() }))}
-            onNavigate={handleNavigation} />
+            tips={tipsData.map(tip => ({ ...tip, id: tip.id.toString() }))}
+            onNavigate={handleNavigation}
+            onNavigateToTip={onNavigateToTip} />
           <TipBody selectedTip={selectedTip} />
         </Box>
       ) : (
