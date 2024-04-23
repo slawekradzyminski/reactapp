@@ -1,7 +1,7 @@
 {
   "name": "reactapp",
   "version": "0.1.0",
-  "homepage": "https://slawekradzyminski.github.io/reactapp",
+  "homepage": "https://www.ftfs.it",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
