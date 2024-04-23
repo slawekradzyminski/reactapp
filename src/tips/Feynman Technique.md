@@ -9,7 +9,7 @@ in simple language to teach others forces us to build a deep understanding of th
 knowledge that begins to connect the dots. Having this knowledge connected into a coherent whole makes it much easier
 for us to understand new concepts.
 
-<img src="/reactapp/images/feynman.png" alt="Feynman Knowledge" width="600">
+<img src="/images/feynman.png" alt="Feynman Knowledge" width="600">
 
 To build these visualized connections mentioned on the attached [Twitter](https://twitter.com/ProfFeynman/status/1763927221230776741), reading books from related fields is excellent.
 Today, I recommend:
