@@ -2,14 +2,15 @@ import { List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/m
 import { Link } from 'react-router-dom';
 
 interface TipsListProps {
+    title: string
     tipsData: { id: number; title: string; }[];
     tipId: string | undefined;
 }
 
-export const TipsList = ({ tipsData, tipId }: TipsListProps) => {
+export const TipsList = ({ title, tipsData, tipId }: TipsListProps) => {
     return (
         <>
-            <Typography variant="h6">Tips List</Typography>
+            <Typography variant="h5">{title}</Typography>
             <List>
                 {tipsData.map((tip) => (
                     <ListItem key={tip.id} disablePadding>

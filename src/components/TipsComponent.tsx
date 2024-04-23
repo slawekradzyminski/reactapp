@@ -10,7 +10,7 @@ function TipsComponent() {
   const { tipId } = useParams<{ tipId: string }>();
   const [selectedTip, setSelectedTip] = useState(tipsData[0]);
   const navigate = useNavigate();
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const isMobile = useMediaQuery('(max-width:900px)');
 
   useEffect(() => {
     const tip = tipsData.find(tip => tip.id.toString() === tipId);
@@ -47,7 +47,7 @@ function TipsComponent() {
       ) : (
         <Box sx={{ display: 'flex', p: 3 }}>
           <Box sx={{ width: '25%', mr: 2 }}>
-            <TipsList tipsData={tipsData} tipId={tipId} />
+            <TipsList title={'Tips List'} tipsData={tipsData} tipId={tipId} />
           </Box>
           <Divider orientation="vertical" flexItem />
           <Box sx={{ width: '75%', ml: 2 }}>

@@ -32,7 +32,7 @@ function Header() {
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar disableGutters sx={{ justifyContent: 'flex-start' }}>
           <IconButton
             onClick={() => navigate('/tips/1')} 
             style={{ color: 'inherit', textDecoration: 'none' }}
@@ -51,7 +51,7 @@ function Header() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-              cursor: 'pointer', // Add cursor pointer for better UX
+              cursor: 'pointer', 
             }}
           >
             ftfs.it
