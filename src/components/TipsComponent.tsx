@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Box, Divider, useMediaQuery } from '@mui/material';
+import { Box, Divider, useMediaQuery, Container } from '@mui/material';
 import { tipsData } from './tipsData';
 import { TipBody } from './TipBody';
 import MobileTipNavigation from './MobileTipNavigation';
@@ -34,7 +34,7 @@ function TipsComponent() {
   };
 
   return (
-    <>
+    <Container maxWidth="xl">
       {isMobile ? (
         <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
           <MobileTipNavigation
@@ -55,7 +55,7 @@ function TipsComponent() {
           </Box>
         </Box>
       )}
-    </>
+    </Container>
   );
 }
 
