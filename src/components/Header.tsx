@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 
 const pages = [
   { name: 'Tips for Seniors', path: '/tips/1' },
-  // { name: 'Book Recommendations', path: '/books' }
+  { name: 'Book Recommendations', path: '/books' }
 ];
 
 function Header() {
