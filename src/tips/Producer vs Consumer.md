@@ -13,8 +13,8 @@ matter.
 
 Bibliography:
 
-- [Implementing Lean Software Development](https://www.amazon.com/Implementing-Lean-Software-Development-Concept/dp/0321437381)
-- [Lean Startup](https://www.amazon.com/Lean-Startup-Eric-September-13-2011-Paperback/dp/B0C1JJZDN3)
-- [Steal Like An Artist](https://www.amazon.com/Steal-Like-Artist-Things-Creative/dp/0761169253)
-- [Show Your Work](https://www.amazon.com/Show-Your-Work-Austin-Kleon/dp/076117897X)
-- [Keep Going](https://www.amazon.com/Keep-Going-Ways-Creative-Times/dp/1523506644)
+- [Implementing Lean Software Development](https://amzn.to/3wkfzvx)
+- [Lean Startup](https://amzn.to/3JCSNSJ)
+- [Steal Like An Artist](https://amzn.to/3WpTpCG)
+- [Show Your Work](https://amzn.to/4dk2Dqc)
+- [Keep Going](https://amzn.to/3JEkBpW)
