@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles';
 import Logo from './Logo';
 import MobileMenu from './MobileMenu';
 import DesktopMenu from './DesktopMenu';
+import LinkedInFollow from './LinkedInFollow';
 
 const Header = () => {
   const theme = useTheme();
@@ -19,6 +20,7 @@ const Header = () => {
         ) : (
           <DesktopMenu />
         )}
+        <LinkedInFollow />
       </Toolbar>
     </AppBar>
   );

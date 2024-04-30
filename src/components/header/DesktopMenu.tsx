@@ -1,10 +1,11 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
 import { pages } from './pages';
 
 const DesktopMenu = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -12,7 +13,12 @@ const DesktopMenu = () => {
         <Button
           key={page.name}
           onClick={() => navigate(page.path)}
-          sx={{ my: 2, color: 'white', display: 'block' }}
+          sx={{
+            my: 2,
+            color: 'white',
+            display: 'block',
+            fontWeight: location.pathname === page.path ? 'bold' : 'normal'
+          }}
         >
           {page.name}
         </Button>

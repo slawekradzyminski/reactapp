@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Header from './components/header/Header';
 import AppRoutes from './AppRoutes';
 import { Container } from '@mui/material';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Container maxWidth="xl">
         <AppRoutes />
+        <Footer/>
       </Container>
     </BrowserRouter>
   );
