@@ -1,12 +1,15 @@
 import { BrowserRouter } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/header/Header';
 import AppRoutes from './AppRoutes';
+import { Container } from '@mui/material';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <AppRoutes/>
+      <Container maxWidth="xl">
+        <AppRoutes />
+      </Container>
     </BrowserRouter>
   );
 }

@@ -23,5 +23,5 @@
   "include": [
     "src/**/*",
     "types/**/*"
-  ]
+, "src/data/tipsData.ts", "src/data/books.ts"  ]
 }

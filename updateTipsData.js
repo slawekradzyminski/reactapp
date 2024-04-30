@@ -3,7 +3,7 @@ const path = require('path');
 const marked = require('marked');
 
 const tipsDirectory = path.join(__dirname, 'src/tips');
-const tipsDataFile = path.join(__dirname, 'src/components/tipsData.ts');
+const tipsDataFile = path.join(__dirname, 'src/data/tipsData.ts');
 
 // Create a custom renderer
 const renderer = new marked.Renderer();

@@ -1,10 +1,9 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, CardActions, Typography, Button, Container } from '@mui/material';
-import books from './books';
+import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
+import books from '../../data/books';
 
 const BooksDisplay: React.FC = () => {
   return (
-    <Container maxWidth="xl">
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center', marginTop: '30px' }}>
         {books.map((book) => (
           <Card key={book.title} sx={{ maxWidth: 365 }}>
@@ -28,7 +27,6 @@ const BooksDisplay: React.FC = () => {
           </Card>
         ))}
       </div>
-    </Container>
   );
 };
 

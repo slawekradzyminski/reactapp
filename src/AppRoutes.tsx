@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import TipsComponent from './components/TipsComponent';
-import BooksDisplay from './components/BooksDisplay';
+import TipsComponent from './components/tips/TipsComponent';
+import BooksDisplay from './components/books/BooksDisplay';
 
 function AppRoutes() {
     return (

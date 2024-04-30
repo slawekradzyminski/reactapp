@@ -6,7 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
@@ -31,7 +30,6 @@ function Header() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ justifyContent: 'flex-start' }}>
           <IconButton
             onClick={() => navigate('/tips/1')} 
@@ -108,7 +106,6 @@ function Header() {
             ))}
           </Box>
         </Toolbar>
-      </Container>
     </AppBar>
   );
 }
