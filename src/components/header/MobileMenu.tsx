@@ -8,6 +8,11 @@ import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import { pages } from './pages';
 
+const mobilePages = [
+  { name: 'Home', path: '/' },
+  ...pages
+]
+
 const MobileMenu = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const navigate = useNavigate();
@@ -50,7 +55,7 @@ const MobileMenu = () => {
           display: { xs: 'block', md: 'none' },
         }}
       >
-        {pages.map((page) => (
+        {mobilePages.map((page) => (
           <MenuItem key={page.name} onClick={() => {
             handleCloseNavMenu();
             navigate(page.path);

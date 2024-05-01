@@ -1,13 +1,13 @@
 import { List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { tipsData } from '../../data/tipsData';
 
 interface TipsListProps {
     title: string
-    tipsData: { id: number; title: string; }[];
-    tipId: string | undefined;
+    selectedTip: number;
 }
 
-export const TipsList = ({ title, tipsData, tipId }: TipsListProps) => {
+export const TipsList = ({ title, selectedTip }: TipsListProps) => {
     return (
         <>
             <Typography variant="h5">{title}</Typography>
@@ -18,7 +18,7 @@ export const TipsList = ({ title, tipsData, tipId }: TipsListProps) => {
                             <ListItemText
                                 primary={tip.title}
                                 primaryTypographyProps={{
-                                    style: { fontWeight: tip.id.toString() === tipId || (!tipId && tipsData[0].id === tip.id) ? 'bold' : 'normal' }
+                                    style: { fontWeight: tip.id === selectedTip ? 'bold' : 'normal' }
                                 }}
                             />
                         </ListItemButton>

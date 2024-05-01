@@ -6,18 +6,25 @@ import { TipBody } from './TipBody';
 import MobileTipNavigation from './MobileTipNavigation';
 import { TipsList } from './TipsList';
 
+const getRandomTipIndex = () => {
+  return Math.floor(Math.random() * tipsData.length);
+}
+
 function TipsComponent() {
   const { tipId } = useParams<{ tipId: string }>();
-  const [selectedTip, setSelectedTip] = useState(tipsData[0]);
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width:900px)');
 
+  // Generate a random index to select a random tip
+  const [selectedTip, setSelectedTip] = useState(tipsData[getRandomTipIndex()]);
+
   useEffect(() => {
+    const randomTipIndex = getRandomTipIndex()
     const tip = tipsData.find(tip => tip.id.toString() === tipId);
     if (tip) {
       setSelectedTip(tip);
     } else {
-      setSelectedTip(tipsData[0]);
+      setSelectedTip(tipsData[randomTipIndex]);
     }
   }, [tipId]);
 
@@ -38,8 +45,7 @@ function TipsComponent() {
       {isMobile ? (
         <Box sx={{ display: 'flex', flexDirection: 'column', p: 3 }}>
           <MobileTipNavigation
-            tipId={tipId}
-            tips={tipsData.map(tip => ({ ...tip, id: tip.id.toString() }))}
+            tipId={selectedTip.id}
             onNavigate={handleNavigation}
             onNavigateToTip={onNavigateToTip} />
           <TipBody selectedTip={selectedTip} />
@@ -47,7 +53,7 @@ function TipsComponent() {
       ) : (
         <Box sx={{ display: 'flex', p: 3 }}>
           <Box sx={{ width: '25%', mr: 2 }}>
-            <TipsList title={'Tips List'} tipsData={tipsData} tipId={tipId} />
+            <TipsList title={'Tips List'} selectedTip={selectedTip.id} />
           </Box>
           <Divider orientation="vertical" flexItem />
           <Box sx={{ width: '75%', ml: 2 }}>
