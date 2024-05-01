@@ -9,7 +9,7 @@ const Logo = () => {
   return (
     <>
       <IconButton
-        onClick={() => navigate('/tips/1')} 
+        onClick={() => navigate('/')} 
         style={{ color: 'inherit', textDecoration: 'none' }}
       >
         <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -17,7 +17,7 @@ const Logo = () => {
       <Typography
         variant="h6"
         noWrap
-        onClick={() => navigate('/tips/1')} 
+        onClick={() => navigate('/')} 
         sx={{
           mr: 2,
           display: { xs: 'none', md: 'flex' },
