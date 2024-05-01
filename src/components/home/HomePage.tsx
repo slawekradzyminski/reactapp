@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <Paper elevation={1} sx={{ padding: 4, marginTop: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <Typography variant="h5" gutterBottom>
-                Hello 😊,
+                Hello 😊
             </Typography>
             <Box
                 component="img"

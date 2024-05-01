@@ -14,8 +14,6 @@ function TipsComponent() {
   const { tipId } = useParams<{ tipId: string }>();
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width:900px)');
-
-  // Generate a random index to select a random tip
   const [selectedTip, setSelectedTip] = useState(tipsData[getRandomTipIndex()]);
 
   useEffect(() => {
