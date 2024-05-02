@@ -6,12 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
-import { pages } from './pages';
-
-const mobilePages = [
-  { name: 'Home', path: '/' },
-  ...pages
-]
+import { mobilePages } from './pages';
 
 const MobileMenu = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
