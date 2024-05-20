@@ -18,8 +18,6 @@ Programming is also a creative activity. We can create things from scratch, givi
 
 Keep calm & keep coding :)
 
-The archive of tips is available on my website: [https://www.ftfs.it/tips](https://www.ftfs.it/tips)
-
 Bibliography:
 - [Mastery](https://amzn.to/3WFYozD)
 - [Clean Code](https://amzn.to/3WHeDvY)
