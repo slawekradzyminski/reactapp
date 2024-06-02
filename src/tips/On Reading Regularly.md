@@ -25,5 +25,5 @@ Recommended titles:
 - [The Charisma Myth](https://amzn.to/3VnwxmL)
 - [The Goal](https://amzn.to/4c3KM5H)
 - [Project Phoenix](https://amzn.to/3Km7vhc)
-- [The Laws of Human Nature](https://amzn.to/3Km7vhc)
+- [The Laws of Human Nature](https://amzn.to/3yIWcNT)
 - [Shackleton's Way](https://amzn.to/3R8tQCL)
