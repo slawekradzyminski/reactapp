@@ -5,5 +5,5 @@
         ],
         "https://json.schemastore.org/github-workflow.json": "file:///Users/ocado/IdeaProjects/reactapp/.github/workflows/deploy.yml"
     },
-    "editor.fontSize": 20
+    "editor.fontSize": 12
 }
