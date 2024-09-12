@@ -12,9 +12,9 @@ Here are some practical tips to get you started:
 
 - Read Widely: Don’t limit yourself to books and content only in your field. Broaden your perspective by reading about various topics—whether it’s business, social sciences, security, programming, or even leadership from a historical lens. If you only consume content from your specific area, you risk narrowing your worldview.
     
-- Avoid Tactical Hell: Constantly putting out fires and reacting to immediate issues without a strategic plan can burn you out. If you find yourself stuck in this cycle, take a step back. Sometimes it helps to take a break, do something different, like a sport or hobby, to clear your mind.
+- Avoid Tactical Hell: Constantly putting out fires and reacting to immediate issues without a strategic plan can burn you out. If you find yourself stuck in this cycle, take a step back. Do you feel like others are leading your life? Sometimes it helps to take a break, do something different, like a sport or hobby, to clear your mind.
 
-- Seek Strategic Heaven: Look for areas within your influence where you can make an impact. If tackling a massive project, like stabilizing a huge test suite, seems overwhelming, break it down into smaller, manageable parts. Be willing to make bold decisions and lead.
+- Seek Strategic Heaven: Look for areas within your influence where you can make an impact. If tackling a massive project, like stabilizing a huge test suite, seems overwhelming redefine the problem. Perhaps whe whole test suite should be dumped in favour of lower level tests? Are you willing to stop Sisyphus work?
 
 - Challenge Yourself Beyond Your Comfort Zone: You don’t need to become an expert in every field, but try doing something that pushes your thinking. This is especially relevant for those in specialized roles like testing or DevOps who are looking to take on more responsibility. If you went back to your old role, would you approach it the same way?
 
