@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import books from "../data/books";
+import books from "../data/books.json";
 import { Book } from "../types/book";
 
 const useBookLoader = (booksPerLoad: number) => {

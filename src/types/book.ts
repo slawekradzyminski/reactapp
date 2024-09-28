@@ -1,3 +1,3 @@
-import books from "../data/books";
+import books from "../data/books.json";
 
 export type Book = typeof books[number];
