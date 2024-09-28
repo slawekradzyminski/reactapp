@@ -1,16 +1,11 @@
-import React from 'react';
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
+import { Book } from '../../types/book';
 
 interface BookCardProps {
-    book: {
-        title: string;
-        description: string;
-        path: string;
-        link: string;
-    };
+    book: Book;
 }
 
-const BookCard: React.FC<BookCardProps> = ({ book }) => {
+const BookCard = ({ book }: BookCardProps) => {
     return (
         <Card sx={{ maxWidth: 365 }}>
             <CardMedia
