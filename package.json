@@ -36,7 +36,7 @@
     "serve": "vite preview",
     "test": "cross-env CI=true react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "extends": [
