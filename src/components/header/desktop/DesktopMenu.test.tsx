@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import DesktopMenu from './DesktopMenu';
-import { pages } from './pages';
+import { pages } from '../pages';
 import { MemoryRouter } from 'react-router-dom';
 
 const mockNavigate = vi.fn();

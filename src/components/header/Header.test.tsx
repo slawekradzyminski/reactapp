@@ -3,16 +3,16 @@ import { it, expect } from "vitest";
 import Header from "./Header";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-vi.mock("./Logo", () => ({
+vi.mock("./desktop/Logo", () => ({
   default: () => <div data-testid="mock-logo">Mock Logo</div>,
 }));
-vi.mock("./MobileMenu", () => ({
+vi.mock("./mobile/MobileMenu", () => ({
   default: () => <div data-testid="mock-mobile-menu">Mock Mobile Menu</div>,
 }));
-vi.mock("./DesktopMenu", () => ({
+vi.mock("./desktop/DesktopMenu", () => ({
   default: () => <div data-testid="mock-desktop-menu">Mock Desktop Menu</div>,
 }));
-vi.mock("./LinkedInFollow", () => ({
+vi.mock("./desktop/LinkedInFollow", () => ({
   default: () => (
     <div data-testid="mock-linkedin-follow">Mock LinkedIn Follow</div>
   ),

@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/material';
-import { pages } from './pages';
+import { pages } from '../pages';
 
 const DesktopMenu = () => {
   const navigate = useNavigate();
