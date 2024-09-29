@@ -7,7 +7,7 @@ interface BookCardProps {
 
 const BookCard = ({ book }: BookCardProps) => {
     return (
-        <Card sx={{ maxWidth: 365 }}>
+        <Card sx={{ maxWidth: 365 }} data-testid="book-card">
             <CardMedia
                 component="img"
                 height="500"
