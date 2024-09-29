@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
+import { it, expect } from 'vitest';
 import BookCard from './BookCard';
 
-test('renders BookCard with correct title and description', () => {
+it('renders BookCard with correct title and description', () => {
     // given
     const book = {
         title: "Sample Book Title",

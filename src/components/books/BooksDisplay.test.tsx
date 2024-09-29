@@ -1,18 +1,18 @@
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import BooksDisplay from './BooksDisplay';
 import useBookLoader from '../../hooks/useBookLoader';
 import books from '../../data/books.json';
 
-jest.mock('../../hooks/useBookLoader');
+vi.mock('../../hooks/useBookLoader');
 
 describe('BooksDisplay', () => {
-  test('renders correct number of book cards initially', () => {
+  it('renders correct number of book cards initially', () => {
     // given
-    (useBookLoader as jest.Mock).mockReturnValue({
+    vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
-      loadMoreBooks: jest.fn(),
+      loadMoreBooks: vi.fn(),
     });
 
     // when
@@ -23,12 +23,12 @@ describe('BooksDisplay', () => {
     expect(bookCards).toHaveLength(6); 
   });
 
-  test('displays book titles correctly', () => {
+  it('displays book titles correctly', () => {
     // given
-    (useBookLoader as jest.Mock).mockReturnValue({
+    vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
-      loadMoreBooks: jest.fn(),
+      loadMoreBooks: vi.fn(),
     });
 
     // when
@@ -40,12 +40,12 @@ describe('BooksDisplay', () => {
     });
   });
 
-  test('renders LoadMoreBooks component with correct props when hasMore is true', () => {
+  it('renders LoadMoreBooks component with correct props when hasMore is true', () => {
     // given
-    (useBookLoader as jest.Mock).mockReturnValue({
+    vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
-      loadMoreBooks: jest.fn(),
+      loadMoreBooks: vi.fn(),
     });
 
     // when
@@ -55,12 +55,12 @@ describe('BooksDisplay', () => {
     expect(screen.getByRole('button', { name: /load more/i })).toBeInTheDocument();
   });
 
-  test('renders LoadMoreBooks component with correct props when hasMore is false', () => {
+  it('renders LoadMoreBooks component with correct props when hasMore is false', () => {
     // given
-    (useBookLoader as jest.Mock).mockReturnValue({
+    vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books,
       hasMore: false,
-      loadMoreBooks: jest.fn(),
+      loadMoreBooks: vi.fn(),
     });
 
     // when

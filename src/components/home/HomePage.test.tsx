@@ -1,33 +1,39 @@
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import HomePage from './HomePage';
+import { describe, it, expect } from 'vitest'
+import { render, screen } from '@testing-library/react'
+import HomePage from './HomePage'
 
 describe('HomePage', () => {
-  test('renders main content correctly', () => {
-    // when
-    render(<HomePage />);
+  it('renders main content correctly', () => {
+    // given
+    render(<HomePage />)
     
-    // then
-    expect(screen.getByText('Hello 😊')).toBeInTheDocument();
-    const image = screen.getByAltText('Sławek');
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute('src', '/images/slawek.jpeg');
-    expect(screen.getByText(/My name is Sławek/)).toBeInTheDocument();
-  });
-
-  test('renders external links correctly', () => {
     // when
-    render(<HomePage />);
-    
-    // then
-    const linkedInLink = screen.getByText('LinkedIn');
-    expect(linkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/slawekradzyminski/');
-    expect(linkedInLink).toHaveAttribute('target', '_blank');
-    expect(linkedInLink).toHaveAttribute('rel', 'noopener noreferrer');
+    const heading = screen.getByText('Hello 😊')
+    const image = screen.getByAltText('Sławek')
+    const description = screen.getByText(/My name is Sławek/)
 
-    const githubLink = screen.getByText('React codebase');
-    expect(githubLink).toHaveAttribute('href', 'https://github.com/slawekradzyminski/reactapp');
-    expect(githubLink).toHaveAttribute('target', '_blank');
-    expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
-  });
-});
+    // then
+    expect(heading).toBeInTheDocument()
+    expect(image).toBeInTheDocument()
+    expect(image).toHaveAttribute('src', '/images/slawek.jpeg')
+    expect(description).toBeInTheDocument()
+  })
+
+  it('renders external links correctly', () => {
+    // given
+    render(<HomePage />)
+    
+    // when
+    const linkedInLink = screen.getByText('LinkedIn')
+    const githubLink = screen.getByText('React codebase')
+
+    // then
+    expect(linkedInLink).toHaveAttribute('href', 'https://www.linkedin.com/in/slawekradzyminski/')
+    expect(linkedInLink).toHaveAttribute('target', '_blank')
+    expect(linkedInLink).toHaveAttribute('rel', 'noopener noreferrer')
+
+    expect(githubLink).toHaveAttribute('href', 'https://github.com/slawekradzyminski/reactapp')
+    expect(githubLink).toHaveAttribute('target', '_blank')
+    expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer')
+  })
+})

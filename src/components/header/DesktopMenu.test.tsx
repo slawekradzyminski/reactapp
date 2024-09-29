@@ -1,16 +1,25 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
 import DesktopMenu from './DesktopMenu';
 import { pages } from './pages';
+import { MemoryRouter } from 'react-router-dom';
 
-const mockNavigate = jest.fn();
-jest.mock('react-router-dom', () => ({
-  ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
-}));
+const mockNavigate = vi.fn();
+
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual<typeof import('react-router-dom')>('react-router-dom');
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate,
+  };
+});
 
 describe('DesktopMenu', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it('renders all pages from the pages array', () => {
     // given
     render(
@@ -34,10 +43,10 @@ describe('DesktopMenu', () => {
     );
 
     // when + then
-    pages.forEach(async (page) => {
+    for (const page of pages) {
       await userEvent.click(screen.getByText(page.name));
       expect(mockNavigate).toHaveBeenCalledWith(page.path);
-    });
+    }
   });
 
   it('applies bold font weight to the active page', () => {

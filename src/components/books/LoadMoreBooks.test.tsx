@@ -1,9 +1,10 @@
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import LoadMoreBooks from './LoadMoreBooks';
 
 describe('LoadMoreBooks', () => {
-  test('renders Load More button when hasMore is true', () => {
+  it('renders Load More button when hasMore is true', () => {
     // when
     render(<LoadMoreBooks hasMore={true} onLoadMore={() => {}} />);
     
@@ -11,7 +12,7 @@ describe('LoadMoreBooks', () => {
     expect(screen.getByRole('button', { name: /load more/i })).toBeInTheDocument();
   });
 
-  test('renders "You have seen all the books!" message when hasMore is false', () => {
+  it('renders "You have seen all the books!" message when hasMore is false', () => {
     // when
     render(<LoadMoreBooks hasMore={false} onLoadMore={() => {}} />);
     
@@ -20,9 +21,9 @@ describe('LoadMoreBooks', () => {
     expect(screen.queryByRole('button', { name: /load more/i })).not.toBeInTheDocument();
   });
 
-  test('calls onLoadMore when Load More button is clicked', () => {
+  it('calls onLoadMore when Load More button is clicked', () => {
     // when
-    const mockOnLoadMore = jest.fn();
+    const mockOnLoadMore = vi.fn();
     render(<LoadMoreBooks hasMore={true} onLoadMore={mockOnLoadMore} />);
     fireEvent.click(screen.getByRole('button', { name: /load more/i }));
     
