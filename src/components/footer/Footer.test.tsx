@@ -1,7 +1,8 @@
-import { render, screen } from '@testing-library/react';
 import Footer from './Footer';
+import { render, screen } from '@testing-library/react';
+import {  it, expect } from 'vitest';
 
-test('renders correct copyright message', () => {
+it('renders correct copyright message', () => {
     // when
     render(<Footer />);
     const currentYear = new Date().getFullYear();
