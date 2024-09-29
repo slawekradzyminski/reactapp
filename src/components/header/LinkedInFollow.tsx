@@ -1,29 +1,28 @@
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Typography from "@mui/material/Typography";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Box from "@mui/material/Box";
 
 const LinkedInFollow = () => {
   const linkedInUrl = "https://www.linkedin.com/in/slawekradzyminski/";
 
   return (
-    <>
-      <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" style={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end', textDecoration: 'none', color: 'inherit' }}>
-        <Typography variant="body1" sx={{ textAlign: 'right' }}>
-          Follow me on
-        </Typography>
-      </a>
-      <IconButton
-        edge="end"
-        color="inherit"
-        href={linkedInUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        sx={{ mr: 2 }} 
-      >
-        <LinkedInIcon />
-      </IconButton>
-    </>
+    <Box component="a"
+      href={linkedInUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
+      <Typography variant="body1">
+        Follow me on
+      </Typography>
+      <LinkedInIcon sx={{ mr: 3, ml: 0.5 }} />
+    </Box>
   );
-}
+};
 
 export default LinkedInFollow;
