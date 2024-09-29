@@ -17,7 +17,7 @@ const DesktopMenu = () => {
             my: 2,
             color: 'white',
             display: 'block',
-            fontWeight: location.pathname === page.path ? 'bold' : 'normal'
+            fontWeight: location.pathname.includes(page.path) ? 'bold' : 'normal'
           }}
         >
           {page.name}

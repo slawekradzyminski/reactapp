@@ -63,4 +63,19 @@ describe('DesktopMenu', () => {
     expect(window.getComputedStyle(activeButton).fontWeight).toBe('700');
     expect(window.getComputedStyle(inactiveButton).fontWeight).toBe('normal');
   });
+
+  it('applies bold font weight to the active page for nested routes', () => {
+    // when
+    render(
+      <MemoryRouter initialEntries={['/tips/2']}>
+        <DesktopMenu />
+      </MemoryRouter>
+    );
+    const activeButton = screen.getByText('Tips for Seniors');
+    const inactiveButton = screen.getByText('Book Recommendations');
+
+    // then
+    expect(window.getComputedStyle(activeButton).fontWeight).toBe('700');
+    expect(window.getComputedStyle(inactiveButton).fontWeight).toBe('normal');
+  });
 });
