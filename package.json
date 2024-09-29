@@ -32,7 +32,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "node updateTipsData.js && tsc && vite build --base=./",
+    "build": "node updateTipsData.js && tsc && vite build",
     "serve": "vite preview",
     "test": "cross-env CI=true react-scripts test",
     "predeploy": "npm run build",

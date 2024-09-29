@@ -6,7 +6,7 @@ import Footer from './components/footer/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Header />
       <Container maxWidth="xl">
         <AppRoutes />
