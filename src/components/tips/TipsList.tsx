@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { tipsData } from '../../data/tipsData';
+import tipsData from '../../data/tipsData.json';
 
 interface TipsListProps {
     title: string

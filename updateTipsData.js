@@ -3,7 +3,7 @@ const path = require('path');
 const marked = require('marked');
 
 const tipsDirectory = path.join(__dirname, 'src/tips');
-const tipsDataFile = path.join(__dirname, 'src/data/tipsData.ts');
+const tipsDataFile = path.join(__dirname, 'src/data/tipsData.json');
 
 // Create a custom renderer
 const renderer = new marked.Renderer();
@@ -34,12 +34,11 @@ fs.readdir(tipsDirectory, (err, files) => {
       const htmlContent = marked.parse(content);
       // Extract the file name without the .md extension for the title
       const title = file.replace('.md', '');
-      // Use JSON.stringify to escape backticks and other special characters in HTML content
-      return `{ id: ${index + 1}, title: ${JSON.stringify(title)}, content: ${JSON.stringify(htmlContent)} }`;
+      return { id: index + 1, title, content: htmlContent };
     });
 
-  const output = `export const tipsData = [\n    ${tipsData.join(',\n    ')}\n  ];\n`;
+  const output = JSON.stringify(tipsData, null, 2);
 
   fs.writeFileSync(tipsDataFile, output);
-  console.log('tipsData.ts has been updated with content from /tips folder.');
+  console.log('tipsData.json has been updated with content from /tips folder.');
 });

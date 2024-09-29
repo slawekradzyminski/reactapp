@@ -2,7 +2,7 @@ import React from 'react';
 import { IconButton, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { tipsData } from '../../data/tipsData';
+import tipsData from '../../data/tipsData.json';
 
 interface MobileTipNavigationProps {
     tipId: number;

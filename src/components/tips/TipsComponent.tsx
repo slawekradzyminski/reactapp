@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Box, Divider, useMediaQuery } from '@mui/material';
-import { tipsData } from '../../data/tipsData';
+import tipsData from '../../data/tipsData.json';
 import { TipBody } from './TipBody';
 import MobileTipNavigation from './MobileTipNavigation';
 import { TipsList } from './TipsList';
