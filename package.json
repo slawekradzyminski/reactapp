@@ -25,7 +25,7 @@
     "gh-pages": "^6.1.1",
     "jsdom": "^25.0.1",
     "vitest": "^2.1.1",
-    "marked": "^14.1.2",
+    "marked": "^12.0.2",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
     "vite-plugin-svgr": "^4.2.0",
@@ -36,7 +36,7 @@
     "build": "node updateTipsData.js && vite build",
     "serve": "vite preview",
     "test": "vitest --run",
-    "coverage": "vitest --coverage",
+    "coverage": "vitest run --coverage",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
