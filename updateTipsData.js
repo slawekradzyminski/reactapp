@@ -23,7 +23,7 @@ marked.setOptions({
   renderer: renderer
 });
 
-const updateTipsData = () => {
+export const updateTipsData = () => {
   fs.readdir(tipsDirectory, (err, files) => {
     if (err) {
       console.error('Could not list the directory.', err);

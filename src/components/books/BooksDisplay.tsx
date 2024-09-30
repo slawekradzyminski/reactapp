@@ -1,7 +1,7 @@
 import BookCard from "./BookCard";
 import LoadMoreBooks from "./LoadMoreBooks";
 import useBookLoader from "../../hooks/useBookLoader";
-import { Book } from "../../types/book";
+import { Book } from "../../types/domain";
 import { Box } from "@mui/material";
 
 const BooksDisplay = () => {

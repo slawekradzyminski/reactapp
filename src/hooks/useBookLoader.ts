@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import books from "../data/books.json";
-import { Book } from "../types/book";
+import { Book } from "../types/domain";
 
 const useBookLoader = (booksPerLoad: number) => {
   const [displayedBooks, setDisplayedBooks] = useState<Book[]>([]);

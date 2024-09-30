@@ -1,5 +1,5 @@
 import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@mui/material';
-import { Book } from '../../types/book';
+import { Book } from '../../types/domain';
 
 interface BookCardProps {
     book: Book;
