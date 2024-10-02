@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import tipsData from '../../data/tipsData.json';
 
 interface MobileTipNavigationProps {
-    tipId: number;
+    tipId: string;
     onNavigate: (direction: 'prev' | 'next') => void;
     onNavigateToTip: (tipId: string) => void;
 }

@@ -33,12 +33,13 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "node updateTipsData.js && vite build",
+    "build": "npm run generateTips && vite build",
     "serve": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "generateTips": "node ./tipsgenerator/updateTipsData.js"
   },
   "browserslist": {
     "production": [

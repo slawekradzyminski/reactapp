@@ -4,7 +4,7 @@ import tipsData from '../../data/tipsData.json';
 
 interface TipsListProps {
     title: string
-    selectedTip: number;
+    selectedTip: string;
 }
 
 export const TipsList = ({ title, selectedTip }: TipsListProps) => {
