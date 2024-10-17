@@ -3,7 +3,7 @@ import TipsComponent from './components/tips/TipsComponent';
 import BooksDisplay from './components/books/BooksDisplay';
 import HomePage from './components/home/HomePage';
 
-function AppRoutes() {
+const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/tips" element={<TipsComponent />} />

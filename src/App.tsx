@@ -4,7 +4,7 @@ import AppRoutes from './AppRoutes';
 import { Container } from '@mui/material';
 import Footer from './components/footer/Footer';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter basename="/">
       <Header />
