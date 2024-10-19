@@ -4,14 +4,20 @@ import { MouseEventHandler } from "react";
 interface LoadMoreBooksProps {
   hasMore: boolean;
   onLoadMore: MouseEventHandler<HTMLButtonElement>;
+  onLoadAll: MouseEventHandler<HTMLButtonElement>;
 }
 
-const LoadMoreBooks = ({ hasMore, onLoadMore }: LoadMoreBooksProps) => (
+const LoadMoreBooks = ({ hasMore, onLoadMore, onLoadAll }: LoadMoreBooksProps) => (
   <Box sx={{ textAlign: "center", marginTop: "20px" }}>
     {hasMore ? (
-      <Button variant="contained" color="primary" onClick={onLoadMore}>
-        Load More
-      </Button>
+      <Box sx={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+        <Button variant="contained" color="primary" onClick={onLoadMore}>
+          Load More
+        </Button>
+        <Button variant="outlined" color="primary" onClick={onLoadAll}>
+          Load All
+        </Button>
+      </Box>
     ) : (
       <Typography variant="body1" sx={{ fontWeight: "bold" }}>
         You have seen all the books!

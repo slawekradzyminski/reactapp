@@ -55,4 +55,18 @@ describe('useBookLoader', () => {
     expect(displayedBooks).toHaveLength(books.length)
     expect(hasMore).toBe(false)
   })
+
+  it('should load all books when loadAllBooks is called', () => {
+    // given
+    const { result } = renderHook(() => useBookLoader(10))
+    
+    // when
+    act(() => {
+      result.current.loadAllBooks()
+    })
+
+    // then
+    expect(result.current.displayedBooks).toHaveLength(books.length)
+    expect(result.current.hasMore).toBe(false)
+  })
 })

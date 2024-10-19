@@ -280,5 +280,41 @@
     "link": "https://amzn.to/3Yv0a70",
     "path": "downloaded_covers/Shoe_Dog:_A_Memoir_by_the_Creator_of_Nike.jpg",
     "description": "\"Shoe Dog\" is a revealing and inspiring memoir by Nike founder Phil Knight, chronicling the company's start as a small import business to becoming one of the world's most iconic and profitable brands. Knight shares the risks, setbacks, triumphs, and relationships that shaped Nike into the powerhouse it is today, offering a candid look at the journey to business success."
+  },
+  {
+    "title": "The Creative Act: A Way of Being",
+    "link": "https://amzn.to/4haMTrC",
+    "path": "downloaded_covers/The_Creative_Act:_A_Way_of_Being.jpg",
+    "description": "In The Creative Act, legendary music producer Rick Rubin shares deep wisdom on creativity, offering insights on how to connect with the wellsprings of creativity and make a profound impact on the world. With a focus on being, rather than doing, Rubin explores how creativity has a place in everyone's life and how we can all tap into our innate creative potential. This beautifully crafted book is a must-read for writers, artists, and anyone looking to reconnect with their creative spirit."
+  },
+  {
+    "title": "The War of Art: Break Through the Blocks and Win Your Inner Creative Battles",
+    "link": "https://amzn.to/48h44nu",
+    "path": "downloaded_covers/The_War_of_Art:_Break_Through_the_Blocks_and_Win_Your_Inner_Creative_Battles.jpg",
+    "description": "In \"The War of Art,\" Steven Pressfield explores the internal obstacles that prevent individuals from pursuing their creative endeavors. Drawing parallels to Sun Tzu's \"The Art of War,\" Pressfield provides a battle plan for overcoming self-doubt and achieving success in any creative field. This practical and motivational guide encourages readers to harness their inner resolve and embrace a disciplined approach to achieving their goals."
+  },
+  {
+    "title": "Deep Work: Rules for Focused Success in a Distracted World",
+    "link": "https://amzn.to/4ha0Vtw",
+    "path": "downloaded_covers/Deep_Work:_Rules_for_Focused_Success_in_a_Distracted_World.jpg",
+    "description": "Deep Work by Cal Newport is a guide to mastering the skill of focusing without distraction on important tasks in order to achieve groundbreaking results in a competitive economy. This book offers a rigorous training regimen and actionable advice to help readers cultivate a deep work ethic and achieve true fulfillment in their professional lives. Through memorable stories and no-nonsense tips, Deep Work is an indispensable tool for anyone seeking success in a world filled with distractions."
+  },
+  {
+    "title": "Hyperfocus: How to Manage Your Attention in a World of Distraction",
+    "link": "https://amzn.to/4ha11RU",
+    "path": "downloaded_covers/Hyperfocus:_How_to_Manage_Your_Attention_in_a_World_of_Distraction.jpg",
+    "description": "In \"Hyperfocus,\" Chris Bailey explores the power of managing your attention to boost productivity and creativity. Drawing on neuroscience research, Bailey provides practical strategies to harness focused and creative mental modes, control distractions, and work more deliberately. By mastering your attention, you can achieve greater purpose and fulfillment in your daily life."
+  },
+  {
+    "title": "Agile Testing: A Practical Guide for Testers and Agile Teams",
+    "link": "https://amzn.to/48dkFZ3",
+    "path": "downloaded_covers/Agile_Testing:_A_Practical_Guide_for_Testers_and_Agile_Teams.jpg",
+    "description": "Agile Testing by Lisa Crispin and Janet Gregory provides a comprehensive guide to agile testing, including the tester's role in agile teams, using agile testing quadrants, and key success factors in agile testing. Readers will learn how to engage testers in agile development, transition from traditional cycles to agile, complete testing activities in short iterations, and more. This book is essential for agile testers, teams, managers, and customers looking to improve their testing practices in agile environments."
+  },
+  {
+    "title": "More Agile Testing: Learning Journeys for the Whole Team",
+    "link": "https://amzn.to/48cjhpw",
+    "path": "downloaded_covers/More_Agile_Testing:_Learning_Journeys_for_the_Whole_Team_(Addison_Wesley_Signature_Series_(Cohn)).jpg",
+    "description": "More Agile Testing is a comprehensive guide that delves into the evolving world of agile testing. Authors Janet Gregory and Lisa Crispin offer insights on adapting agile testing to different environments, improving test processes, scaling testing across teams, and overcoming challenges in automated testing. With real team examples and practical advice, this book covers a wide range of topics including collaboration with business experts, designing reliable automated tests, enhancing testing skills, and mitigating risks. Whether you are working in an enterprise, with distributed teams, on mobile/embedded systems, in regulated environments, or practicing DevOps, this book provides valuable strategies and techniques for agile testers looking to excel in their roles."
   }
 ]

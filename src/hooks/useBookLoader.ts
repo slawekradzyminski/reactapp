@@ -22,7 +22,12 @@ const useBookLoader = (booksPerLoad: number) => {
     }
   };
 
-  return { displayedBooks, hasMore, loadMoreBooks };
+  const loadAllBooks = () => {
+    setDisplayedBooks(books);
+    setHasMore(false);
+  };
+
+  return { displayedBooks, hasMore, loadMoreBooks, loadAllBooks };
 };
 
 export default useBookLoader;

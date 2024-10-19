@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest'
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import BooksDisplay from './BooksDisplay';
 import useBookLoader from '../../hooks/useBookLoader';
 import books from '../../data/books.json';
@@ -13,6 +13,7 @@ describe('BooksDisplay', () => {
       displayedBooks: books.slice(0, 6),
       hasMore: true,
       loadMoreBooks: vi.fn(),
+      loadAllBooks: vi.fn(),
     });
 
     // when
@@ -29,6 +30,7 @@ describe('BooksDisplay', () => {
       displayedBooks: books.slice(0, 6),
       hasMore: true,
       loadMoreBooks: vi.fn(),
+      loadAllBooks: vi.fn(),
     });
 
     // when
@@ -42,10 +44,13 @@ describe('BooksDisplay', () => {
 
   it('renders LoadMoreBooks component with correct props when hasMore is true', () => {
     // given
+    const loadMoreBooks = vi.fn();
+    const loadAllBooks = vi.fn();
     vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
-      loadMoreBooks: vi.fn(),
+      loadMoreBooks,
+      loadAllBooks,
     });
 
     // when
@@ -53,6 +58,7 @@ describe('BooksDisplay', () => {
     
     // then
     expect(screen.getByRole('button', { name: /load more/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /load all/i })).toBeInTheDocument();
   });
 
   it('renders LoadMoreBooks component with correct props when hasMore is false', () => {
@@ -61,6 +67,7 @@ describe('BooksDisplay', () => {
       displayedBooks: books,
       hasMore: false,
       loadMoreBooks: vi.fn(),
+      loadAllBooks: vi.fn(),
     });
 
     // when
@@ -69,5 +76,44 @@ describe('BooksDisplay', () => {
     // then
     expect(screen.getByText(/you have seen all the books!/i)).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /load more/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /load all/i })).not.toBeInTheDocument();
+  });
+
+  it('calls loadMoreBooks when Load More button is clicked', () => {
+    // given
+    const loadMoreBooks = vi.fn();
+    const loadAllBooks = vi.fn();
+    vi.mocked(useBookLoader).mockReturnValue({
+      displayedBooks: books.slice(0, 6),
+      hasMore: true,
+      loadMoreBooks,
+      loadAllBooks,
+    });
+
+    // when
+    render(<BooksDisplay />);
+    fireEvent.click(screen.getByRole('button', { name: /load more/i }));
+    
+    // then
+    expect(loadMoreBooks).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls loadAllBooks when Load All button is clicked', () => {
+    // given
+    const loadMoreBooks = vi.fn();
+    const loadAllBooks = vi.fn();
+    vi.mocked(useBookLoader).mockReturnValue({
+      displayedBooks: books.slice(0, 6),
+      hasMore: true,
+      loadMoreBooks,
+      loadAllBooks,
+    });
+
+    // when
+    render(<BooksDisplay />);
+    fireEvent.click(screen.getByRole('button', { name: /load all/i }));
+    
+    // then
+    expect(loadAllBooks).toHaveBeenCalledTimes(1);
   });
 });

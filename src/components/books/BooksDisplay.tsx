@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 
 const BooksDisplay = () => {
   const booksPerLoad = 6;
-  const { displayedBooks, hasMore, loadMoreBooks } = useBookLoader(booksPerLoad);
+  const { displayedBooks, hasMore, loadMoreBooks, loadAllBooks } = useBookLoader(booksPerLoad);
 
   return (
     <Box>
@@ -23,7 +23,11 @@ const BooksDisplay = () => {
           <BookCard key={book.title} book={book} />
         ))}
       </Box>
-      <LoadMoreBooks hasMore={hasMore} onLoadMore={loadMoreBooks} />
+      <LoadMoreBooks 
+        hasMore={hasMore} 
+        onLoadMore={loadMoreBooks} 
+        onLoadAll={loadAllBooks} 
+      />
     </Box>
   );
 };
