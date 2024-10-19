@@ -19,8 +19,8 @@ Programming is also a creative activity. We can create things from scratch, givi
 Keep calm & keep coding :)
 
 Bibliography:
-- [Mastery](https://amzn.to/3WFYozD)
-- [Clean Code](https://amzn.to/3WHeDvY)
-- [Tidy First](https://amzn.to/3UTDxrb)
-- [Professional Javascript for Web Developers](https://amzn.to/4bdfyc0)
-- [Atomic Habits](https://amzn.to/3UTzj2G)
+- [Mastery](https://amzn.to/4hdlxkz)
+- [Clean Code](https://amzn.to/48cBl34)
+- [Tidy First](https://amzn.to/4hdUNRa)
+- [Professional Javascript for Web Developers](https://amzn.to/3Y9fipn)
+- [Atomic Habits](https://amzn.to/3BSAQiz)

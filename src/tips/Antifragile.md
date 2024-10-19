@@ -34,9 +34,9 @@ as a content producer, not just a consumer. If you're looking for training for y
 be the one leading it?
 
 Books:
-- [Antifragile](https://amzn.to/4d9rD3E)
-- [The Black Swan](https://amzn.to/3xFx2yS)
-- [Fooled by Randomness](https://amzn.to/4b5kmje)
-- [Skin in the Game](https://amzn.to/4d0rL5r)
-- [Full Incerto - all Taleb books in one](https://amzn.to/3W1TsEO)
-- [The Software Engineer's Guidebook](https://amzn.to/3Q8C0e3)
+- [Antifragile](https://amzn.to/3Ufyalq)
+- [The Black Swan](https://amzn.to/3Yv4zXC)
+- [Fooled by Randomness](https://amzn.to/3YtKe4X)
+- [Skin in the Game](https://amzn.to/3zVrli1)
+- [Full Incerto - all Taleb books in one](https://amzn.to/4dNnwJu)
+- [The Software Engineer's Guidebook](https://amzn.to/4ha0fnX)

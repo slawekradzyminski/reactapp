@@ -7,6 +7,7 @@ It is also worth boasting about successes, both personal and of the team. For le
 In summary: let's pay attention to our visibility. Let's engage in matters important to the company. Let's report progress and successes. Train for effective and concise communication (e.g., on LinkedIn).
 
 Bibliography:
-- [Show your work](https://amzn.to/3vZIF3v)
-- [Public Relations](https://amzn.to/3Ux6qt1)
+- [Show Your Work](https://amzn.to/3A5imuy)
+- [Public Relations](https://amzn.to/3BO9EBr)
+
 

@@ -9,8 +9,8 @@ In addition to the obvious benefits, writing often brings unexpected side effect
 You won’t find any “how-to” guides that make writing easier. There are no courses to take, no degrees to earn. It’s simply a skill you develop over time. So, just keep writing.
 
 Book recommendations:
-- [The Creative Act: A Way of Being](https://amzn.to/4f8Q15C)
-- [Show your work](https://amzn.to/3Ydx7DP)
-- [The War of Art](https://amzn.to/3NsO7ka)
-- [Deep Work](https://amzn.to/3zSHNQ7)
-- [Hyperfocus](https://amzn.to/407nx7M)
+- [The Creative Act: A Way of Being](https://amzn.to/4haMTrC)
+- [Show Your Work](https://amzn.to/3A5imuy)
+- [The War of Art: Break Through the Blocks and Win Your Inner Creative Battles](https://amzn.to/48h44nu)
+- [Deep Work: Rules for Focused Success in a Distracted World](https://amzn.to/4ha0Vtw)
+- [Hyperfocus: How to Manage Your Attention in a World of Distraction](https://amzn.to/4ha11RU)

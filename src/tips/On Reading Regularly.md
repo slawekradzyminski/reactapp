@@ -17,13 +17,13 @@ Besides practice, these skills can be honed by regularly reading books from vari
 It's worth developing a bookworm habit and reading every day.
 
 Recommended titles:
-- [Creativity Inc](https://amzn.to/3KlMjbt)
-- [Influence](https://amzn.to/3VbotUS)
-- [Thinking in Systems](https://amzn.to/3yEpWeC)
-- [Atomic Habits](https://amzn.to/3Kr7Bo1)
-- [Thinking Fast and Slow](https://amzn.to/3Ko17pT)
-- [The Charisma Myth](https://amzn.to/3VnwxmL)
-- [The Goal](https://amzn.to/4c3KM5H)
-- [Project Phoenix](https://amzn.to/3Km7vhc)
-- [The Laws of Human Nature](https://amzn.to/3yIWcNT)
-- [Shackleton's Way](https://amzn.to/3R8tQCL)
+- [Creativity Inc](https://amzn.to/4hdlHIH)
+- [Influence](https://amzn.to/4h8JFVx)
+- [Thinking in Systems](https://amzn.to/3Yv4O4Y)
+- [Atomic Habits](https://amzn.to/3BSAQiz)
+- [Thinking Fast and Slow](https://amzn.to/3YbAjzI)
+- [The Charisma Myth](https://amzn.to/4h9iH03)
+- [The Goal](https://amzn.to/3Yv4QtC)
+- [Project Phoenix](https://amzn.to/3Nz5Dn4)
+- [The Laws of Human Nature](https://amzn.to/48eeP9Q)
+- [Shackleton's Way](https://amzn.to/3UjKZLp)

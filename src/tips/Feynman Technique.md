@@ -13,8 +13,8 @@ for us to understand new concepts.
 
 To build these visualized connections mentioned on the attached [Twitter](https://twitter.com/ProfFeynman/status/1763927221230776741), reading books from related fields is excellent.
 Today, I recommend:
-- [Continuous Delivery](https://amzn.to/4aH08g8)
-- [Fundamentals of Software Architecture](https://amzn.to/3UBWwqd)
+- [Continuous Delivery](https://amzn.to/3UfWkMp)
+- [Fundamentals of Software Architecture](https://amzn.to/4h8J7yX)
 - [PL - Bezpieczeństwo Aplikacji Webowych](https://sklep.securitum.pl/ksiazka-bezpieczenstwo-aplikacji-webowych)
 
 Teaching others has a very bad PR due to the dubious practices of many companies, but please remember that most active

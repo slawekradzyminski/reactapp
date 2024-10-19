@@ -20,10 +20,9 @@ organizing this in our heads, we not only become better testers of the current s
 knowledge that becomes our personal capital. We build an advantage over the competition in the job market.
 
 Books that are great for connecting the dots:
-- [Understanding Distributed Systems](https://amzn.to/4d3hgOD)
-- [Fundamentals of Software Architecture](https://amzn.to/3UBWwqd)
-- [Software Architecture - the Hard Parts](https://amzn.to/3UrBR7V)
-- [Thinking in Systems](https://amzn.to/4aIMLvQ)
-- [System Design Interview - Volume 1](https://amzn.to/448eHGU)
-- [System Desing Interview - Volume 2](https://amzn.to/4aIOTDJ)
- 
+- [Understanding Distributed Systems](https://amzn.to/4hdUjKQ)
+- [Fundamentals of Software Architecture](https://amzn.to/4h8J7yX)
+- [Software Architecture - the Hard Parts](https://amzn.to/48aefKt)
+- [Thinking in Systems](https://amzn.to/3Yv4O4Y)
+- [System Design Interview - Volume 1](https://amzn.to/48fMfoP)
+- [System Design Interview - Volume 2](https://amzn.to/48cAtLI)

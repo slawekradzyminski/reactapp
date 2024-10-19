@@ -4,14 +4,14 @@ The interdisciplinary approach is often absent on a global scale. Educators at a
 
 **Leonardo da Vinci**: A polymath whose approach to interconnected knowledge remains profoundly influential.
 
-- [Biography](https://amzn.to/3Ugho4W)
-- [How to Think Like Leonardo da Vinci](https://amzn.to/3U8m6RZ)
+- [Leonardo da Vinci - Biography](https://amzn.to/4e9ItyF)
+- [How to Think Like Leonardo da Vinci](https://amzn.to/3BO7Ubf)
 
 **John Boyd**: Known for the OODA loop, his strategies have applications beyond the military, in areas such as business and management.
 
-- [Boyd: The Fighter Pilot Who Changed the Art of War](https://amzn.to/4473vKA)
-- [The Mind of War: John Boyd and American Security](https://amzn.to/3xHSWBQ)
-- [Certain to Win: The Strategy of John Boyd, Applied to Business](https://amzn.to/3JsZ7Mz)
-- [Science, Strategy and War (Strategy and History)](https://amzn.to/4b3GN8B)
+- [Boyd: The Fighter Pilot Who Changed the Art of War](https://amzn.to/4f9GoDD)
+- [The Mind of War: John Boyd and American Security](https://amzn.to/40aBTo8)
+- [Certain to Win: The Strategy of John Boyd, Applied to Business](https://amzn.to/4eSI3Oi)
+- [Science, Strategy and War (Strategy and History)](https://amzn.to/40d68Le)
 
 **Taylor Swift** - Analyze the strategic reasons behind the high costs and immense popularity of her concerts.

@@ -25,8 +25,8 @@ Here are some practical tips to get you started:
 - Broaden Your View: Don’t just surround yourself with people who think like you. Seek out diverse opinions, bring in people with different perspectives, and invite them into discussions. Challenging your assumptions will expand your understanding.
 
 Book recommendations:
-- [Napoleon: A Life](https://amzn.to/4gnOg5F)
-- [Don't Sleep, There Are Snakes: Life and Language in the Amazonian Jungle](https://amzn.to/3XriwUV)
-- [Nothing to Envy: Ordinary Lives in North Korea](https://amzn.to/3TrS4Jj)
-- [Small Unit Leadership: A Commonsense Approach](https://amzn.to/4gq8Baw)
-- [Shoe Dog: A Memoir by the Creator of Nike](https://amzn.to/3zeOGe8)
+- [Napoleon: A Life](https://amzn.to/4eMgQN5)
+- [Don't Sleep, There Are Snakes: Life and Language in the Amazonian Jungle](https://amzn.to/4eSIpEC)
+- [Nothing to Envy: Ordinary Lives in North Korea](https://amzn.to/3NuRuYb)
+- [Small Unit Leadership: A Commonsense Approach](https://amzn.to/3Yys6qQ)
+- [Shoe Dog: A Memoir by the Creator of Nike](https://amzn.to/3Yv0a70)
