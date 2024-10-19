@@ -316,5 +316,35 @@
     "link": "https://amzn.to/48cjhpw",
     "path": "downloaded_covers/More_Agile_Testing:_Learning_Journeys_for_the_Whole_Team_(Addison_Wesley_Signature_Series_(Cohn)).jpg",
     "description": "More Agile Testing is a comprehensive guide that delves into the evolving world of agile testing. Authors Janet Gregory and Lisa Crispin offer insights on adapting agile testing to different environments, improving test processes, scaling testing across teams, and overcoming challenges in automated testing. With real team examples and practical advice, this book covers a wide range of topics including collaboration with business experts, designing reliable automated tests, enhancing testing skills, and mitigating risks. Whether you are working in an enterprise, with distributed teams, on mobile/embedded systems, in regulated environments, or practicing DevOps, this book provides valuable strategies and techniques for agile testers looking to excel in their roles."
+  },
+  {
+    "title": "Team Geek: A Software Developer's Guide to Working Well with Others",
+    "link": "https://amzn.to/3YasSIV",
+    "path": "downloaded_covers/Team_Geek:_A_Software_Developers_Guide_to_Working_Well_with_Others.jpg",
+    "description": "\"Team Geek\" is an insightful book by renowned software engineers Brian Fitzpatrick and Ben Collins-Sussman, offering vital strategies to help software engineers navigate the often challenging human aspect of the industry. The authors delve into crucial engagement skills, illustrating both beneficial techniques and pitfalls to avoid when collaborating with colleagues and users. The lessons contained within are particularly valuable to those who have honed their technical abilities and are seeking to enhance their overall impact through effective collaboration and the cultivation of \"soft skills\". This guidance culminates in an approach that maximizes the potential for success in the often-complicated world of software creation, asserting the importance of the human component in a predominantly technical field."
+  },
+  {
+    "title": "The Count of Monte Cristo (Penguin Classics)",
+    "link": "https://amzn.to/3Yt5qYU",
+    "path": "downloaded_covers/The_Count_of_Monte_Cristo_(Penguin_Classics).jpg",
+    "description": "The Count of Monte Cristo by Alexandre Dumas is a riveting story about Edmond Dantes, an innocent man wrongly imprisoned in the grim fortress of If. He learns about a hidden treasure and plans not only his escape but also his retribution against those who caused his downfall. This Penguin Classics edition, a lively and complete translation by Robin Buss, includes an introduction, explanatory notes, and reading suggestions."
+  },
+  {
+    "title": "Complete Guide to Test Automation: Techniques, Practices, and Patterns for Building and Maintaining Effective Software Projects",
+    "link": "https://amzn.to/3UhgDcy",
+    "path": "downloaded_covers/Complete_Guide_to_Test_Automation:_Techniques,_Practices,_and_Patterns_for_Building_and_Maintaining_Effective_Software_Projects.jpg",
+    "description": "The Complete Guide to Test Automation is an exhaustive resource on test automation in software development. Shifting the perspective from traditional waterfall paradigms to newer, agile models, the book explores how automation tools can enhance productivity without sacrificing quality. It addresses the complexity of employing test automation effectively, including the factors that influence its value and costs, with the aim to help create the optimal automation solution for software projects. The hands-on guide teaches you how to write maintainable test code, and encompasses various topics such as test planning, implementation, test project architecture, and how to derive the most value from test automation. The book is intended for anyone involved in software development, including test automation leads, QA managers, developers, and even nonprogrammers."
+  },
+  {
+    "title": "Thinking-Driven Testing: The Most Reasonable Approach to Quality Control",
+    "link": "https://amzn.to/4f9zHBA",
+    "path": "downloaded_covers/Thinking_Driven_Testing:_The_Most_Reasonable_Approach_to_Quality_Control.jpg",
+    "description": "This innovative book redefines software testing, emphasizing critical thinking, system thinking, and rationality as core tester skills. It moves away from traditionally tool-focused viewpoints, offering a unique meta-approach for creating effective testing strategies, grounded in modern psychology, economics, system sciences, and logic. The book introduces new testing concepts such as Thinking-Driven Testing (TDT) and TQED to optimize testing ideas. Various types of testing techniques are covered, alongside potential pitfalls turned learning opportunities. The final chapter applies theory into practice with practical exercises to enhance tester's crucial skills. The book encourages readers to challenge conventional software testing wisdom and evolve into value-adding professional testers."
+  },
+  {
+    "title": "How Google Tests Software",
+    "link": "https://amzn.to/48gtv8l",
+    "path": "downloaded_covers/How_Google_Tests_Software.jpg",
+    "description": "\"Learn from Google\" is a comprehensive guide written by legendary testing expert James Whittaker and two top Google experts. The book provides insights into how Google tests software and offers a plethora of new best practices applicable regardless of your organization's size. From risk analysis and test planning to implementing a variety of testing methods, tracking issues, creating tools and more, you'll discover practical and scalable techniques to streamline your testing process and boost your organization's productivity."
   }
 ]
