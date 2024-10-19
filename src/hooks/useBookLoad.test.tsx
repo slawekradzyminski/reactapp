@@ -69,4 +69,55 @@ describe('useBookLoader', () => {
     expect(result.current.displayedBooks).toHaveLength(books.length)
     expect(result.current.hasMore).toBe(false)
   })
+
+  it('should filter books based on search term', () => {
+    // given
+    const { result } = renderHook(() => useBookLoader(10))
+    const searchTerm = books[0].title.slice(0, 5)
+    
+    // when
+    act(() => {
+      result.current.setSearchTerm(searchTerm)
+    })
+
+    // then
+    expect(result.current.displayedBooks.every(book => 
+      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )).toBe(true)
+  })
+
+  it('should update displayed books when search term changes', () => {
+    // given
+    const { result } = renderHook(() => useBookLoader(10))
+    const searchTerm = books[0].title.slice(0, 5)
+    
+    // when
+    act(() => {
+      result.current.setSearchTerm(searchTerm)
+    })
+
+    // then
+    expect(result.current.displayedBooks.length).toBeLessThanOrEqual(10)
+    expect(result.current.displayedBooks.every(book => 
+      book.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )).toBe(true)
+  })
+
+  it('should reset search when search term is cleared', () => {
+    // given
+    const { result } = renderHook(() => useBookLoader(10))
+    const searchTerm = books[0].title.slice(0, 5)
+    
+    // when
+    act(() => {
+      result.current.setSearchTerm(searchTerm)
+    })
+    act(() => {
+      result.current.setSearchTerm('')
+    })
+
+    // then
+    expect(result.current.displayedBooks).toHaveLength(10)
+    expect(result.current.hasMore).toBe(true)
+  })
 })

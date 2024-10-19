@@ -14,6 +14,7 @@ describe('BooksDisplay', () => {
       hasMore: true,
       loadMoreBooks: vi.fn(),
       loadAllBooks: vi.fn(),
+      setSearchTerm: vi.fn(),
     });
 
     // when
@@ -31,6 +32,7 @@ describe('BooksDisplay', () => {
       hasMore: true,
       loadMoreBooks: vi.fn(),
       loadAllBooks: vi.fn(),
+      setSearchTerm: vi.fn(),
     });
 
     // when
@@ -51,6 +53,7 @@ describe('BooksDisplay', () => {
       hasMore: true,
       loadMoreBooks,
       loadAllBooks,
+      setSearchTerm: vi.fn(),
     });
 
     // when
@@ -68,6 +71,7 @@ describe('BooksDisplay', () => {
       hasMore: false,
       loadMoreBooks: vi.fn(),
       loadAllBooks: vi.fn(),
+      setSearchTerm: vi.fn(),
     });
 
     // when
@@ -83,11 +87,13 @@ describe('BooksDisplay', () => {
     // given
     const loadMoreBooks = vi.fn();
     const loadAllBooks = vi.fn();
+    const setSearchTerm = vi.fn();
     vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
       loadMoreBooks,
       loadAllBooks,
+      setSearchTerm,
     });
 
     // when
@@ -102,11 +108,13 @@ describe('BooksDisplay', () => {
     // given
     const loadMoreBooks = vi.fn();
     const loadAllBooks = vi.fn();
+    const setSearchTerm = vi.fn();
     vi.mocked(useBookLoader).mockReturnValue({
       displayedBooks: books.slice(0, 6),
       hasMore: true,
       loadMoreBooks,
       loadAllBooks,
+      setSearchTerm,
     });
 
     // when
@@ -115,5 +123,43 @@ describe('BooksDisplay', () => {
     
     // then
     expect(loadAllBooks).toHaveBeenCalledTimes(1);
+  });
+
+  it('calls setSearchTerm when search input changes', () => {
+    // given
+    const setSearchTerm = vi.fn();
+    vi.mocked(useBookLoader).mockReturnValue({
+      displayedBooks: books.slice(0, 6),
+      hasMore: true,
+      loadMoreBooks: vi.fn(),
+      loadAllBooks: vi.fn(),
+      setSearchTerm,
+    });
+
+    // when
+    render(<BooksDisplay />);
+    fireEvent.change(screen.getByPlaceholderText('Search by title'), { target: { value: 'test search' } });
+    
+    // then
+    expect(setSearchTerm).toHaveBeenCalledWith('test search');
+  });
+
+  it('displays filtered books when search term is provided', () => {
+    // given
+    const filteredBooks = [books[0]];
+    vi.mocked(useBookLoader).mockReturnValue({
+      displayedBooks: filteredBooks,
+      hasMore: false,
+      loadMoreBooks: vi.fn(),
+      loadAllBooks: vi.fn(),
+      setSearchTerm: vi.fn(),
+    });
+
+    // when
+    render(<BooksDisplay />);
+    
+    // then
+    expect(screen.getAllByTestId('book-card')).toHaveLength(1);
+    expect(screen.getByText(filteredBooks[0].title)).toBeInTheDocument();
   });
 });
