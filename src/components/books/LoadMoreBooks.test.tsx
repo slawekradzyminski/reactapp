@@ -16,7 +16,7 @@ describe('LoadMoreBooks', () => {
     expect(screen.getByRole('button', { name: /load all/i })).toBeInTheDocument();
   });
 
-  it('renders "You have seen all the books!" message when hasMore is false', () => {
+  it('renders "That\'s all the books!" message when hasMore is false', () => {
     // given
     const onLoadMore = vi.fn();
     const onLoadAll = vi.fn();
@@ -25,7 +25,7 @@ describe('LoadMoreBooks', () => {
     render(<LoadMoreBooks hasMore={false} onLoadMore={onLoadMore} onLoadAll={onLoadAll} />);
     
     // then
-    expect(screen.getByText(/you have seen all the books!/i)).toBeInTheDocument();
+    expect(screen.getByText(/That's all the books!/i)).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /load more/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /load all/i })).not.toBeInTheDocument();
   });

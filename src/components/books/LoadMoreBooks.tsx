@@ -20,7 +20,7 @@ const LoadMoreBooks = ({ hasMore, onLoadMore, onLoadAll }: LoadMoreBooksProps) =
       </Box>
     ) : (
       <Typography variant="body1" sx={{ fontWeight: "bold" }}>
-        You have seen all the books!
+        That's all the books!
       </Typography>
     )}
   </Box>

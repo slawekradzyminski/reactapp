@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { it, expect, describe, vi } from 'vitest';
-import TipsComponent from './TipsComponent';
+import TipsPage from './TipsPage';
 import { useMediaQuery } from "@mui/material";
 
 vi.mock("@mui/material", () => ({
@@ -21,7 +21,7 @@ describe('TipsComponent', () => {
     vi.mocked(useMediaQuery).mockReturnValue(true);
 
     // when
-    render(<TipsComponent />);
+    render(<TipsPage />);
 
     // then
     expect(screen.getByTestId('mock-mobile-tip-view')).toBeInTheDocument();
@@ -33,7 +33,7 @@ describe('TipsComponent', () => {
     vi.mocked(useMediaQuery).mockReturnValue(false);
 
     // when
-    render(<TipsComponent />);
+    render(<TipsPage />);
 
     // then
     expect(screen.getByTestId('mock-desktop-tip-view')).toBeInTheDocument();
