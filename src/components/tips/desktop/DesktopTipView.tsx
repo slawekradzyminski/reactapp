@@ -13,7 +13,7 @@ const DesktopTipView = () => {
       </Box>
       <Divider orientation="vertical" flexItem />
       <Box sx={{ width: "75%", ml: 2 }}>
-        <TipBody selectedTip={selectedTip} />
+        <TipBody selectedTip={selectedTip} header={true} />
       </Box>
     </Box>
   );

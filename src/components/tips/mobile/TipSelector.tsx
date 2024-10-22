@@ -18,7 +18,6 @@ const TipSelector = ({ tipId, onNavigateToTip }: TipSelectorProps) => {
       displayEmpty
       inputProps={{ "aria-label": "Without label" }}
       style={{ minWidth: 120 }}
-      renderValue={() => "Jump to..."}
     >
       {tipsData.map((tip) => (
         <MenuItem key={tip.id} value={tip.id}>

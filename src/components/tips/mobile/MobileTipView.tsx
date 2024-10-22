@@ -13,7 +13,7 @@ const MobileTipView = () => {
         onNavigate={handleNavigation}
         onNavigateToTip={onNavigateToTip}
       />
-      <TipBody selectedTip={selectedTip} />
+      <TipBody selectedTip={selectedTip} header={false} />
     </Box>
   );
 };
