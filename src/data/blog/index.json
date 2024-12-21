@@ -1,0 +1,1131 @@
+[
+  {
+    "id": "2024-12-08-from-live-suggestions",
+    "title": "From Live Suggestions to Agents: Exploring AI-Powered IDEs",
+    "date": "2024-12-08",
+    "categories": [
+      "AI"
+    ],
+    "tags": [
+      "AI"
+    ],
+    "permalink": "/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides"
+  },
+  {
+    "id": "2024-11-30-kraqa-meetup",
+    "title": "KraQA meetup testing predictions for 2025",
+    "date": "2024-11-30",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2024/11/kraqa-meetup-testing-predictions-for-2025"
+  },
+  {
+    "id": "2024-10-18-cypress-parallel-execution",
+    "title": "Cypress Parallel Execution",
+    "date": "2024-10-18",
+    "categories": [
+      "Cypress"
+    ],
+    "tags": [
+      "Cypress"
+    ],
+    "permalink": "/2024/10/cypress-parallel-execution"
+  },
+  {
+    "id": "2024-09-21-the-rise-of-ai-driven-development",
+    "title": "The rise of AI Driven Development",
+    "date": "2024-09-21",
+    "categories": [
+      "AI"
+    ],
+    "tags": [
+      "AI"
+    ],
+    "permalink": "/2024/09/the-rise-of-ai-driven-development"
+  },
+  {
+    "id": "2023-05-21-tips-for-aspiring-test-leaders",
+    "title": "Steering the Ship: A Comprehensive Guide for Aspiring Test Leaders",
+    "date": "2023-05-21",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts",
+      "leadership"
+    ],
+    "permalink": "/2023/05/tips-for-aspiring-test-leaders"
+  },
+  {
+    "id": "2023-05-04-bi-directional-contract-testing",
+    "title": "BiDirectional Contract Testing",
+    "date": "2023-05-04",
+    "categories": [
+      "Contract testing"
+    ],
+    "tags": [
+      "pact",
+      "contract testing"
+    ],
+    "permalink": "/2023/05/bi-directional-contract-testing"
+  },
+  {
+    "id": "2023-04-10-exploring-selenium-bidi-functionality-a-guide-with-java-examples",
+    "title": "Exploring Selenium BiDi Functionality",
+    "date": "2023-04-10",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "Java",
+      "selenium",
+      "UI testing",
+      "test automation"
+    ],
+    "permalink": "/2023/04/exploring-selenium-bidi-functionality"
+  },
+  {
+    "id": "2023-03-20-learning-tips-for-using-chatgpt-in-software-testing",
+    "title": "Learning Tips for Using ChatGPT in Software Testing",
+    "date": "2023-03-20",
+    "categories": [
+      "Generative AI"
+    ],
+    "tags": [
+      "AI",
+      "ChatGPT",
+      "artificial intelligence",
+      "test automation"
+    ],
+    "permalink": "/2023/03/learning-tips-for-using-chatgpt-in"
+  },
+  {
+    "id": "2023-03-13-the-comprehensive-guide-to-essential",
+    "title": "The Comprehensive Guide to Essential Soft Skills for Testers",
+    "date": "2023-03-13",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "leadership",
+      "testing thoughts",
+      "soft skills"
+    ],
+    "permalink": "/2023/03/the-comprehensive-guide-to-essential"
+  },
+  {
+    "id": "2023-03-12-understanding-cypress-synchronousasynchronous-duality",
+    "title": "Understanding Cypress synchronous/asynchronous duality",
+    "date": "2023-03-12",
+    "categories": [
+      "Cypress"
+    ],
+    "tags": [
+      "cypress",
+      "test automation",
+      "UI testing"
+    ],
+    "permalink": "/2023/03/understanding-cypress"
+  },
+  {
+    "id": "2023-03-01-GPT-4-Test-Manifesto",
+    "title": "GPT-4 Test Manifesto",
+    "date": "2023-03-01",
+    "categories": [
+      "Generative AI"
+    ],
+    "tags": [
+      "chatgpt"
+    ],
+    "permalink": "/2023/03/gpt-4-test-manifesto"
+  },
+  {
+    "id": "2023-02-22-revolutionizing-test-engineering-with-chatgpt-exploring-the-possibilities-of-ai-in-testing",
+    "title": "Revolutionizing Test Engineering with ChatGPT",
+    "date": "2023-02-22",
+    "categories": [
+      "Generative AI"
+    ],
+    "tags": [
+      "AI",
+      "ChatGPT",
+      "test automation"
+    ],
+    "permalink": "/2023/02/revolutionizing-test-engineering-with"
+  },
+  {
+    "id": "2023-02-15-mastering-t-shaped-skills-a-comprehensive-guide-for-software-engineers-in-test",
+    "title": "Mastering T-Shaped Skills",
+    "date": "2023-02-15",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "test automation",
+      "testing thoughts"
+    ],
+    "permalink": "/2023/02/mastering-t-shaped-skills-comprehensive"
+  },
+  {
+    "id": "2023-01-30-supertest-api-testing-library",
+    "title": "Supertest API testing library",
+    "date": "2023-01-30",
+    "categories": [
+      "API testing"
+    ],
+    "tags": [
+      "API testing"
+    ],
+    "permalink": "/2023/01/superest-api-testing-library"
+  },
+  {
+    "id": "2023-01-22-maximizing-your-employability-as-a-software-engineer-in-test",
+    "title": "Maximizing Your Employability as a Software Engineer in Test",
+    "date": "2023-01-22",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts",
+      "soft skills"
+    ],
+    "permalink": "/2023/01/maximizing-your-employability-as"
+  },
+  {
+    "id": "2023-01-10-maximizing-performance-with-gatling-a-beginners-guide-to-load-testing",
+    "title": "Maximizing Performance with Gatling",
+    "date": "2023-01-10",
+    "categories": [
+      "Performance testing"
+    ],
+    "tags": [
+      "performance testing"
+    ],
+    "permalink": "/2023/01/maximizing-performance-with-gatling"
+  },
+  {
+    "id": "2022-04-06-pl-performance-tests-in-k6",
+    "title": "Performance tests in K6",
+    "date": "2022-04-06",
+    "categories": [
+      "Performance testing"
+    ],
+    "tags": [
+      "testerzy",
+      "performance testing"
+    ],
+    "permalink": "/2022/04/pl-performance-tests-in-k6"
+  },
+  {
+    "id": "2020-08-08-appium-up-and-running-working-example-",
+    "title": "Appium up and running (working example)",
+    "date": "2020-08-08",
+    "categories": [
+      "Mobile testing"
+    ],
+    "tags": [
+      "mobile testing"
+    ],
+    "permalink": "/2020/08/appium-up-and-running-working-example"
+  },
+  {
+    "id": "2020-06-20-best-software-testing-books-2",
+    "title": "Best software testing books - 2",
+    "date": "2020-06-20",
+    "categories": [
+      "Books"
+    ],
+    "tags": [
+      "learning",
+      "books"
+    ],
+    "permalink": "/2020/06/best-software-testing-books-2"
+  },
+  {
+    "id": "2020-04-13-android-testing-tools",
+    "title": "Android testing tools",
+    "date": "2020-04-13",
+    "categories": [
+      "Mobile testing"
+    ],
+    "tags": [
+      "mobile testing"
+    ],
+    "permalink": "/2020/04/android-testing-tools"
+  },
+  {
+    "id": "2020-02-12-isolated-cypress-ui-tests",
+    "title": "Isolated Cypress UI tests",
+    "date": "2020-02-12",
+    "categories": [
+      "Cypress"
+    ],
+    "tags": [
+      "cypress"
+    ],
+    "permalink": "/2020/02/isolated-cypress-ui-tests"
+  },
+  {
+    "id": "2020-01-29-practical-test-strategy-for-spring-react-application",
+    "title": "Practical test strategy for Spring & React application",
+    "date": "2020-01-29",
+    "categories": [
+      "Test strategy"
+    ],
+    "tags": [
+      "strategy",
+      "testing thoughts"
+    ],
+    "permalink": "/2020/01/practical-test-strategy-for-spring"
+  },
+  {
+    "id": "2019-12-20-testers-toolbox-2-awesome-testing-christmas-edition",
+    "title": "Tester's toolbox 2 - Awesome Testing Christmas edition",
+    "date": "2019-12-20",
+    "categories": [
+      "Toolbox"
+    ],
+    "tags": [
+      "resources for testers",
+      "selenium",
+      "API testing",
+      "test automation",
+      "testing tools"
+    ],
+    "permalink": "/2019/12/testers-toolbox-2-awesome-testing"
+  },
+  {
+    "id": "2019-09-09-continuous-security-take-care-of-your-regression",
+    "title": "Continuous Security - take care of your regression",
+    "date": "2019-09-09",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "security",
+      "API testing"
+    ],
+    "permalink": "/2019/09/continuous-security-take-care-of-your"
+  },
+  {
+    "id": "2019-08-09-continuous-security-how-to-get-involved-as-a-tester",
+    "title": "Continuous Security - how to get involved as a tester?",
+    "date": "2019-08-09",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "security",
+      "API testing"
+    ],
+    "permalink": "/2019/08/continuous-security-how-to-get-involved"
+  },
+  {
+    "id": "2019-06-20-throttling-network-in-selenium-tests-using-browsermob-proxy",
+    "title": "Throttling network in Selenium tests using BrowserMob Proxy",
+    "date": "2019-06-20",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2019/06/throttling-network-in-selenium-tests"
+  },
+  {
+    "id": "2019-05-22-performance-testing-benchmarking-java-code-with-jmh",
+    "title": "Performance testing (benchmarking) Java code with JMH",
+    "date": "2019-05-22",
+    "categories": [
+      "Performance testing"
+    ],
+    "tags": [
+      "performance testing"
+    ],
+    "permalink": "/2019/05/performance-testing-benchmarking-java"
+  },
+  {
+    "id": "2019-04-04-headless-browser-testing-with-selenium",
+    "title": "Headless Browser Testing with Selenium",
+    "date": "2019-04-04",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2019/04/headless-browser-testing-with-selenium"
+  },
+  {
+    "id": "2019-03-30-disabling-javascript-using-selenium",
+    "title": "Disabling JavaScript using Selenium",
+    "date": "2019-03-30",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2019/03/disabling-javascript-using-selenium"
+  },
+  {
+    "id": "2019-03-28-selenium-page-object-pattern-how-to-handle-common-components",
+    "title": "Selenium Page Object Pattern - how to handle common components?",
+    "date": "2019-03-28",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2019/03/selenium-page-object-pattern-how-to"
+  },
+  {
+    "id": "2019-01-30-measuring-page-load-times-using-selenium",
+    "title": "Measuring page load times using Selenium",
+    "date": "2019-01-30",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium performance testing"
+    ],
+    "permalink": "/2019/01/measuring-page-load-times-using-selenium"
+  },
+  {
+    "id": "2019-01-08-adding-console-error-log-verification-to-selenium-tests-using-chrome",
+    "title": "Adding console error log verification to Selenium tests using Chrome",
+    "date": "2019-01-08",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2019/01/adding-console-error-log-verification"
+  },
+  {
+    "id": "2018-12-15-continuous-security-with-owasp-zap",
+    "title": "Continuous Security with OWASP ZAP",
+    "date": "2018-12-15",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "security"
+    ],
+    "permalink": "/2018/12/continuous-security-with-owasp-zap"
+  },
+  {
+    "id": "2018-11-15-continuous-security-with-find-sec-bugs",
+    "title": "Continuous Security with Find-Sec-Bugs",
+    "date": "2018-11-15",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "security"
+    ],
+    "permalink": "/2018/11/continuous-security-with-find-sec-bugs"
+  },
+  {
+    "id": "2018-09-25-how-to-speed-up-your-tests-in-one-simple-step",
+    "title": "How to speed up your tests in one simple step",
+    "date": "2018-09-25",
+    "categories": [
+      "CI/CD"
+    ],
+    "tags": [
+      "CI/CD",
+      "testing tools"
+    ],
+    "permalink": "/2018/09/how-to-speed-up-your-tests-in-one"
+  },
+  {
+    "id": "2018-08-25-on-being-multiskilled",
+    "title": "On being multiskilled",
+    "date": "2018-08-25",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "learning",
+      "testing thoughts"
+    ],
+    "permalink": "/2018/10/on-being-multiskilled"
+  },
+  {
+    "id": "2018-08-04-how-to-get-a-first-job-as-a-software-tester",
+    "title": "How to get a first job as a software tester?",
+    "date": "2018-08-04",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2018/08/how-to-get-first-job-as-software-tester"
+  },
+  {
+    "id": "2018-05-16-selenium-vs-fluentlenium",
+    "title": "Selenium vs FluentLenium",
+    "date": "2018-05-16",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "fluentlenium"
+    ],
+    "permalink": "/2018/05/selenium-vs-fluentlenium"
+  },
+  {
+    "id": "2018-04-24-my-road-to-public-speaking-slides-from-engineering-productivity-talk",
+    "title": "My road to public speaking + slides from Engineering Productivity talk",
+    "date": "2018-04-24",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "conference",
+      "public speaking",
+      "testing thoughts"
+    ],
+    "permalink": "/2018/04/my-road-to-public-speaking-slides-from"
+  },
+  {
+    "id": "2018-03-13-how-to-be-a-failure-as-a-software-tester",
+    "title": "How to be a failure as a software tester",
+    "date": "2018-03-13",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2018/03/how-to-be-failure-as-software-tester"
+  },
+  {
+    "id": "2018-03-08-five-minutes-performance-report-with-google-lighthouse",
+    "title": "Five minutes performance report with Google Lighthouse",
+    "date": "2018-03-08",
+    "categories": [
+      "Performance testing"
+    ],
+    "tags": [
+      "performance testing"
+    ],
+    "permalink": "/2018/03/five-minutes-performance-report-with"
+  },
+  {
+    "id": "2018-02-02-testops-the-most-antifragile-testing-role",
+    "title": "TestOps - the most antifragile testing role",
+    "date": "2018-02-02",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops",
+      "testing thoughts"
+    ],
+    "permalink": "/2018/02/testops-most-antifragile-testing-role"
+  },
+  {
+    "id": "2018-01-28-how-to-use-automated-functional-tests-to-drive-your-exploratory-security-and-performance-testing-efforts",
+    "title": "How to use automated functional tests to drive your exploratory, security and performance testing efforts?",
+    "date": "2018-01-28",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "testing thoughts",
+      "security",
+      "performance testing"
+    ],
+    "permalink": "/2018/01/how-to-use-automated-functional-tests"
+  },
+  {
+    "id": "2017-12-30-get-rid-of-your-external-dependencies-with-wiremock",
+    "title": "Get rid of your external dependencies with WireMock",
+    "date": "2017-12-30",
+    "categories": [
+      "API testing"
+    ],
+    "tags": [
+      "API testing",
+      "security"
+    ],
+    "permalink": "/2017/12/get-rid-of-your-external-dependencies"
+  },
+  {
+    "id": "2017-12-10-what-cia-teaches-us-about-productivity",
+    "title": "What CIA teaches us about productivity",
+    "date": "2017-12-10",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2017/12/what-cia-teaches-us-about-productivity"
+  },
+  {
+    "id": "2017-11-11-automate-your-xss-tests-with-selenium",
+    "title": "Automate your XSS tests with Selenium",
+    "date": "2017-11-11",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "security"
+    ],
+    "permalink": "/2017/11/automate-your-xss-tests-with-selenium"
+  },
+  {
+    "id": "2017-09-29-firefox-selenium-browser-capabilities-explained",
+    "title": "Firefox Selenium Browser Capabilities explained",
+    "date": "2017-09-29",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2017/09/firefox-selenium-browser-capabilities"
+  },
+  {
+    "id": "2017-09-08-headless-testing-with-firefox",
+    "title": "Headless testing with Firefox",
+    "date": "2017-09-08",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2017/09/headless-testing-with-firefox"
+  },
+  {
+    "id": "2017-07-05-testops-5-engineering-productivity",
+    "title": "TestOps - Engineering Productivity",
+    "date": "2017-07-05",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops"
+    ],
+    "permalink": "/2017/07/testops-5-engineering-productivity"
+  },
+  {
+    "id": "2017-06-30-rest-assured-integration-tests-for-jsontestcom",
+    "title": "Rest Assured integration tests for jsontest.com",
+    "date": "2017-06-30",
+    "categories": [
+      "API testing"
+    ],
+    "tags": [
+      "API testing"
+    ],
+    "permalink": "/2017/06/rest-assured-integration-tests-for"
+  },
+  {
+    "id": "2017-05-25-headless-testing-with-google-chrome",
+    "title": "Headless testing with Google Chrome",
+    "date": "2017-05-25",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2017/05/headless-testing-with-google-chrome"
+  },
+  {
+    "id": "2017-05-22-how-to-find-test-css-selector-using-chrome-devtools",
+    "title": "How to find & test CSS Selector using Chrome DevTools",
+    "date": "2017-05-22",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "CSS selectors",
+      "selenium"
+    ],
+    "permalink": "/2017/05/how-to-find-test-cssselector-using"
+  },
+  {
+    "id": "2017-04-14-best-software-testing-books",
+    "title": "Best software testing books",
+    "date": "2017-04-14",
+    "categories": [
+      "Books"
+    ],
+    "tags": [
+      "learning",
+      "books"
+    ],
+    "permalink": "/2017/04/best-software-testing-books"
+  },
+  {
+    "id": "2017-03-13-automated-testing-vs-manual-testing-security-perspective",
+    "title": "Automated testing vs manual testing - security perspective",
+    "date": "2017-03-13",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "security",
+      "testing thoughts"
+    ],
+    "permalink": "/2017/03/automated-testing-vs-manual-testing"
+  },
+  {
+    "id": "2017-03-13-learning-software-testing-checklist-2017-edition",
+    "title": "Learning Software Testing Checklist - 2017 edition",
+    "date": "2017-03-13",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "learning",
+      "testing thoughts"
+    ],
+    "permalink": "/2017/03/learning-software-testing-checklist"
+  },
+  {
+    "id": "2017-02-22-mentorship-how-to-skyrocket-your-testing-career",
+    "title": "Mentorship - how to skyrocket your testing career",
+    "date": "2017-02-22",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "learning"
+    ],
+    "permalink": "/2017/02/mentorship-how-to-skyrocket-your"
+  },
+  {
+    "id": "2017-02-12-continuous-security-with-owasp-dependency-check",
+    "title": "Continuous Security with OWASP Dependency Check",
+    "date": "2017-02-12",
+    "categories": [
+      "Security"
+    ],
+    "tags": [
+      "security"
+    ],
+    "permalink": "/2017/02/continuous-security-with-owasp"
+  },
+  {
+    "id": "2017-01-05-testops-4-continuous-improvement",
+    "title": "TestOps - Continuous Improvement",
+    "date": "2017-01-05",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops",
+      "learning"
+    ],
+    "permalink": "/2017/01/testops-4-continuous-improvement"
+  },
+  {
+    "id": "2016-12-29-system-traps-in-software-testing",
+    "title": "System traps in software testing",
+    "date": "2016-12-29",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2016/12/system-traps-in-software-testing"
+  },
+  {
+    "id": "2016-12-26-summary-planning-and-more-",
+    "title": "2016 Summary, Planning and More :)",
+    "date": "2016-12-26",
+    "categories": [],
+    "tags": [],
+    "permalink": "/2016/12/2016-summary-planning-and-more"
+  },
+  {
+    "id": "2016-10-22-browsermob-proxy-selenium-network-performance-extension",
+    "title": "BrowserMob Proxy Selenium network performance extension",
+    "date": "2016-10-22",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2016/10/browsermob-proxy-selenium-network"
+  },
+  {
+    "id": "2016-10-20-testops-3-continuous-testing",
+    "title": "TestOps - Continuous Testing",
+    "date": "2016-10-20",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops"
+    ],
+    "permalink": "/2016/10/testops-3-continuous-testing"
+  },
+  {
+    "id": "2016-09-21-anniversary-post-five-benefits-of-blogging",
+    "title": "Anniversary post - Five benefits of blogging",
+    "date": "2016-09-21",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2016/09/anniversary-post-five-benefits-of"
+  },
+  {
+    "id": "2016-09-09-testops-2-testing-in-production",
+    "title": "TestOps - Testing in Production",
+    "date": "2016-09-09",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops"
+    ],
+    "permalink": "/2016/09/testops-2-testing-in-production"
+  },
+  {
+    "id": "2016-08-20-how-to-start-learning-test-automation",
+    "title": "How to start learning test automation",
+    "date": "2016-08-20",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "learning"
+    ],
+    "permalink": "/2016/08/how-to-start-learning-test-automation"
+  },
+  {
+    "id": "2016-08-18-best-complete-testing-suites-available-online",
+    "title": "Best complete testing suites available online",
+    "date": "2016-08-18",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "learning"
+    ],
+    "permalink": "/2016/08/best-complete-testing-suites-available"
+  },
+  {
+    "id": "2016-07-30-restful-api-testing-with-rest-assured-1-",
+    "title": "RESTful API Testing with Rest-Assured (1)",
+    "date": "2016-07-30",
+    "categories": [
+      "API testing"
+    ],
+    "tags": [
+      "rest-assured",
+      "API testing",
+      "test automation"
+    ],
+    "permalink": "/2016/07/restful-api-testing-with-rest-assured-1"
+  },
+  {
+    "id": "2016-07-22-testops-missing-piece-of-puzzle",
+    "title": "TestOps - missing piece of puzzle",
+    "date": "2016-07-22",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testops",
+      "devops"
+    ],
+    "permalink": "/2016/07/testops-missing-piece-of-puzzle"
+  },
+  {
+    "id": "2016-06-29-how-to-download-files-using-selenium-2-",
+    "title": "How to Download files using Selenium 2",
+    "date": "2016-06-29",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "testing",
+      "fluentlenium",
+      "test automation",
+      "UI testing"
+    ],
+    "permalink": "/2016/06/how-to-download-files-using-selenium-2"
+  },
+  {
+    "id": "2016-06-18-how-to-become-software-tester",
+    "title": "How to become a software tester",
+    "date": "2016-06-18",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "how to",
+      "testing",
+      "learning",
+      "soft skills"
+    ],
+    "permalink": "/2016/06/how-to-become-software-tester/"
+  },
+  {
+    "id": "2016-05-10-arguing-micheal-boltons-20-statements-about-testing",
+    "title": "Arguing Micheal Bolton's 20 statements about testing",
+    "date": "2016-05-10",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing",
+      "testing thoughts"
+    ],
+    "permalink": "/2016/05/arguing-micheal-boltons-20-statements"
+  },
+  {
+    "id": "2016-05-05-how-to-nail-testing-job-interview",
+    "title": "How to nail testing job interview",
+    "date": "2016-05-05",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing",
+      "psychology",
+      "tips",
+      "learning",
+      "job interview"
+    ],
+    "permalink": "/2016/05/how-to-nail-testing-job-interview"
+  },
+  {
+    "id": "2016-04-14-introducing-fluentlenium-2-selenium-waiting-game",
+    "title": "Introducing FluentLenium 2 - Selenium waiting game",
+    "date": "2016-04-14",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "fluentlenium",
+      "firefox",
+      "test automation",
+      "UI testing",
+      "chrome"
+    ],
+    "permalink": "/2016/04/introducing-fluentlenium-2-selenium"
+  },
+  {
+    "id": "2016-04-04-testers-toolbox-an-alternative-guide",
+    "title": "Tester's toolbox - an alternative guide",
+    "date": "2016-04-04",
+    "categories": [
+      "Toolbox"
+    ],
+    "tags": [
+      "resources for testers",
+      "testing",
+      "pentesting",
+      "BDD",
+      "test automation",
+      "UI testing",
+      "learning",
+      "testing tools",
+      "automation",
+      "usability testing"
+    ],
+    "permalink": "/2016/04/testers-toolbox-alternative-guide"
+  },
+  {
+    "id": "2016-03-15-mapping-lean-principles-to-testing",
+    "title": "Mapping lean principles to testing",
+    "date": "2016-03-15",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "lean",
+      "testops",
+      "poppendieck",
+      "test automation",
+      "agile",
+      "testing thoughts"
+    ],
+    "permalink": "/2016/03/mapping-lean-principles-to-testing"
+  },
+  {
+    "id": "2016-03-03-learning-pathways-for-testers",
+    "title": "Learning pathways for testers",
+    "date": "2016-03-03",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "resources for testers",
+      "testing",
+      "motivation",
+      "learning"
+    ],
+    "permalink": "/2016/03/learning-pathways-for-testers"
+  },
+  {
+    "id": "2016-02-22-selenium-browser-capabilities-explained-1-",
+    "title": "Selenium - Browser Capabilities explained 1",
+    "date": "2016-02-22",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "browser capabilities",
+      "selenium",
+      "firefox",
+      "test automation",
+      "UI testing",
+      "chrome"
+    ],
+    "permalink": "/2016/02/selenium-browser-capabilities-explained"
+  },
+  {
+    "id": "2016-02-20-dos-and-donts-for-testers-2016-edition",
+    "title": "Do's and don'ts for testers - 2016 edition",
+    "date": "2016-02-20",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing",
+      "testops",
+      "test automation",
+      "learning"
+    ],
+    "permalink": "/2016/02/dos-and-donts-for-testers-2016-edition"
+  },
+  {
+    "id": "2016-01-27-introducing-fluentlenium-1-",
+    "title": "Introducing FluentLenium 1",
+    "date": "2016-01-27",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium",
+      "fluentlenium",
+      "test automation",
+      "UI testing"
+    ],
+    "permalink": "/2016/01/introducing-fluentlenium-1"
+  },
+  {
+    "id": "2016-01-05-in-famous-testers",
+    "title": "(In)famous testers",
+    "date": "2016-01-05",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing",
+      "istqb",
+      "lean",
+      "agile",
+      "testing thoughts"
+    ],
+    "permalink": "/2016/01/infamous-testers"
+  },
+  {
+    "id": "2015-12-13-testing-with-ansible",
+    "title": "Testing with Ansible",
+    "date": "2015-12-13",
+    "categories": [
+      "TestOps"
+    ],
+    "tags": [
+      "testing",
+      "orchestration",
+      "testops",
+      "test automation",
+      "testing tools",
+      "automation",
+      "ansible"
+    ],
+    "permalink": "/2015/12/testing-with-ansible"
+  },
+  {
+    "id": "2015-11-22-system-testing",
+    "title": "System Testing",
+    "date": "2015-11-22",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2015/11/system-testing"
+  },
+  {
+    "id": "2015-11-11-ideal-tester-equals-3141592",
+    "title": "Ideal tester equals 3.141592..",
+    "date": "2015-11-11",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "T-shaped",
+      "testing thoughts"
+    ],
+    "permalink": "/2015/11/ideal-tester-equals-3141592"
+  },
+  {
+    "id": "2015-11-11-selenium-maintenance-hell",
+    "title": "Selenium maintenance hell",
+    "date": "2015-11-11",
+    "categories": [
+      "Selenium"
+    ],
+    "tags": [
+      "selenium"
+    ],
+    "permalink": "/2015/11/selenium-maintenance-hell"
+  },
+  {
+    "id": "2015-10-20-our-future-as-testers",
+    "title": "Our future as testers",
+    "date": "2015-10-20",
+    "categories": [
+      "Testing thoughts"
+    ],
+    "tags": [
+      "testing thoughts"
+    ],
+    "permalink": "/2015/10/our-future-as-testers"
+  },
+  {
+    "id": "2015-10-11-steps-to-successfully-manage-house-project",
+    "title": "11 Steps to successfully manage house project",
+    "date": "2015-10-11",
+    "categories": [
+      "IT thoughts"
+    ],
+    "tags": [
+      "how to",
+      "soft skills"
+    ],
+    "permalink": "/2015/10/11-steps-to-successfully-manage-house"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "id": "2022-04-06-pl-performance-tests-in-k6",
+  "title": "Performance tests in K6",
+  "date": "2022-04-06",
+  "categories": [
+    "Performance testing"
+  ],
+  "tags": [
+    "testerzy",
+    "performance testing"
+  ],
+  "permalink": "/2022/04/pl-performance-tests-in-k6",
+  "content": "<p><img src=\"/images/blog/k6-czyli-testy-wydajnosciowe-w-javascript.jpg\" alt=\"\" style=\"width: 100%;\"></p>\n<p>I have published new article about performance tests in k6 on testerzy.pl. The article is in polish language.</p>\n<p><strong><a href=\"https://testerzy.pl/baza-wiedzy/artykuly/k6-czyli-testy-wydajnosciowe-w-javascript\" target=\"_blank\" rel=\"noreferrer\">https://testerzy.pl/baza-wiedzy/artykuly/k6-czyli-testy-wydajnosciowe-w-javascript</a></strong></p>\n<p><img src=\"/images/blog/thumbnail-fb.jpg\" alt=\"\" style=\"width: 100%;\"></p>\n"
+}
