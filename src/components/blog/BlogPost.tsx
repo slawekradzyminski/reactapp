@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { Typography, Paper, Box, Container } from '@mui/material';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Typography, Paper, Box, Container, Link } from '@mui/material';
+import { Category as CategoryIcon } from '@mui/icons-material';
 import blogIndex from '../../data/blog/index.json';
 import 'highlight.js/styles/github.css';
 import './BlogPost.css';
@@ -16,6 +17,7 @@ interface BlogPostData {
 
 const BlogPost = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [post, setPost] = useState<BlogPostData | null>(null);
 
   useEffect(() => {
@@ -39,6 +41,10 @@ const BlogPost = () => {
     loadPost();
   }, [location.pathname]);
 
+  const handleCategoryClick = (category: string) => {
+    navigate(`/blog?category=${category}&page=1`);
+  };
+
   if (!post) {
     return (
       <Container maxWidth="md">
@@ -58,11 +64,36 @@ const BlogPost = () => {
         <Typography variant="subtitle1" color="text.secondary" gutterBottom>
           Date: {post.date}
         </Typography>
-        <Box mb={2}>
-          <Typography variant="subtitle2" component="span" mr={1}>
+        <Box 
+          mb={2}
+          sx={{ 
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1
+          }}
+        >
+          <CategoryIcon fontSize="small" color="action" />
+          <Typography variant="subtitle2" component="span">
             Category:
           </Typography>
-          {post.category}
+          {post.category && (
+            <Link
+              component="button"
+              variant="subtitle2"
+              onClick={() => handleCategoryClick(post.category)}
+              sx={{
+                textDecoration: 'none',
+                cursor: 'pointer',
+                border: 'none',
+                background: 'none',
+                '&:hover': {
+                  color: 'primary.main'
+                }
+              }}
+            >
+              {post.category}
+            </Link>
+          )}
         </Box>
         <Box className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
       </Paper>
