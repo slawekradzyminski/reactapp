@@ -48,11 +48,9 @@ console.log('end');
 
 This code will output:
 
-{% highlight bash %}
-start
-middle
-end
-{% endhighlight %}
+> start
+> middle
+> end
 
 In synchronous JavaScript, each console.log statement executes in order, and the second statement will not start
 executing until the first one has finished.
@@ -66,18 +64,16 @@ finished executing. For example, consider the following code:
 {% highlight javascript %}
 console.log('start');
 setTimeout(() => {
-console.log('middle');
+  console.log('middle');
 }, 1000);
 console.log('end');
 {% endhighlight %}
 
 This code will output:
 
-{% highlight bash %}
-start
-end
-middle
-{% endhighlight %}
+> start
+> end
+> middle
 
 In asynchronous JavaScript, the setTimeout function executes asynchronously. It starts a timer for one second and then
 returns immediately. Meanwhile, the console.log('end') statement executes before the timer has finished. When the timer

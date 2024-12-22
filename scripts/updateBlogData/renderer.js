@@ -7,7 +7,12 @@ const renderer = new marked.Renderer();
 renderer.code = (code, language) => {
   const detectedLanguage = language || detectLanguage(code);
   const validLanguage = hljs.getLanguage(detectedLanguage) ? detectedLanguage : detectLanguage(code);
-  const highlightedCode = hljs.highlight(code, { language: validLanguage }).value;
+  
+  // Preserve all lines in the code block
+  const lines = code.split('\n').map(line => line.trimEnd());
+  const preservedCode = lines.join('\n');
+  
+  const highlightedCode = hljs.highlight(preservedCode, { language: validLanguage }).value;
   return `<pre><code class="hljs language-${validLanguage}">${highlightedCode}</code></pre>`;
 };
 
