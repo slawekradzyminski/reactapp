@@ -16,7 +16,8 @@ const renderer = new marked.Renderer();
 
 // Custom code block rendering with highlight.js
 renderer.code = (code, language) => {
-  const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+  const detectedLanguage = language || detectLanguage(code);
+  const validLanguage = hljs.getLanguage(detectedLanguage) ? detectedLanguage : detectLanguage(code);
   const highlightedCode = hljs.highlight(code, { language: validLanguage }).value;
   return `<pre><code class="hljs language-${validLanguage}">${highlightedCode}</code></pre>`;
 };
@@ -42,12 +43,53 @@ renderer.blockquote = (quote) => {
   return `<blockquote class="blog-quote"><p>${cleanQuote}</p></blockquote>`;
 };
 
+// Custom image rendering
+renderer.image = (href, title, text) => {
+  // Extract width attribute from text if present
+  const widthMatch = text.match(/\{:width="(\d+)%"\}/);
+  const width = widthMatch ? widthMatch[1] + '%' : null;
+  
+  // Remove width attribute from alt text
+  const altText = text.replace(/\s*\{:width="\d+%"\}/, '');
+  
+  // Build the image tag with width style if present
+  return `<img src="${href}"${title ? ` title="${title}"` : ''} alt="${altText}"${width ? ` style="width: ${width};"` : ''}>`;
+};
+
 // Custom language mapping
 const languageMap = {
   'yml': 'yaml',
   'typescript': 'typescript',
   'yaml': 'yaml',
-  'java': 'java'
+  'java': 'java',
+  'plaintext': 'java'
+};
+
+// Function to detect code language
+const detectLanguage = (code) => {
+  // Look for TypeScript patterns
+  if (code.includes('defineConfig') ||
+      code.includes('module.exports') ||
+      code.includes('require(') ||
+      code.includes('import ') ||
+      code.includes('export ')) {
+    return 'typescript';
+  }
+  // Look for Java patterns
+  if (code.includes('@Test') || 
+      code.includes('public class') || 
+      code.includes('private void') ||
+      code.includes('@Before') ||
+      code.includes('extends ')) {
+    return 'java';
+  }
+  // Look for YAML patterns
+  if (code.includes('image:') || 
+      code.includes('stage:') || 
+      code.includes('script:')) {
+    return 'yaml';
+  }
+  return 'plaintext';
 };
 
 // Function to convert highlight blocks to markdown code blocks
@@ -55,11 +97,11 @@ const convertHighlightBlocks = (content) => {
   return content.replace(
     /{%\s*highlight\s+(\w+)\s*%}([\s\S]*?){%\s*endhighlight\s*%}/g,
     (match, language, code) => {
-      const mappedLanguage = languageMap[language.toLowerCase()] || language;
+      const mappedLanguage = languageMap[language.toLowerCase()] || detectLanguage(code);
       const cleanCode = code
         .trim()
         .split('\n')
-        .map(line => line.trimEnd())
+        .map(line => line.trimEnd()) // Only remove trailing whitespace
         .join('\n');
       return `\`\`\`${mappedLanguage}\n${cleanCode}\n\`\`\``;
     }
@@ -116,17 +158,17 @@ const processContent = (content) => {
   return marked.parse(content);
 };
 
+// Configure marked to use the custom renderer and enable highlighting
 marked.setOptions({
   renderer: renderer,
-  breaks: true,
-  gfm: true,
-  pedantic: false,
-  mangle: false,
-  headerIds: false,
   highlight: (code, language) => {
-    const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+    const detectedLanguage = language || detectLanguage(code);
+    const validLanguage = hljs.getLanguage(detectedLanguage) ? detectedLanguage : detectLanguage(code);
     return hljs.highlight(code, { language: validLanguage }).value;
-  }
+  },
+  langPrefix: 'hljs language-',
+  gfm: true,
+  breaks: true
 });
 
 export const updateBlogData = () => {

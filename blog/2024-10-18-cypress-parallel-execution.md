@@ -95,7 +95,7 @@ frontend cypress tests:
 
 The number of code modification is minimal. You just need to install it via `npm i -D cypress-split` and modify `cypress.config.ts` to enable the plugin:
 
-{% highlight typescript %}
+{% highlight javascript %}
 const { defineConfig } = require('cypress')
 const cypressSplit = require('cypress-split')
 
