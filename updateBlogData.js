@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
 import matter from 'gray-matter';
+import hljs from 'highlight.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,24 +14,22 @@ const blogDataDirectory = path.join(projectRoot, 'src', 'data', 'blog');
 
 const renderer = new marked.Renderer();
 
+// Custom code block rendering with highlight.js
+renderer.code = (code, language) => {
+  const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+  const highlightedCode = hljs.highlight(code, { language: validLanguage }).value;
+  return `<pre><code class="hljs language-${validLanguage}">${highlightedCode}</code></pre>`;
+};
+
 renderer.link = (href, title, text) => {
   return `<a href="${href}" target="_blank" rel="noreferrer"${title ? ` title="${title}"` : ''}>${text}</a>`;
 };
 
-// Custom image rendering
-renderer.image = (href, title, text) => {
-  // Default width is 100%
-  let width = '100%';
-  
-  // Check if there's a width attribute after the image
-  const nextLine = text?.match(/\{:width="(\d+)%"\}/);
-  if (nextLine) {
-    width = nextLine[1] + '%';
-    // Remove the width attribute from alt text
-    text = text.replace(/\s*\{:width="\d+%"\}/, '');
-  }
-  
-  return `<img src="${href}" alt="${text || ''}" style="width: ${width};"${title ? ` title="${title}"` : ''}>`;
+// Custom paragraph rendering to handle line breaks
+renderer.paragraph = (text) => {
+  // Join lines that end with a word and start with a word (removing line breaks)
+  text = text.replace(/(\w)\n(\w)/g, '$1 $2');
+  return `<p>${text}</p>`;
 };
 
 // Custom blockquote rendering
@@ -47,7 +46,8 @@ renderer.blockquote = (quote) => {
 const languageMap = {
   'yml': 'yaml',
   'typescript': 'typescript',
-  'yaml': 'yaml'
+  'yaml': 'yaml',
+  'java': 'java'
 };
 
 // Function to convert highlight blocks to markdown code blocks
@@ -91,11 +91,29 @@ const fixBlockquoteLineBreaks = (content) => {
     .replace(/^(>.*?)$/gm, '$1  ');
 };
 
-// Function to clean up image width attributes
-const cleanImageAttributes = (content) => {
-  return content.replace(/!\[(.*?)\]\((.*?)\)\s*\{:width="(\d+)%"\}/g, (match, alt, src, width) => {
-    return `![${alt}${width ? ` {:width="${width}%"}` : ''}](${src})`;
+// Function to fix line breaks in paragraphs
+const fixParagraphLineBreaks = (content) => {
+  return content
+    // Join lines that end with a word and start with a word
+    .replace(/(\w)\n(\w)/g, '$1 $2')
+    // Preserve intentional line breaks (marked with two spaces at the end of the line)
+    .replace(/  \n/g, '<br>\n');
+};
+
+// Function to process content
+const processContent = (content) => {
+  // First, handle the width attributes in the markdown
+  content = content.replace(/!\[(.*?)\]\((.*?)\)\s*\{:width="(\d+)%"\}/g, (match, alt, src, width) => {
+    return `<img src="${src}" alt="${alt}" style="width: ${width}%">`;
   });
+  
+  // Then process other content
+  content = convertHighlightBlocks(content);
+  content = fixBlockquoteLineBreaks(content);
+  content = fixParagraphLineBreaks(content);
+  
+  // Parse any remaining markdown with marked
+  return marked.parse(content);
 };
 
 marked.setOptions({
@@ -104,7 +122,11 @@ marked.setOptions({
   gfm: true,
   pedantic: false,
   mangle: false,
-  headerIds: false
+  headerIds: false,
+  highlight: (code, language) => {
+    const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
+    return hljs.highlight(code, { language: validLanguage }).value;
+  }
 });
 
 export const updateBlogData = () => {
@@ -132,11 +154,7 @@ export const updateBlogData = () => {
           const { data, content } = matter(fileContent);
           
           // Process content
-          let processedContent = content;
-          processedContent = convertHighlightBlocks(processedContent);
-          processedContent = fixBlockquoteLineBreaks(processedContent);
-          processedContent = cleanImageAttributes(processedContent);
-          const htmlContent = marked.parse(processedContent);
+          const htmlContent = processContent(content);
           
           const postData = {
             id: file.replace('.md', ''),

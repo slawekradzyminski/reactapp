@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { Typography, Paper, Chip, Box, Container, useTheme } from '@mui/material';
 import blogIndex from '../../data/blog/index.json';
+import 'highlight.js/styles/github.css';
 
 interface BlogPostData {
   id: string;
@@ -86,10 +87,12 @@ const BlogPost = () => {
             backgroundColor: theme.palette.grey[100],
             padding: theme.spacing(2),
             borderRadius: theme.shape.borderRadius,
-            overflow: 'auto'
+            overflow: 'auto',
+            margin: theme.spacing(2, 0)
           },
           '& code': {
-            fontFamily: 'monospace'
+            fontFamily: 'monospace',
+            fontSize: '0.9em'
           },
           '& a': {
             color: theme.palette.primary.main,
@@ -107,6 +110,10 @@ const BlogPost = () => {
               margin: 0,
               color: theme.palette.text.secondary
             }
+          },
+          '& .hljs': {
+            background: 'transparent',
+            padding: 0
           }
         }} dangerouslySetInnerHTML={{ __html: post.content }} />
       </Paper>

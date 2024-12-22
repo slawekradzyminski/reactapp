@@ -6,9 +6,11 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@highlightjs/cdn-assets": "^11.11.0",
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
     "@types/turndown": "^5.0.5",
+    "highlight.js": "^11.11.0",
     "markdown-to-jsx": "^7.7.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
