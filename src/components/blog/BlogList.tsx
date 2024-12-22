@@ -1,6 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { Container, Paper, Typography, Chip, Box, Pagination } from '@mui/material';
-import { LocalOffer as TagIcon, Category as CategoryIcon } from '@mui/icons-material';
+import { Category as CategoryIcon } from '@mui/icons-material';
 import blogIndex from '../../data/blog/index.json';
 import './BlogList.css';
 
@@ -43,38 +43,11 @@ const BlogList = () => {
             </Typography>
 
             <Box className="blog-entry-meta">
-              {post.categories.length > 0 && (
+              {post.category && (
                 <Box className="blog-entry-section">
                   <CategoryIcon fontSize="small" color="action" />
-                  <span className="blog-entry-section-label">Categories:</span>
-                  <Box>
-                    {post.categories.map((category) => (
-                      <Chip
-                        key={category}
-                        label={category}
-                        variant="outlined"
-                        size="small"
-                        sx={{ mr: 0.5 }}
-                      />
-                    ))}
-                  </Box>
-                </Box>
-              )}
-
-              {post.tags.length > 0 && (
-                <Box className="blog-entry-section">
-                  <TagIcon fontSize="small" color="action" />
-                  <span className="blog-entry-section-label">Tags:</span>
-                  <Box>
-                    {post.tags.map((tag) => (
-                      <Chip
-                        key={tag}
-                        label={tag}
-                        size="small"
-                        sx={{ mr: 0.5 }}
-                      />
-                    ))}
-                  </Box>
+                  <span className="blog-entry-section-label">Category:</span>
+                  <span>{post.category}</span>
                 </Box>
               )}
             </Box>

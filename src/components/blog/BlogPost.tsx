@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Typography, Paper, Chip, Box, Container } from '@mui/material';
+import { Typography, Paper, Box, Container } from '@mui/material';
 import blogIndex from '../../data/blog/index.json';
 import 'highlight.js/styles/github.css';
 import './BlogPost.css';
@@ -9,8 +9,7 @@ interface BlogPostData {
   id: string;
   title: string;
   date: string;
-  categories: string[];
-  tags: string[];
+  category: string;
   content: string;
   permalink: string;
 }
@@ -61,19 +60,9 @@ const BlogPost = () => {
         </Typography>
         <Box mb={2}>
           <Typography variant="subtitle2" component="span" mr={1}>
-            Categories:
+            Category:
           </Typography>
-          {post.categories.map((category) => (
-            <Chip key={category} label={category} variant="outlined" size="small" sx={{ mr: 0.5 }} />
-          ))}
-        </Box>
-        <Box mb={3}>
-          <Typography variant="subtitle2" component="span" mr={1}>
-            Tags:
-          </Typography>
-          {post.tags.map((tag) => (
-            <Chip key={tag} label={tag} size="small" sx={{ mr: 0.5 }} />
-          ))}
+          {post.category}
         </Box>
         <Box className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
       </Paper>

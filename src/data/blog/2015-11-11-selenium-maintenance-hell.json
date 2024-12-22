@@ -2,12 +2,7 @@
   "id": "2015-11-11-selenium-maintenance-hell",
   "title": "Selenium maintenance hell",
   "date": "2015-11-11",
-  "categories": [
-    "Selenium"
-  ],
-  "tags": [
-    "selenium"
-  ],
+  "category": "Selenium",
   "permalink": "/2015/11/selenium-maintenance-hell",
   "content": "<p>So often we find ourselves scratching our heads thinking &#39;Why did it fail? It works perfectly well locally...&#39;. Timeout or &#39;Session ID is null&#39; (my favorite) errors can be especially annoying when we are currently working on the most famous testing task: make all test pass. Let&#39;s analyze together how to fix this unhealthy situation.</p><p>First of all, we need to redefine our task with management. Why so? Having dummy test methods is not what we want to achieve (and not what managers expect from us). Our real task can be defined as:</p><p>Make your tests cover as many functionalities as possible, but avoid false results at all costs.</p><p>I emphasized &#39;all costs&#39; because I want to make a point which you may find controversial:</p><p>Even the most important tests should be excluded from the automated suite if they are unstable. After exclusion we need to:</p><ul>\n<li><p>prioritize test-fixing task (according to test importance/coverage)</p></li>\n<li><p>perform the manual test until automated one isn&#39;t stable</p></li>\n</ul>\n<p>Certainly do not run tests locally (and do not force programmers to do that...). This approach leads to nowhere.</p><p>I know we shouldn&#39;t, but what if we depend on other services, DBs, factors? Automated test dependencies should be verified before test execution, and if such one exists test should be ignored.</p><p>There is one thing which we often forget about. As QAs/testers we are responsible for building trust in automated tests throughout team/company. False test results are the single most important factor which reduces (or even destroys) this trust.</p><p>Even from the most selfish perspective, there is an important argument against non-stable tests. Writing/maintaining tests with false results will combine your work image in the eyes of others with the word &#39;FAILURE&#39;. Avoid it at all costs.</p>"
 }

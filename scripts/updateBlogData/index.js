@@ -40,8 +40,7 @@ export const updateBlogData = () => {
             id: file.replace('.md', ''),
             title: data.title,
             date: data.date || file.slice(0, 10),
-            categories: data.categories || [],
-            tags: data.tags || [],
+            category: data.categories?.[0] || '',
             permalink: data.permalink,
             content: htmlContent
           };

@@ -2,13 +2,7 @@
   "id": "2015-11-11-ideal-tester-equals-3141592",
   "title": "Ideal tester equals 3.141592..",
   "date": "2015-11-11",
-  "categories": [
-    "Testing thoughts"
-  ],
-  "tags": [
-    "T-shaped",
-    "testing thoughts"
-  ],
+  "category": "Testing thoughts",
   "permalink": "/2015/11/ideal-tester-equals-3141592",
   "content": "<p>I was reading quite a lot recently about Tester / QA / Software Engineer in Test role in IT. I&#39;d like to continue the discussion which I had started in my previous post - &#39;<a href=\"https://www.awesome-testing.com/2015/10/our-future-as-testers.html\" target=\"_blank\" rel=\"noreferrer\">Our future as testers</a>&#39;. After publishing this post I came across two very good articles from ThoughtWorks - <a href=\"https://www.thoughtworks.com/insights/blog/qa-dead\" target=\"_blank\" rel=\"noreferrer\">&#39;Is QA Dead&#39;</a><br>and <a href=\"https://www.thoughtworks.com/insights/blog/qa-role-what-it-really\" target=\"_blank\" rel=\"noreferrer\">&#39;QA Role - What Is It Really&#39;</a>. They are definitely worth reading, but I had also found a real gem which you should read ASAP - <a href=\"http://www.sqetraining.com/content/strategies-advancing-your-test-career-todays-world\" target=\"_blank\" rel=\"noreferrer\">&#39;Strategies for Advancing Your Test Career in Today&#39;s World&#39;</a>.<br>It&#39;s so good that I had even decided not to publish it in <a href=\"https://twitter.com/s_radzyminski\" target=\"_blank\" rel=\"noreferrer\">my twitter feed</a>. For my blog readers only!</p><p>Different people triggered me to write this post though. It was <a href=\"https://twitter.com/janetgregoryca\" target=\"_blank\" rel=\"noreferrer\">Janet Gregory</a> and her speech on Agile Automation Days Kraków which took place today. In her presentation, she told us that every tester should be. like <a href=\"https://www.artofmanliness.com/articles/to-succeed-in-work-and-life-be-mr-t/\" target=\"_blank\" rel=\"noreferrer\">Mr. T.</a></p><p>I don&#39;t think I can fully agree with this statement though. Of course expert knowledge in one field chosen from Exploratory testing, Security testing, Functional testing (manual or automated), Security Testing, Infrastructure testing (+ DevOps), UX, BA in indeed required to be successful, but there is more of that. This is the second pillar required to lift our careers - social skills.</p><p>Every great tester should collaborate closely with teammates, elicit examples, clarify requirements, ask questions,<br>obtain information, deliver information. Janet pointed out one more thing which is worth mentioning. As testers, we should clearly report how did we do our job, what did we test and what risks did we observe. From my short experience, I can say that most of us (including me) aren&#39;t good at that.</p><p>Do you agree that social and technical skills are equally important?</p>"
 }
