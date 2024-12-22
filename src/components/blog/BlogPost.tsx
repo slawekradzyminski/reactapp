@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import { Typography, Paper, Chip, Box, Container, useTheme } from '@mui/material';
+import { useLocation } from 'react-router-dom';
+import { Typography, Paper, Chip, Box, Container } from '@mui/material';
 import blogIndex from '../../data/blog/index.json';
 import 'highlight.js/styles/github.css';
+import './BlogPost.css';
 
 interface BlogPostData {
   id: string;
@@ -16,13 +17,11 @@ interface BlogPostData {
 
 const BlogPost = () => {
   const location = useLocation();
-  const theme = useTheme();
   const [post, setPost] = useState<BlogPostData | null>(null);
 
   useEffect(() => {
     const loadPost = async () => {
       try {
-        // Find the post ID from the index based on the current URL
         const currentPath = location.pathname;
         const indexEntry = blogIndex.find(post => post.permalink === currentPath);
         
@@ -54,7 +53,7 @@ const BlogPost = () => {
   return (
     <Container maxWidth="md">
       <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography variant="h4" component="h1" gutterBottom>
           {post.title}
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" gutterBottom>
@@ -76,46 +75,7 @@ const BlogPost = () => {
             <Chip key={tag} label={tag} size="small" sx={{ mr: 0.5 }} />
           ))}
         </Box>
-        <Box sx={{ 
-          '& img': { 
-            maxWidth: '100%', 
-            height: 'auto',
-            display: 'block',
-            margin: `${theme.spacing(2)} auto`
-          },
-          '& pre': {
-            backgroundColor: theme.palette.grey[100],
-            padding: theme.spacing(2),
-            borderRadius: theme.shape.borderRadius,
-            overflow: 'auto',
-            margin: theme.spacing(2, 0)
-          },
-          '& code': {
-            fontFamily: 'monospace',
-            fontSize: '0.9em'
-          },
-          '& a': {
-            color: theme.palette.primary.main,
-            textDecoration: 'none',
-            '&:hover': {
-              textDecoration: 'underline'
-            }
-          },
-          '& blockquote.blog-quote': {
-            borderLeft: `4px solid ${theme.palette.primary.main}`,
-            margin: theme.spacing(2, 0),
-            padding: theme.spacing(1, 2),
-            backgroundColor: theme.palette.grey[50],
-            '& p': {
-              margin: 0,
-              color: theme.palette.text.secondary
-            }
-          },
-          '& .hljs': {
-            background: 'transparent',
-            padding: 0
-          }
-        }} dangerouslySetInnerHTML={{ __html: post.content }} />
+        <Box className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
       </Paper>
     </Container>
   );

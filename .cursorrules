@@ -1,0 +1,20 @@
+Typescript/JS Conventions:
+- Use npm for package management
+- Use arrow function syntax (const name = () => {}) instead of function declarations
+- Use ES6+ import syntax instead of require()
+- Project uses React Router v6
+- Omit comments in code
+
+Testing Conventions:
+- Use given/when/then pattern in test blocks
+- Example test structure:
+  it('test description', () => {
+    // given
+    // setup and mock declarations
+
+    // when
+    // action being tested
+
+    // then
+    // assertions
+  }); 

@@ -40,13 +40,14 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npm run generateTips && vite build",
+    "build": "npm run generateTips && npm run generateBlog && vite build",
     "serve": "vite preview",
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "generateTips": "node ./tipsgenerator/updateTipsData.js"
+    "generateTips": "node ./tipsgenerator/updateTipsData.js",
+    "generateBlog": "node ./scripts/updateBlogData/index.js"
   },
   "browserslist": {
     "production": [
