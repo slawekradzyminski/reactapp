@@ -3,9 +3,7 @@ title: GPT-4 Test Manifesto
 layout: post
 permalink: /2023/03/gpt-4-test-manifesto
 categories:
-  - Generative AI
-tags:
-  - chatgpt
+  - AI
 ---
 
 I am thrilled to share with you the Test Manifesto, a remarkable example of the unparalleled reasoning powers of the

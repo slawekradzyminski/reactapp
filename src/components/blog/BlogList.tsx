@@ -1,17 +1,13 @@
 import { Link, useSearchParams } from "react-router-dom";
-import {
-  Container,
-  Paper,
-  Typography,
-  Box,
-  Pagination,
-  Link as MuiLink,
-} from "@mui/material";
-import { Category as CategoryIcon } from "@mui/icons-material";
+import { Container, Box, Grid } from "@mui/material";
 import blogIndex from "../../data/blog/index.json";
 import CategoryFilter from "./CategoryFilter";
-import SearchInput from "../shared/SearchInput";
 import { useState, useEffect } from "react";
+import { BlogListHeader } from "./BlogListHeader";
+import { BlogEntry } from "./BlogEntry";
+import { BlogPagination } from "./BlogPagination";
+import { NoPostsFound } from "./NoPostsFound";
+import { YearlyArchive } from "./YearlyArchive";
 import "./BlogList.css";
 
 const POSTS_PER_PAGE = 5;
@@ -42,26 +38,20 @@ const BlogList = () => {
   const currentPage = parseInt(searchParams.get("page") || "1", 10);
   const currentCategory = searchParams.get("category");
   const currentSearch = searchParams.get("search") || "";
-  const [postPreviews, setPostPreviews] = useState<Map<string, string>>(
-    new Map()
-  );
+  const currentYear = searchParams.get("year") ? parseInt(searchParams.get("year")!, 10) : undefined;
+  const [postPreviews, setPostPreviews] = useState<Map<string, string>>(new Map());
   const [searchTerm, setSearchTerm] = useState(currentSearch);
 
   const filteredPosts = blogIndex.filter((post) => {
-    const matchesCategory =
-      !currentCategory || post.category === currentCategory;
-    const matchesSearch =
-      !currentSearch ||
-      post.title.toLowerCase().includes(currentSearch.toLowerCase());
-    return matchesCategory && matchesSearch;
+    const matchesCategory = !currentCategory || post.category === currentCategory;
+    const matchesSearch = !currentSearch || post.title.toLowerCase().includes(currentSearch.toLowerCase());
+    const matchesYear = !currentYear || new Date(post.date).getFullYear() === currentYear;
+    return matchesCategory && matchesSearch && matchesYear;
   });
 
   const totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
 
-  const handlePageChange = (
-    event: React.ChangeEvent<unknown>,
-    page: number
-  ) => {
+  const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
     const newSearchParams = new URLSearchParams(searchParams);
     newSearchParams.set("page", page.toString());
     setSearchParams(newSearchParams);
@@ -84,6 +74,17 @@ const BlogList = () => {
     }, 300);
 
     return () => clearTimeout(timeoutId);
+  };
+
+  const handleYearSelect = (year: number | undefined) => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    if (year) {
+      newSearchParams.set("year", year.toString());
+    } else {
+      newSearchParams.delete("year");
+    }
+    newSearchParams.set("page", "1");
+    setSearchParams(newSearchParams);
   };
 
   const currentPosts = filteredPosts.slice(
@@ -120,130 +121,48 @@ const BlogList = () => {
   }, [currentPosts]);
 
   return (
-    <Container maxWidth="md">
-        <Box>
-          <SearchInput 
-            value={searchTerm} 
-            onSearchChange={handleSearchChange}
-            testId="search-blog-input"
-          />
-        </Box>
-
-        <Typography
-          variant="h4"
-          component="h1"
-          className="blog-list-title"
-          sx={{ mb: 3, textAlign: "center" }}
-        >
-          Blog Archive
-        </Typography>
-        <CategoryFilter />
-
-        <Box>
-          {currentPosts.length > 0 ? (
-            currentPosts.map((post) => (
-              <Link
-                to={post.permalink}
-                key={post.id}
-                style={{ textDecoration: "none" }}
-              >
-                <Paper
-                  className="blog-entry"
-                  elevation={1}
-                  sx={{
-                    transition: "all 0.3s ease",
-                    "&:hover": {
-                      transform: "translateY(-2px)",
-                      boxShadow: 3,
-                    },
-                  }}
-                >
-                  <Typography
-                    variant="h5"
-                    component="h2"
-                    className="blog-entry-title"
-                  >
-                    {post.title}
-                  </Typography>
-
-                  <Typography className="blog-entry-date">
-                    {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </Typography>
-
-                  {postPreviews.get(post.id) && (
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{
-                        mt: 2,
-                        mb: 2,
-                        lineHeight: 1.6,
-                        opacity: 0.87,
-                      }}
-                    >
-                      {postPreviews.get(post.id)}
-                    </Typography>
-                  )}
-
-                  <Box className="blog-entry-meta">
-                    {post.category && (
-                      <Box
-                        className="blog-entry-section"
-                        component={MuiLink}
-                        onClick={(e) => handleCategoryClick(e, post.category)}
-                        sx={{
-                          cursor: "pointer",
-                          textDecoration: "none",
-                          color: "inherit",
-                          display: "flex",
-                          alignItems: "center",
-                          "&:hover": {
-                            color: "primary.main",
-                            "& .MuiSvgIcon-root": {
-                              color: "primary.main",
-                            },
-                          },
-                        }}
-                      >
-                        <CategoryIcon fontSize="small" color="action" />
-                        <span className="blog-entry-section-label">
-                          Category:
-                        </span>
-                        <span>{post.category}</span>
-                      </Box>
-                    )}
-                  </Box>
-                </Paper>
-              </Link>
-            ))
-          ) : (
-            <Typography
-              variant="h6"
-              color="text.secondary"
-              sx={{ textAlign: "center", mt: 4 }}
-            >
-              No posts found matching your criteria
-            </Typography>
-          )}
-
-          {totalPages > 1 && (
-            <Box className="blog-pagination" sx={{ mt: 4, mb: 4 }}>
-              <Pagination
-                count={totalPages}
-                page={currentPage}
-                onChange={handlePageChange}
-                color="primary"
-                size="large"
-                showFirstButton
-                showLastButton
+    <Container maxWidth="lg">
+      <BlogListHeader searchTerm={searchTerm} onSearchChange={handleSearchChange} />
+      
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={3} sx={{ order: { xs: 2, md: 1 } }}>
+          <Box sx={{ position: 'sticky', top: 24 }}>
+            <CategoryFilter />
+            <Box sx={{ mt: 3 }}>
+              <YearlyArchive 
+                posts={blogIndex}
+                selectedYear={currentYear}
+                onYearSelect={handleYearSelect}
               />
             </Box>
-          )}
-        </Box>
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} md={9} sx={{ order: { xs: 1, md: 2 } }}>
+          <Box>
+            {currentPosts.length > 0 ? (
+              currentPosts.map((post) => (
+                <BlogEntry
+                  key={post.id}
+                  post={post}
+                  preview={postPreviews.get(post.id)}
+                  onCategoryClick={handleCategoryClick}
+                />
+              ))
+            ) : (
+              <NoPostsFound />
+            )}
+
+            {totalPages > 1 && (
+              <BlogPagination
+                totalPages={totalPages}
+                currentPage={currentPage}
+                onPageChange={handlePageChange}
+              />
+            )}
+          </Box>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

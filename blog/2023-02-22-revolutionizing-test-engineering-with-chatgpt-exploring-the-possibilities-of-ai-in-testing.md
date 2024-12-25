@@ -3,11 +3,7 @@ title: Revolutionizing Test Engineering with ChatGPT
 layout: post
 permalink: /2023/02/revolutionizing-test-engineering-with
 categories:
-  - Generative AI
-tags:
   - AI
-  - ChatGPT
-  - test automation 
 ---
 
 ![](/images/blog/b9093e86-a249-44ed-88bb-b9a578fd5ac0_nEcoIDXz_400x400.jpg.webp)

@@ -3,12 +3,7 @@ title: Learning Tips for Using ChatGPT in Software Testing
 layout: post
 permalink: /2023/03/learning-tips-for-using-chatgpt-in
 categories:
-  - Generative AI
-tags:
   - AI
-  - ChatGPT
-  - artificial intelligence
-  - test automation 
 ---
 
 ![](/images/blog/Slawek_visualise_generative_AI_as_seen_by_someone_who_loves_it_9e6822a2-2d42-47ea-8348-5c11e757d283.png)
