@@ -11,7 +11,7 @@ import { YearlyArchive } from "./YearlyArchive";
 import "./BlogList.css";
 
 const POSTS_PER_PAGE = 5;
-const MAX_PREVIEW_LENGTH = 200;
+const MAX_PREVIEW_LENGTH = 400;
 
 const extractPreview = (htmlContent: string): string => {
   const tempDiv = document.createElement("div");
