@@ -8,20 +8,15 @@ tags:
   - performance testing 
 ---
 
-With little disappointment I realised today that I haven’t done a single post about performance testing (in almost 3
-years of blogging!). Today I’d like to change that by introducing you with simple, yet powerful, performance tool
-called [Lighthouse](https://github.com/GoogleChrome/lighthouse). According to developers:
+With little disappointment I realised today that I haven't done a single post about performance testing (in almost 3 years of blogging!). Today I'd like to change that by introducing you with simple, yet powerful, performance tool called [Lighthouse](https://github.com/GoogleChrome/lighthouse). According to developers:
 
-> Lighthouse analyzes web apps and web pages, collecting modern performance metrics and insights on developer best
-> practices.
+> Lighthouse analyzes web apps and web pages, collecting modern performance metrics and insights on developer best practices.
 
-In case you are short on time choose Lighthouse. You only need… 5 minutes to make Desktop & Mobile report. Lighthouse
-opens Chrome browser and gathers all useful metrics
-from [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/).
+In case you are short on time choose Lighthouse. You only need… 5 minutes to make Desktop & Mobile report. Lighthouse opens Chrome browser and gathers all useful metrics from [Chrome Dev Tools](https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/).
 
 ## Setup
 
-Installation couldn’t be easier. First you need npm (get it from [here](https://nodejs.org/en/download/)) and then type:
+Installation couldn't be easier. First you need npm (get it from [here](https://nodejs.org/en/download/)) and then type:
 
 `npm install -g lighthouse`
 
@@ -31,8 +26,7 @@ Now we need only two commands in order to get reports.
 
 a) Desktop
 
-`lighthouse https://www.awesome-testing.com --disable-device-emulation --disable-cpu-throttling
---disable-network-throttling --view`
+`lighthouse https://www.awesome-testing.com --disable-device-emulation --disable-cpu-throttling --disable-network-throttling --view`
 
 You can view generated reports here:
 
@@ -60,16 +54,12 @@ a) Passing headers (can be used to get logged in pages)
 
 b) Passing chrome flags
 
-Every single one of [Chromium Command Line Switches](https://peter.sh/experiments/chromium-command-line-switches/) can
-be used
+Every single one of [Chromium Command Line Switches](https://peter.sh/experiments/chromium-command-line-switches/) can be used
 
-`lighthouse \--chrome-flags=’--start-maximized’`
+`lighthouse \--chrome-flags='--start-maximized'`
 
 ## Continuous Integration usage
 
-As with almost everything related to automated tests we would like to add them into Continuous Integration. Lighthouse
-allows it!
-See [official guide](https://github.com/GoogleChrome/lighthouse/blob/master/docs/readme.md#using-programmatically) for
-details.
+As with almost everything related to automated tests we would like to add them into Continuous Integration. Lighthouse allows it! See [official guide](https://github.com/GoogleChrome/lighthouse/blob/master/docs/readme.md#using-programmatically) for details.
 
 Quick win, isn't it?
