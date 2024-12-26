@@ -12,37 +12,23 @@ tags:
 
 ## OWASP Dependency Check as a Continuous Security tool
 
-In my [Continuous Testing post](http://www.awesome-testing.com/2016/10/testops-3-continuous-testing.html) I introduced
-you with an idea of Continuous Security. Those are automatic and repeatable tests which look for vulnerabilities in your
-application. They should be run as often as possible (ideally after each commit). In case of failure build pipeline
-should be stopped and person who introduced breaking changes should investigate what went wrong.
+In my [Continuous Testing post](http://www.awesome-testing.com/2016/10/testops-3-continuous-testing.html) I introduced you with an idea of Continuous Security. Those are automatic and repeatable tests which look for vulnerabilities in your application. They should be run as often as possible (ideally after each commit). In case of failure build pipeline should be stopped and person who introduced breaking changes should investigate what went wrong.
 
-OWASP Dependency Check is one of the most popular continuous security tool. It takes your dependencies as an input,
-compares them with local vulnerabilities database and produces vulnerability report as a output. Integration is pretty
-easy and potential benefits significant - you may be surprised how often even most popular open source libraries have
-security flaws.
+OWASP Dependency Check is one of the most popular continuous security tool. It takes your dependencies as an input, compares them with local vulnerabilities database and produces vulnerability report as a output. Integration is pretty easy and potential benefits significant - you may be surprised how often even most popular open source libraries have security flaws.
 
 ## OWASP Top 10 A9 - Using components with known vulnerabilities
 
 Why bother?
 
-According to [OWASP Top 10](https://www.owasp.org/images/f/f8/OWASP_Top_10_-_2013.pdf) using components with known
-vulnerabilities is widespread. Almost every application has those issues because most development teams don't pay much
-attention to project dependencies. Libraries are often added to speed up development and never updated. This obviously
-creates risks. Even famous Spring wasn't an exception
-allowing [remote code execution](https://pivotal.io/security/cve-2016-4977) in it's Security OAuth.
+According to [OWASP Top 10](https://www.owasp.org/images/f/f8/OWASP_Top_10_-_2013.pdf) using components with known vulnerabilities is widespread. Almost every application has those issues because most development teams don't pay much attention to project dependencies. Libraries are often added to speed up development and never updated. This obviously creates risks. Even famous Spring wasn't an exception allowing [remote code execution](https://pivotal.io/security/cve-2016-4977) in it's Security OAuth.
 
-Full range of weaknesses is possible (XSS, injections, broken access control, etc) and this subject shouldn't be
-ignored.
+Full range of weaknesses is possible (XSS, injections, broken access control, etc) and this subject shouldn't be ignored.
 
 ## OWASP Dependency Check Maven plugin
 
-Let's get down to business. I'll show you how to integrate OWASP Dependency Check using
-my [AwesomeTesting GitHub project](https://github.com/slawekradzyminski/AwesomeTesting)where I store and maintain every
-line of code ever written on this blog.
+Let's get down to business. I'll show you how to integrate OWASP Dependency Check using my [AwesomeTesting GitHub project](https://github.com/slawekradzyminski/AwesomeTesting)where I store and maintain every line of code ever written on this blog.
 
-All you need to do is to add Dependency Check to your pom and run one command. For a start it's better to not integrate
-it into Continuous Delivery pipeline. That's why I'm keeping it in separate _security_ profile.
+All you need to do is to add Dependency Check to your pom and run one command. For a start it's better to not integrate it into Continuous Delivery pipeline. That's why I'm keeping it in separate _security_ profile.
 
 {% highlight xml %}
         <profile>
@@ -70,8 +56,7 @@ In order to start scanning run:
 
 `mvn -P security dependency-check:check`
 
-This is how console output should look like (first run would be significantly longer, because whole database
-of [National Vulnerability Database](https://web.nvd.nist.gov/) has to be downloaded).
+This is how console output should look like (first run would be significantly longer, because whole database of [National Vulnerability Database](https://web.nvd.nist.gov/) has to be downloaded).
 
 {% highlight txt %}
 s.radzyminski@ ~/I/s/AwesomeTestingBlog> mvn -P security dependency-check:check

@@ -10,27 +10,19 @@ tags:
 
 ![](/images/blog/firefox.jpg)
 
-Last week I wanted to show you how to run Selenium tests using headless Firefox. Unfortunately
-my [Browser Capabilities](http://www.awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html)turned out
-to be outdated so I opted for
-correct [Firefox Selenium Browser Capabilities](http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.html)
-explanation instead.
+Last week I wanted to show you how to run Selenium tests using headless Firefox. Unfortunately my [Browser Capabilities](http://www.awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html)turned out to be outdated so I opted for correct [Firefox Selenium Browser Capabilities](http://www.awesome-testing.com/2017/09/firefox-selenium-browser-capabilities.html) explanation instead.
 
-It turned out that most of the work was done already and I just needed few minutes to run Firefox in headless mode. Here
-is how I did it.
+It turned out that most of the work was done already and I just needed few minutes to run Firefox in headless mode. Here is how I did it.
 
 ## Getting started - requirements
 
-According to [official Mozilla guide](https://developer.mozilla.org/en-US/Firefox/Headless_mode)you need Firefox 55+ on
-Linux and Firefox 56+ on Windows/Mac.
+According to [official Mozilla guide](https://developer.mozilla.org/en-US/Firefox/Headless_mode)you need Firefox 55+ on Linux and Firefox 56+ on Windows/Mac.
 
-I'm currently using Windows, so I had to
-download [Firefox 56 beta](https://www.mozilla.org/en-US/firefox/56.0beta/releasenotes/) first (stable version is 55).
+I'm currently using Windows, so I had to download [Firefox 56 beta](https://www.mozilla.org/en-US/firefox/56.0beta/releasenotes/) first (stable version is 55).
 
 ## Headless Firefox configuration
 
-My code from last week was almost sufficient. I only needed to add one option (--headless). Configuration is almost
-identical as in [Chrome](http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html).
+My code from last week was almost sufficient. I only needed to add one option (--headless). Configuration is almost identical as in [Chrome](http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html).
 
 {% highlight java %}
     @Override
@@ -53,9 +45,7 @@ identical as in [Chrome](http://www.awesome-testing.com/2017/05/headless-testing
 
 ## Demo
 
-As usual, I prepared quick demo for my readers. I run it few times in headless/non-headless mode on my local machine and
-didn't observe any time differences. Still the main benefit of headless testing is ease of use on Unix machines. We
-don't have to install xvfb and other tools related to graphic environment.
+As usual, I prepared quick demo for my readers. I run it few times in headless/non-headless mode on my local machine and didn't observe any time differences. Still the main benefit of headless testing is ease of use on Unix machines. We don't have to install xvfb and other tools related to graphic environment.
 
 Demo is testing that only 5 posts is displayed on my homepage.
 
@@ -135,5 +125,4 @@ public class HeadlessFirefoxDemoTest extends FirefoxManipulator {
 }
 {% endhighlight %}
 
-As usual, I posted all the code from above in
-my[GitHub Awesome Testing project](https://github.com/slawekradzyminski/AwesomeTesting).
+As usual, I posted all the code from above in my[GitHub Awesome Testing project](https://github.com/slawekradzyminski/AwesomeTesting).

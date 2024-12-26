@@ -16,20 +16,11 @@ tags:
 
 ![](/images/blog/CONTINUOUS-DELIVERY-2.png)
 
-IEEE Spectrum has recently posted an article
-about [Yahoo resigning from the QA team](http://spectrum.ieee.org/view-from-the-valley/computing/software/yahoos-engineers-move-to-coding-without-a-net).
-After that maneuver quality of the final product not only didn't degrade but actually improved. Of course, if we delve
-deeper into the article we will realize that the products got better after continuous delivery introduction (image
-credit to[www.cloudofit.com](http://www.cloudofit.com/)) and the QA team wasn't entirely to blame. However, that's a
-clear signal to old school testers that programming/scripting skills are now necessary.
+IEEE Spectrum has recently posted an article about [Yahoo resigning from the QA team](http://spectrum.ieee.org/view-from-the-valley/computing/software/yahoos-engineers-move-to-coding-without-a-net). After that maneuver quality of the final product not only didn't degrade but actually improved. Of course, if we delve deeper into the article we will realize that the products got better after continuous delivery introduction (image credit to[www.cloudofit.com](http://www.cloudofit.com/)) and the QA team wasn't entirely to blame. However, that's a clear signal to old school testers that programming/scripting skills are now necessary.
 
-One of my favorite tools that support Continuous Delivery (or Deployment if we assume what deploy to production is
-automatic) is [Ansible](http://www.ansible.com/how-ansible-works). This simple automation agent allows us to execute
-commands on external hosts via plays, which can later be organized to playbooks (list of plays). This is how example
-playbook looks like:
+One of my favorite tools that support Continuous Delivery (or Deployment if we assume what deploy to production is automatic) is [Ansible](http://www.ansible.com/how-ansible-works). This simple automation agent allows us to execute commands on external hosts via plays, which can later be organized to playbooks (list of plays). This is how example playbook looks like:
 
 {% highlight yml %}
-
 - hosts: droplets
   tasks:
     - name: Installs nginx web server
@@ -78,7 +69,6 @@ With very few lines we were able to install the necessary applications on two ho
     - name: Check service
       service: name=vsftpd state=started
 {% endhighlight %}
-
 
 * Running commands and checking the output 
 

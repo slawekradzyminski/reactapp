@@ -15,21 +15,13 @@ tags:
 
 ![](/images/blog/is-this-selenium-ide.png)
 
-In my first post about
-Selenium ([FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) series will focus
-on extension features only), I decided to tackle Chrome & Firefox capabilities which allow us to preconfigure browser
-settings before tests. This seemed quite easy at the beginning, but I quickly realized that a huge amount of information
-available via Google is outdated. Hopefully, this post will make things straight.
+In my first post about Selenium ([FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) series will focus on extension features only), I decided to tackle Chrome & Firefox capabilities which allow us to preconfigure browser settings before tests. This seemed quite easy at the beginning, but I quickly realized that a huge amount of information available via Google is outdated. Hopefully, this post will make things straight.
 
 **Prerequisite** - you need to understand which method initializes WebDriver in your project in order to override it.
 
 ## Chrome
 
-Only this [piece of the documentation](https://sites.google.com/a/chromium.org/chromedriver/capabilities)tells us how to
-properly configure the browser before running tests. It's done
-via [Chrome Options](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java).
-Due to legacy reasons, desiredCapabilities still has to be initialized, which makes the code somehow weird. Here it is (
-with my formatting):
+Only this [piece of the documentation](https://sites.google.com/a/chromium.org/chromedriver/capabilities)tells us how to properly configure the browser before running tests. It's done via [Chrome Options](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java). Due to legacy reasons, desiredCapabilities still has to be initialized, which makes the code somehow weird. Here it is (with my formatting):
 
 {% highlight java %}
 private static final String PREFS = "prefs";
@@ -53,25 +45,19 @@ private static final String PREFS = "prefs";
     }
 {% endhighlight %}
 
-As you can see above two methods preconfigure our Chrome (description
-via [Javadoc](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java)):
+As you can see above two methods preconfigure our Chrome (description via [Javadoc](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java)):
 
 - _addArguments()_ which adds additional command-line arguments to be used when starting Chrome
 
-- _addExperimentalSettings()_ which sets an experimental option. Useful for new ChromeDriver options not yet exposed
-through the ChromeOptions API
+- _addExperimentalSettings()_ which sets an experimental option. Useful for new ChromeDriver options not yet exposed through the ChromeOptions API
 
 We may also add extensions via _add extensions()_ method
 
-This is when the easy part ends and Googling begins. For unknown reasons lists of available arguments (called very often
-switches) and experimental settings aren't linked on the
-official [chromedriver site](https://sites.google.com/a/chromium.org/chromedriver/getting-started). With some
-determination I was able to obtain them:
+This is when the easy part ends and Googling begins. For unknown reasons lists of available arguments (called very often switches) and experimental settings aren't linked on the official [chromedriver site](https://sites.google.com/a/chromium.org/chromedriver/getting-started). With some determination I was able to obtain them:
 
 - Arguments (switches) - [peter.sh](http://peter.sh/experiments/chromium-command-line-switches/)
 
-- Experimental
-options - [src.chromium.org](https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc?view=markup)
+- Experimental options - [src.chromium.org](https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc?view=markup)
 
 My implementation with example values - feel free to do some code review :)
 
@@ -116,9 +102,7 @@ public interface ChromeSwitchesInt {
 
 ## Demo
 
-Comment this line & Try running
-my [FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) test (or just log in on
-Facebook via Selenium).
+Comment this line & Try running my [FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) test (or just log in on Facebook via Selenium).
 
 {% highlight java %}
 chromePrefs.put(BROWSER_NOTIFICATIONS, DISABLED);
