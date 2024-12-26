@@ -10,43 +10,25 @@ tags:
 
 ![](/images/blog/performance-icon-png-8.png)
 
-As test engineers when we approach performance testing we usually only think about final end-to-end application
-verification with tools such as [JMeter](https://jmeter.apache.org/), [Locust](https://locust.io/)
-or [Gatling](https://gatling.io/). We know that such tests should run on a separate environment with conditions
-resembling production as close as possible. Unfortunately in some cases (especially with monolithic architecture)
-dedicated performance testing environment is hard to get. What to do in such cases? Should we test on common test
-environment? Or should we test on production? Or maybe we should change our approach to performance testing? Each option
-has advantages and disadvantages.
+As test engineers when we approach performance testing we usually only think about final end-to-end application verification with tools such as [JMeter](https://jmeter.apache.org/), [Locust](https://locust.io/) or [Gatling](https://gatling.io/). We know that such tests should run on a separate environment with conditions resembling production as close as possible. Unfortunately in some cases (especially with monolithic architecture) dedicated performance testing environment is hard to get. What to do in such cases? Should we test on common test environment? Or should we test on production? Or maybe we should change our approach to performance testing? Each option has advantages and disadvantages.
 
-Today I'd like to describe low-level performance testing (often called benchmarking) of Java code. It does not require a
-separate environment. It can be executed directly from your IDE (although that's not recommended) or from the command
-line. Measuring the performance of critical pieces of code is essential for everyone who creates applications,
-frameworks, and tools. Testers are co-creators so it's also our responsibility.
+Today I'd like to describe low-level performance testing (often called benchmarking) of Java code. It does not require a separate environment. It can be executed directly from your IDE (although that's not recommended) or from the command line. Measuring the performance of critical pieces of code is essential for everyone who creates applications, frameworks, and tools. Testers are co-creators so it's also our responsibility.
 
 ## Is it easy?
 
-Benchmarking correctly is hard. There are multiple optimizations implemented on the JVM/OS/hardware side which make it
-challenging. In order to measure right, you need to understand how to avoid those optimizations because they may not
-happen in the real production system.
+Benchmarking correctly is hard. There are multiple optimizations implemented on the JVM/OS/hardware side which make it challenging. In order to measure right, you need to understand how to avoid those optimizations because they may not happen in the real production system.
 
-Thankfully, there is a tool which helps you mitigate those issues called JMH (Java Microbenchmark Harness). It was
-created for building, running, and analyzing nano/micro/milli/macro benchmarks written in Java and other languages
-targetting the JVM. The tool is developed by [OpenJDK](http://openjdk.java.net/projects/code-tools/jmh/).
+Thankfully, there is a tool which helps you mitigate those issues called JMH (Java Microbenchmark Harness). It was created for building, running, and analyzing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. The tool is developed by [OpenJDK](http://openjdk.java.net/projects/code-tools/jmh/).
 
 ## Common pitfalls
 
-JMH tool does not guarantee that your benchmark is implemented correctly. You still need to avoid common pitfalls.
-According to tool creators, the best way to learn how to use JMH is to read through the official JMH samples before
-implementing your own benchmarks.
+JMH tool does not guarantee that your benchmark is implemented correctly. You still need to avoid common pitfalls. According to tool creators, the best way to learn how to use JMH is to read through the official JMH samples before implementing your own benchmarks.
 
-I'll describe only the four most common pitfalls. For a more complete list please refer to other sources(see the further
-reading section at the bottom).
+I'll describe only the four most common pitfalls. For a more complete list please refer to other sources(see the further reading section at the bottom).
 
 **_a) Dead code elimination_**
 
-JVM is smart enough to detect that certain code is never used. That's why the methods you measure should always return
-something. Alternatively, you can use JMH consume method which guarantees that consumed code will never be buried by
-JVM.
+JVM is smart enough to detect that certain code is never used. That's why the methods you measure should always return something. Alternatively, you can use JMH consume method which guarantees that consumed code will never be buried by JVM.
 
 {% highlight java %}
     @Benchmark
@@ -60,8 +42,7 @@ JVM.
 
 **_b) Constant folding_**
 
-If JVM realizes the result of the computation is the same no matter what, it can cleverly optimize it. That's why you
-should act against your IDE suggestion and don't make any fields final.
+If JVM realizes the result of the computation is the same no matter what, it can cleverly optimize it. That's why you should act against your IDE suggestion and don't make any fields final.
 
 {% highlight java %}
     private double x = Math.PI;
@@ -80,34 +61,24 @@ should act against your IDE suggestion and don't make any fields final.
 
 _**c) Loop optimizations**_
 
-You need to be very careful benchmarking unit operations within loops and dividing measurements by the number of
-iterations. JVM optimizes the loop, so the cost of the loop is smaller than the sum of the costs of its parts measured
-in isolation.
+You need to be very careful benchmarking unit operations within loops and dividing measurements by the number of iterations. JVM optimizes the loop, so the cost of the loop is smaller than the sum of the costs of its parts measured in isolation.
 
-It's a bit tricky (I have misunderstood how it works at first) so I suggest to take a closer look at JMH
-example [11](https://github.com/Valloric/jmh-playground/blob/master/src/jmh/java/org/openjdk/jmh/samples/JMHSample_11_Loops.java)
-and [34](https://github.com/Valloric/jmh-playground/blob/master/src/jmh/java/org/openjdk/jmh/samples/JMHSample_34_SafeLooping.java).
+It's a bit tricky (I have misunderstood how it works at first) so I suggest to take a closer look at JMH example [11](https://github.com/Valloric/jmh-playground/blob/master/src/jmh/java/org/openjdk/jmh/samples/JMHSample_11_Loops.java) and [34](https://github.com/Valloric/jmh-playground/blob/master/src/jmh/java/org/openjdk/jmh/samples/JMHSample_34_SafeLooping.java).
 
 **_d) Warmup_**
 
 From official [JMH playground GitHub](https://github.com/Valloric/jmh-playground) repository:
 
-* You need warmup iterations because of JVM and JIT warmup. How many depends on the benchmark, but probably no less than
-  5. A safer number is 10.
-* The more measurement iterations you use, the smaller the error margin reported by JMH at the end! A solid choice is 20
-  iterations.
+* You need warmup iterations because of JVM and JIT warmup. How many depends on the benchmark, but probably no less than 5. A safer number is 10.
+* The more measurement iterations you use, the smaller the error margin reported by JMH at the end! A solid choice is 20 iterations.
 
 ## Setup
 
-JMH is very easy to start working with. You can create your own project in a couple of seconds. Just execute the
-following command in your ~/IdeaProjects folder and open first-benchmark project.
+JMH is very easy to start working with. You can create your own project in a couple of seconds. Just execute the following command in your ~/IdeaProjects folder and open first-benchmark project.
 
 `mvn archetype:generate -DinteractiveMode=false -DarchetypeGroupId=org.openjdk.jmh -DarchetypeArtifactId=jmh-java-benchmark-archetype -DgroupId=com.awesome.testing -DartifactId=first-benchmark -Dversion=1.21`
 
-Alternatively, if you want to create tests in existing project, you can follow the same steps I did for
-my [AwesomeTesting Github](https://github.com/slawekradzyminski/AwesomeTesting) repository. First, add maven
-dependencies. In a real-world scenario you probably also need to add your application here(in order to call methods you
-want to measure).
+Alternatively, if you want to create tests in existing project, you can follow the same steps I did for my [AwesomeTesting Github](https://github.com/slawekradzyminski/AwesomeTesting) repository. First, add maven dependencies. In a real-world scenario you probably also need to add your application here(in order to call methods you want to measure).
 
 {% highlight xml %}
         <dependency>
@@ -176,8 +147,7 @@ There are three alternative ways of configuring JMH:
 
 **_a) Annotations_**
 
-You can use Java annotations which is very convenient. That's my favorite type by far because I can easily access nicely
-written Javadoc for each option. Here is how I configured my demo (each option would be described below):
+You can use Java annotations which is very convenient. That's my favorite type by far because I can easily access nicely written Javadoc for each option. Here is how I configured my demo (each option would be described below):
 
 {% highlight java %}
 @Fork(value = 3, warmups = 0)
@@ -190,8 +160,7 @@ public class BenchMark {
 
 **_b) Java API_**
 
-If you prefer Java API you can use builder configuration and run your tests from IDE. That's not recommended because
-Benchmark should ideally run with every single application closed.
+If you prefer Java API you can use builder configuration and run your tests from IDE. That's not recommended because Benchmark should ideally run with every single application closed.
 
 {% highlight java %}
     public static void main(String[] args) throws RunnerException {
@@ -218,8 +187,7 @@ Example: 5 warmup/measurement iterations, single fork
 
 ## Configuration options
 
-JMH provides multiple configuration options which can be used in our benchmarks. You can find detailed descriptions in
-excellent JMH Javadoc.
+JMH provides multiple configuration options which can be used in our benchmarks. You can find detailed descriptions in excellent JMH Javadoc.
 
 **_a) BenchmarkMode_**
 
@@ -246,8 +214,7 @@ Additionally, you can modify JVM options using this annotation.
 
 _**d) Warmup**_
 
-Warmup allows setting the default warmup parameters for the benchmark which will execute before each fork (including
-warmup forks).
+Warmup allows setting the default warmup parameters for the benchmark which will execute before each fork (including warmup forks).
 
 - iterations() sets the number of iterations
 - time() sets the time for each iteration
@@ -259,16 +226,13 @@ Measurement allow setting the default measurement parameters for the actual benc
 
 **_f) Threads_**
 
-Threads provides the default number of threads to run. By default, this setting is set to 1. If you want to use maximum
-set value to Threads.MAX (the equivalent of _Runtime.getRuntime().availableProcessors()_)
+Threads provides the default number of threads to run. By default, this setting is set to 1. If you want to use maximum set value to Threads.MAX (the equivalent of _Runtime.getRuntime().availableProcessors()_)
 
 ## Predefining state
 
-Unfortunately, two sections of this article aren't enough to fully describe the JMH configuration. One of the most
-challenging tasks when it comes to benchmarking is ensuring clean and not JVM-optimized state before each measurement.
+Unfortunately, two sections of this article aren't enough to fully describe the JMH configuration. One of the most challenging tasks when it comes to benchmarking is ensuring clean and not JVM-optimized state before each measurement.
 
-Of course, JMH helps us in this domain as well with class-level @State annotation. This has to be nested public static
-class defined in a class which contains our Benchmark methods.
+Of course, JMH helps us in this domain as well with class-level @State annotation. This has to be nested public static class defined in a class which contains our Benchmark methods.
 
 The Scope class gives us the following options:
 
@@ -276,22 +240,17 @@ The Scope class gives us the following options:
 - Group: Each thread group running the benchmark will create its own instance of the state object.
 - Benchmark: All threads running the benchmark share the same state object.
 
-Having State class in place we can now use @Setup (the equivalent of Junit/TestNG Before) and @TearDown (Junit/TestNG
-After) which will execute before/after @Benchmark methods. The execution time of these methods will not be counted in
-our benchmark results.
+Having State class in place we can now use @Setup (the equivalent of Junit/TestNG Before) and @TearDown (Junit/TestNG After) which will execute before/after @Benchmark methods. The execution time of these methods will not be counted in our benchmark results.
 
 Setup and Teardown can be set for three levels:
 
 - Trial: before/after each fork
 - Iteration: before/after each iteration
-- Invocation: before/after measured method invocation. Javadoc for this option starts with WARNING: HERE BE DRAGONS! so
-  unless you want to meet Game of Thrones dragons don't use it
+- Invocation: before/after measured method invocation. Javadoc for this option starts with WARNING: HERE BE DRAGONS! so unless you want to meet Game of Thrones dragons don't use it
 
 In order to fully understand @Scope, you need to take a look into an actual example.
 
-Let's suppose we want to measure multiplication in 4 scenarios (1\*1, 1\*31, 31\*1, 31\*31). We also want to start each
-fork with 0 as a result. After each iteration, we want to do garbage collection. Here is how our benchmark should look
-like:
+Let's suppose we want to measure multiplication in 4 scenarios (1*1, 1*31, 31*1, 31*31). We also want to start each fork with 0 as a result. After each iteration, we want to do garbage collection. Here is how our benchmark should look like:
 
 {% highlight java %}
 public class ExplainingState {
@@ -336,17 +295,13 @@ public class ExplainingState {
 }
 {% endhighlight %}
 
-If you still don't understand please run the benchmark and analyze console output in order to see what's going on and
-when.
+If you still don't understand please run the benchmark and analyze console output in order to see what's going on and when.
 
 ## Demo
 
-Uff... finally, demo time! After this long introduction, we can do something interesting. Let's say we want to measure
-how fast different implementations of methods summing 20000000 longs work. It's 1 + 2 + 3 +... + 20000000.
+Uff... finally, demo time! After this long introduction, we can do something interesting. Let's say we want to measure how fast different implementations of methods summing 20000000 longs work. It's 1 + 2 + 3 +... + 20000000.
 
-We have 5 contenders (full credit for problem definition goes
-to [Modern Java in Action](https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563) book which I
-can recommend).
+We have 5 contenders (full credit for problem definition goes to [Modern Java in Action](https://www.amazon.com/Modern-Java-Action-functional-programming/dp/1617293563) book which I can recommend).
 
 **_a) iterativeSum()_**
 
@@ -359,7 +314,6 @@ can recommend).
         }
         return result;
     }
-view raw
 {% endhighlight %}
 
 **_b) sequentialSum()_**
@@ -406,8 +360,7 @@ view raw
     }
 {% endhighlight %}
 
-What do you think which implementation would be the best? We can theorize that implementations 2 and 3 would be slower
-because of [autoboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html), but let's see!
+What do you think which implementation would be the best? We can theorize that implementations 2 and 3 would be slower because of [autoboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html), but let's see!
 
 ## Results
 
@@ -437,4 +390,4 @@ As a homework you can try to parametrise N and see if parallelRangedSum() is sti
 - [https://shipilev.net/talks/jvmls-July2014-benchmarking.mp4](https://shipilev.net/talks/jvmls-July2014-benchmarking.mp4)
 - [https://www.youtube.com/watch?v=VaWgOCDBxYw](https://www.youtube.com/watch?v=VaWgOCDBxYw)
 - [https://shipilev.net/talks/j1-Oct2011-21682-benchmarking.pdf](https://shipilev.net/talks/j1-Oct2011-21682-benchmarking.pdf)
-- [http://leogomes.github.io/assets/JMH\_cheatsheet.pdf](http://leogomes.github.io/assets/JMH_cheatsheet.pdf)
+- [http://leogomes.github.io/assets/JMH_cheatsheet.pdf](http://leogomes.github.io/assets/JMH_cheatsheet.pdf)
