@@ -12,13 +12,9 @@ tags:
 
 **1\. Introduction**
 
-A few weeks ago I introduced you to
-multiple [Android testing tools](https://www.awesome-testing.com/2020/04/android-testing-tools.html). One of them (
-Appium) was listed on top of the pyramid as the most powerful one. You can do almost everything with Appium, which makes
-it the perfect choice for automating your E2E test regression.
+A few weeks ago I introduced you to multiple [Android testing tools](https://www.awesome-testing.com/2020/04/android-testing-tools.html). One of them (Appium) was listed on top of the pyramid as the most powerful one. You can do almost everything with Appium, which makes it the perfect choice for automating your E2E test regression.
 
-In this article, I'd like to introduce you to the Appium setup and show a few examples which were just shared on
-my [GitHub project](https://github.com/slawekradzyminski/appium-example).
+In this article, I'd like to introduce you to the Appium setup and show a few examples which were just shared on my [GitHub project](https://github.com/slawekradzyminski/appium-example).
 
 **2\. Basic setup**
 
@@ -26,10 +22,8 @@ Mobile tests are difficult mostly because of complicated setup. Assuming you wou
 
 - [Appium Installation guide for Windows](https://www.swtestacademy.com/appium-tutorial/) - swtestacademy
 - [Appium Installation guide for Mac](https://www.swtestacademy.com/how-to-install-appium-on-mac/) - swtestacademy
-- [Appium iOS test setup](https://medium.com/2359media/tutorial-automated-testing-on-ios-with-appium-test-ng-and-java-on-mac-bc115d0ec881) -
-Medium
-- [Appium Android test setup](https://medium.com/2359media/tutorial-automated-testing-on-android-and-ios-with-appium-testng-and-java-on-mac-210119edf323) -
-Medium
+- [Appium iOS test setup](https://medium.com/2359media/tutorial-automated-testing-on-ios-with-appium-test-ng-and-java-on-mac-bc115d0ec881) - Medium
+- [Appium Android test setup](https://medium.com/2359media/tutorial-automated-testing-on-android-and-ios-with-appium-testng-and-java-on-mac-210119edf323) - Medium
 
 After completing tutorials you should have all of those installed and working:
 
@@ -51,8 +45,7 @@ Having all of that up&running you can start the fun part: testing. You need to d
 
 - Download my [GitHub project](https://github.com/slawekradzyminski/appium-example) (requires Java 11)
 - Run Appium server, Android Emulator, and iPhone Simulator
-- Change paths to applications
-in [config.properties](https://github.com/slawekradzyminski/appium-example/blob/master/src/main/resources/config.properties)
+- Change paths to applications in [config.properties](https://github.com/slawekradzyminski/appium-example/blob/master/src/main/resources/config.properties)
 - For iOS tests you need to change spring.active.profiles value to iphone
 - Run tests
 

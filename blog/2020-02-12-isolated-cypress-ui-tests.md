@@ -10,28 +10,22 @@ tags:
 
 ![](/images/blog/Screenshot%2B2020-02-08%2Bat%2B14.09.16.png)
 
-In my previous post, I described the
-whole [test automation strategy](https://www.awesome-testing.com/2020/01/practical-test-strategy-for-spring.html) for
-Spring + React application. One of the items there was isolated Cypress UI tests.
+In my previous post, I described the whole [test automation strategy](https://www.awesome-testing.com/2020/01/practical-test-strategy-for-spring.html) for Spring + React application. One of the items there was isolated Cypress UI tests.
 
-In this post, I'd like to describe what isolation means and how to achieve it using Cypress. As usual, the theory will
-be supported by a practical and working demo. All code on [my GitHub](https://github.com/slawekradzyminski) is 100% free
-to use by anyone.
+In this post, I'd like to describe what isolation means and how to achieve it using Cypress. As usual, the theory will be supported by a practical and working demo. All code on [my GitHub](https://github.com/slawekradzyminski) is 100% free to use by anyone.
 
 ## Understanding isolation
 
 So what are the characteristics of an isolated test?
 
-First of all, it needs to work offline. All external traffic should be controlled inside a test. Of course, in
-real-world we are connected to the network but all your isolated tests should pass in the following scenario:
+First of all, it needs to work offline. All external traffic should be controlled inside a test. Of course, in real-world we are connected to the network but all your isolated tests should pass in the following scenario:
 
 * download dependencies (maven, npm, sbt...)
 * run the app you test (if needed)
 * disable network connection
 * run tests
 
-All tests should also be fully idempotent. They should work in any order. Each of them should set the desired
-application state before running.
+All tests should also be fully idempotent. They should work in any order. Each of them should set the desired application state before running.
 
 ## Isolation in Cypress
 
@@ -45,8 +39,7 @@ We need to do two things:
 
 - asserting that outgoing frontend requests are correctly built
 
-Cypress seems to be build-in having stubbing in mind. We only need two lines and static object to stub GET requests in
-cypress:
+Cypress seems to be build-in having stubbing in mind. We only need two lines and static object to stub GET requests in cypress:
 
 {% highlight javascript %}
 cy.server();
@@ -65,18 +58,13 @@ export const firstUser = {
 };
 {% endhighlight %}
 
-cy.server() needs to be called only once. It enables custom cy.route() stubbing for test. As you can see stubbing GET
-requests requires providing a response body only. Of course, you can also provide custom headers, delays, etc. Details
-in the [command documentation](https://docs.cypress.io/api/commands/route.html#Options).
+cy.server() needs to be called only once. It enables custom cy.route() stubbing for test. As you can see stubbing GET requests requires providing a response body only. Of course, you can also provide custom headers, delays, etc. Details in the [command documentation](https://docs.cypress.io/api/commands/route.html#Options).
 
 ## Demo - testing data display on the front page
 
-I assume you have successfully installed Cypress
-and [run the first test](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Add-a-test-file).
-Cypress documentation guides you very well through the initial setup.
+I assume you have successfully installed Cypress and [run the first test](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Add-a-test-file). Cypress documentation guides you very well through the initial setup.
 
-So let's get started with my application tests. I usually define the most useful get stubs in custom command and run
-them before each test:
+So let's get started with my application tests. I usually define the most useful get stubs in custom command and run them before each test:
 
 {% highlight javascript %}
     beforeEach(() => {
@@ -133,8 +121,7 @@ Having all that in place we can verify that our front page displays data properl
 
 When it comes to asserting that our frontend app builds and sends correct requests the flow isn't so simple.
 
-At first, we need to make sure that our fake backend will respond in the desired way (usually HTTP 200). The request
-should be tagged in .as() so we can access and verify it later.
+At first, we need to make sure that our fake backend will respond in the desired way (usually HTTP 200). The request should be tagged in .as() so we can access and verify it later.
 
 {% highlight javascript %}
         cy.route({
@@ -185,15 +172,9 @@ And now the clue. Here is how to assert outgoing request:
 
 ## Fetch API and Cypress
 
-There are two leading technologies which browser use to make
-requests: [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API. XHR (often called AJAX) is older and more
-popular, whereas Fetch is a modern approach that relies on [Promise/async](https://javascript.info/async) javascript
-syntax.
+There are two leading technologies which browser use to make requests: [XHR](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) API. XHR (often called AJAX) is older and more popular, whereas Fetch is a modern approach that relies on [Promise/async](https://javascript.info/async) javascript syntax.
 
-Unfortunately, Cypress supports only XHR right now. Fetch support is in progress, but with no release date commitments.
-There is a very interesting [GitHub issue](https://github.com/cypress-io/cypress/issues/95) where you can track work
-progress and read about possible workarounds.
+Unfortunately, Cypress supports only XHR right now. Fetch support is in progress, but with no release date commitments. There is a very interesting [GitHub issue](https://github.com/cypress-io/cypress/issues/95) where you can track work progress and read about possible workarounds.
 
 If your application relies on Fetch API I suggest you use the following workaround:
 
