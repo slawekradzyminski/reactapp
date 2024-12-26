@@ -30,10 +30,8 @@ export const YearlyArchive = ({ posts, selectedYear, onYearSelect }: YearlyArchi
     return acc;
   }, []).sort((a, b) => b.year - a.year);
 
-  const handleHeaderClick = (event: React.MouseEvent) => {
-    if (event.target === event.currentTarget) {
-      setIsExpanded(!isExpanded);
-    }
+  const handleHeaderClick = () => {
+    setIsExpanded(!isExpanded);
   };
 
   const clearYear = (event: React.MouseEvent) => {
@@ -74,7 +72,10 @@ export const YearlyArchive = ({ posts, selectedYear, onYearSelect }: YearlyArchi
         <IconButton 
           size="small" 
           sx={{ ml: 1 }}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsExpanded(!isExpanded);
+          }}
         >
           {isExpanded ? <ExpandLess /> : <ExpandMore />}
         </IconButton>

@@ -28,10 +28,8 @@ const CategoryFilter = () => {
     setSearchParams(newSearchParams);
   };
 
-  const handleHeaderClick = (event: React.MouseEvent) => {
-    if (event.target === event.currentTarget) {
-      setIsExpanded(!isExpanded);
-    }
+  const handleHeaderClick = () => {
+    setIsExpanded(!isExpanded);
   };
 
   const clearCategory = (event: React.MouseEvent) => {
@@ -75,7 +73,10 @@ const CategoryFilter = () => {
         <IconButton 
           size="small" 
           sx={{ ml: 1 }}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsExpanded(!isExpanded);
+          }}
         >
           {isExpanded ? <ExpandLess /> : <ExpandMore />}
         </IconButton>

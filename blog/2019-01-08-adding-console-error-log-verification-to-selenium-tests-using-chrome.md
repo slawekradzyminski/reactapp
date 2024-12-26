@@ -10,25 +10,20 @@ tags:
 
 ![](/images/blog/Przechwytywanie.PNG)
 
-Selenium is an amazing test tool that is used pretty much everywhere these days. People are usually so spoiled by the
-number of functionalities it provides that they can't hide being surprised when they notice two missing functionalities:
+Selenium is an amazing test tool that is used pretty much everywhere these days. People are usually so spoiled by the number of functionalities it provides that they can't hide being surprised when they notice two missing functionalities:
 
 * ability to assert HTTP requests/responses (like status codes)
 * ability to capture browser console logs
 
 Today I'd like to focus on the second topic - browser console.
 
-To put it in simple words. Currently, you can easily capture browser logs only in Chrome. Of course, you can always
-build your own solution for other browsers but you have no guarantee that it would work after next browser update. There
-is a [W3C Webdriver](https://github.com/w3c/webdriver/issues/406) attempt to standardize browser logging interface
-however the progress seems to be slow.
+To put it in simple words. Currently, you can easily capture browser logs only in Chrome. Of course, you can always build your own solution for other browsers but you have no guarantee that it would work after next browser update. There is a [W3C Webdriver](https://github.com/w3c/webdriver/issues/406) attempt to standardize browser logging interface however the progress seems to be slow.
 
 Thankfully, in Chrome errors can be captured and I encourage you to do it in your scripts.
 
 **Preparation**
 
-To show this feature in action we need to prepare tests. I'm going to use my own blog as an example of a site not
-reporting any console errors. In order to make failing example deterministic I created a custom broken site.
+To show this feature in action we need to prepare tests. I'm going to use my own blog as an example of a site not reporting any console errors. In order to make failing example deterministic I created a custom broken site.
 
 {% highlight xml %}
 <html>
