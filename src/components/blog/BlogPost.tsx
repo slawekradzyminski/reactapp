@@ -4,6 +4,7 @@ import { Typography, Paper, Box, Container, Link } from '@mui/material';
 import { Category as CategoryIcon } from '@mui/icons-material';
 import blogIndex from '../../data/blog/index.json';
 import BlogPostNavigation from './BlogPostNavigation';
+import BlogComments from './BlogComments';
 import 'highlight.js/styles/github.css';
 import './BlogPost.css';
 
@@ -97,6 +98,7 @@ const BlogPost = () => {
           )}
         </Box>
         <Box className="blog-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+        <BlogComments postId={post.id} />
         <BlogPostNavigation currentPostId={post.id} />
       </Paper>
     </Container>

@@ -41,6 +41,7 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
               cursor: "pointer",
               "&:hover": { textDecoration: "underline" },
               display: { xs: "none", sm: "block" },
+              mr: "30px"
             }}
             onClick={() => navigate(`${prevPost.permalink}`)}
           >
@@ -58,6 +59,7 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
               cursor: "pointer",
               "&:hover": { textDecoration: "underline" },
               display: { xs: "none", sm: "block" },
+              ml: "30px"
             }}
             onClick={() => navigate(`${nextPost.permalink}`)}
           >
