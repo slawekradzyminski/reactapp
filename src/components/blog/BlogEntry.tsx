@@ -61,8 +61,11 @@ export const BlogEntry = ({ post, preview, onCategoryClick }: BlogEntryProps) =>
           {post.category && (
             <Box
               className="blog-entry-section"
-              component={MuiLink}
-              onClick={(e) => onCategoryClick(e, post.category)}
+              component="span"
+              onClick={(e) => {
+                e.preventDefault();
+                onCategoryClick(e, post.category);
+              }}
               sx={{
                 cursor: "pointer",
                 textDecoration: "none",
