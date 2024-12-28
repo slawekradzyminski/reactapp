@@ -17,7 +17,17 @@ interface BlogPostData {
   permalink: string;
 }
 
-const BlogPost = () => {
+// Default implementation of the import function
+const defaultImportPost = async (postId: string) => {
+  const postData = await import(`../../data/blog/${postId}.json`);
+  return postData.default;
+};
+
+interface BlogPostProps {
+  importPost?: (postId: string) => Promise<BlogPostData>;
+}
+
+const BlogPost = ({ importPost = defaultImportPost }: BlogPostProps) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [post, setPost] = useState<BlogPostData | null>(null);
@@ -33,7 +43,7 @@ const BlogPost = () => {
           return;
         }
 
-        const postData = await import(`../../data/blog/${indexEntry.id}.json`);
+        const postData = await importPost(indexEntry.id);
         setPost(postData);
       } catch (error) {
         console.error('Error loading blog post:', error);
@@ -41,7 +51,7 @@ const BlogPost = () => {
     };
 
     loadPost();
-  }, [location.pathname]);
+  }, [location.pathname, importPost]);
 
   const handleCategoryClick = (category: string) => {
     navigate(`/blog?category=${category}&page=1`);
