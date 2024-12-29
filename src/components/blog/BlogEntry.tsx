@@ -8,6 +8,7 @@ interface BlogPost {
   date: string;
   category: string;
   permalink: string;
+  preview?: string;
 }
 
 interface BlogEntryProps {
@@ -40,6 +41,22 @@ export const BlogEntry = ({ post, onCategoryClick }: BlogEntryProps) => {
             day: "numeric",
           })}
         </Typography>
+
+        {post.preview && (
+          <Typography 
+            className="blog-entry-preview" 
+            data-testid="blog-entry-preview"
+            sx={{ 
+              mt: 2, 
+              mb: 2,
+              color: 'text.secondary',
+              fontSize: '0.95rem',
+              lineHeight: 1.6
+            }}
+          >
+            {post.preview}
+          </Typography>
+        )}
 
         <Box className="blog-entry-meta">
           {post.category && (

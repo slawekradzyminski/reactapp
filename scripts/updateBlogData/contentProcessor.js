@@ -1,5 +1,6 @@
 import { marked } from 'marked';
 import { detectLanguage, languageMap } from './languageDetector.js';
+import { decode } from 'html-entities';
 
 export const convertHighlightBlocks = (content) => {
   return content.replace(
@@ -51,6 +52,25 @@ export const fixParagraphLineBreaks = (content) => {
   return content
     .replace(/(\w)\n(\w)/g, '$1 $2')
     .replace(/  \n/g, '<br>\n');
+};
+
+export const extractPreview = (htmlContent) => {
+  // Remove code blocks
+  const withoutCode = htmlContent.replace(/<pre><code[\s\S]*?<\/code><\/pre>/g, '');
+  
+  // Remove HTML tags
+  const textOnly = withoutCode.replace(/<[^>]*>/g, ' ');
+  
+  // Decode HTML entities
+  const decodedText = decode(textOnly);
+  
+  // Remove extra whitespace
+  const cleanText = decodedText.replace(/\s+/g, ' ').trim();
+  
+  // Take first 400 characters and cut at the last complete word
+  const preview = cleanText.slice(0, 400).replace(/\s+\S*$/, '');
+  
+  return preview + '...';
 };
 
 export const processContent = (content) => {

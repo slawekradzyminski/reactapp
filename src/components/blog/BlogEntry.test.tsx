@@ -9,7 +9,8 @@ const mockPost = {
   title: 'Test Blog Post',
   date: '2023-01-15',
   category: 'Testing',
-  permalink: '/blog/test-post'
+  permalink: '/blog/test-post',
+  preview: 'This is a test preview of the blog post that gives readers a glimpse of the content...'
 };
 
 const renderWithRouter = (ui: React.ReactElement) => {
@@ -103,5 +104,44 @@ describe('BlogEntry', () => {
     const paperElement = screen.getByRole('heading').parentElement;
     expect(paperElement).toHaveClass('blog-entry');
     expect(paperElement).toHaveStyle({ transition: 'all 0.3s ease' });
+  });
+
+  it('renders preview text with correct styling', () => {
+    // given
+    const onCategoryClick = vi.fn();
+    
+    // when
+    renderWithRouter(
+      <BlogEntry
+        post={mockPost}
+        onCategoryClick={onCategoryClick}
+      />
+    );
+    
+    // then
+    const previewElement = screen.getByText(mockPost.preview);
+    expect(previewElement).toBeInTheDocument();
+    expect(previewElement).toHaveClass('blog-entry-preview');
+    expect(previewElement).toHaveStyle({
+      color: 'rgba(0, 0, 0, 0.6)'
+    });
+  });
+
+  it('handles missing preview gracefully', () => {
+    // given
+    const onCategoryClick = vi.fn();
+    const postWithoutPreview = { ...mockPost, preview: undefined };
+    
+    // when
+    renderWithRouter(
+      <BlogEntry
+        post={postWithoutPreview}
+        onCategoryClick={onCategoryClick}
+      />
+    );
+    
+    // then
+    const previewElements = screen.queryAllByTestId('blog-entry-preview');
+    expect(previewElements).toHaveLength(0);
   });
 }); 

@@ -1,5 +1,5 @@
 ---
-title: Understanding Cypress synchronous/asynchronous duality
+title: Understanding Cypress sync/async duality
 layout: post
 permalink: /2023/03/understanding-cypress
 categories:

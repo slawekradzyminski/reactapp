@@ -4,601 +4,687 @@
     "title": "From Live Suggestions to Agents: Exploring AI-Powered IDEs",
     "date": "2024-12-08",
     "category": "AI",
-    "permalink": "/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides"
+    "permalink": "/2024/12/from-live-suggestions-to-agents-exploring-ai-powered-ides",
+    "preview": "Among the many AI tools that have been released in the last two years, the coding IDE is one of the most powerful. It's a tool that can help developers write code faster and more efficiently. In this post I'll explain what an AI-powered IDE is, and how to evaluate it. You may be surprised to learn that it's not just a chat-based tool, but a combination of several different technologies that work..."
   },
   {
     "id": "2024-11-30-kraqa-meetup",
     "title": "KraQA meetup testing predictions for 2025",
     "date": "2024-11-30",
     "category": "Testing thoughts",
-    "permalink": "/2024/11/kraqa-meetup-testing-predictions-for-2025"
+    "permalink": "/2024/11/kraqa-meetup-testing-predictions-for-2025",
+    "preview": "On the 26th of November, I had the pleasure of being a discussion panelist at KraQA meetup . The meetup focused on testing predictions for 2025. I was invited at the last minute due to a previous panelist being unable to attend. As a former KraQA co-organizer, I was happy to step in and contribute. In the picture above, you can see all the panelists. From left to right: Przemysław Barański..."
   },
   {
     "id": "2024-10-18-cypress-parallel-execution",
     "title": "Cypress Parallel Execution",
     "date": "2024-10-18",
     "category": "Cypress",
-    "permalink": "/2024/10/cypress-parallel-execution"
+    "permalink": "/2024/10/cypress-parallel-execution",
+    "preview": "As shown in the graph above, Playwright has recently overtaken Cypress in popularity. One key reason for this shift is Playwright’s support for parallel test execution . This feature, which allows multiple tests to run simultaneously rather than one after another, plays a crucial role in reducing overall test duration and improving the feedback loop. Faster feedback enables quicker iteration,..."
   },
   {
     "id": "2024-09-21-the-rise-of-ai-driven-development",
     "title": "The rise of AI Driven Development",
     "date": "2024-09-21",
     "category": "AI",
-    "permalink": "/2024/09/the-rise-of-ai-driven-development"
+    "permalink": "/2024/09/the-rise-of-ai-driven-development",
+    "preview": "As the AI hype settles down a bit, now seems like the perfect time to reflect on what we've learned so far. Nearly two years have passed since ChatGPT was released, and the majority of AI tools still rely heavily on Large Language Models (LLMs). Despite the hype, there's been no truly revolutionary advancement since then. However, LLMs are steadily becoming more clever, and that trend is likely..."
   },
   {
     "id": "2023-05-21-tips-for-aspiring-test-leaders",
     "title": "Steering the Ship: A Comprehensive Guide for Aspiring Test Leaders",
     "date": "2023-05-21",
     "category": "Testing thoughts",
-    "permalink": "/2023/05/tips-for-aspiring-test-leaders"
+    "permalink": "/2023/05/tips-for-aspiring-test-leaders",
+    "preview": "In the vast ocean of software development, the role of a test leader is akin to that of a skilled navigator, steering the ship through both calm and stormy waters, ensuring a safe and successful journey. Amidst the technological breakthroughs and waves of innovation, the demand for adept test leaders is steadily on the rise. Indeed, their role is essential in guiding the testing ship, with its..."
   },
   {
     "id": "2023-05-04-bi-directional-contract-testing",
     "title": "BiDirectional Contract Testing",
     "date": "2023-05-04",
     "category": "Contract testing",
-    "permalink": "/2023/05/bi-directional-contract-testing"
+    "permalink": "/2023/05/bi-directional-contract-testing",
+    "preview": "In today's world of complex and interconnected software systems, ensuring the reliability and compatibility of various components has become a critical part of the development process. As teams work on different services, the need for effective integration testing becomes more important than ever. Among the various approaches to integration testing, Bidirectional Contract Testing has emerged as a..."
   },
   {
     "id": "2023-04-10-exploring-selenium-bidi-functionality-a-guide-with-java-examples",
     "title": "Exploring Selenium BiDi Functionality",
     "date": "2023-04-10",
     "category": "Selenium",
-    "permalink": "/2023/04/exploring-selenium-bidi-functionality"
+    "permalink": "/2023/04/exploring-selenium-bidi-functionality",
+    "preview": "Selenium is a widely-used open-source testing framework designed for automating web browsers and validating web applications. Initially, Selenium consisted of Selenium IDE, a plugin for record-and-playback testing, and Selenium Remote Control (RC), which allowed for browser automation using various programming languages. However, as the web grew more complex, so did the need for more advanced..."
   },
   {
     "id": "2023-03-20-learning-tips-for-using-chatgpt-in-software-testing",
     "title": "Learning Tips for Using ChatGPT in Software Testing",
     "date": "2023-03-20",
     "category": "AI",
-    "permalink": "/2023/03/learning-tips-for-using-chatgpt-in"
+    "permalink": "/2023/03/learning-tips-for-using-chatgpt-in",
+    "preview": "ChatGPT is a powerful tool that can be useful for a wide range of applications, from creative writing and conversation to research and decision-making. For software engineers in test, ChatGPT can be an invaluable resource for generating test cases, automating repetitive tasks, and even assisting with bug triaging. However, in order to use ChatGPT effectively, it's important to understand its..."
   },
   {
     "id": "2023-03-13-the-comprehensive-guide-to-essential",
     "title": "The Comprehensive Guide to Essential Soft Skills for Testers",
     "date": "2023-03-13",
     "category": "Testing thoughts",
-    "permalink": "/2023/03/the-comprehensive-guide-to-essential"
+    "permalink": "/2023/03/the-comprehensive-guide-to-essential",
+    "preview": "In the dynamic and evolving world of software testing, technical expertise alone is not enough to ensure success. Soft skills play an equally important role in enhancing a tester's overall effectiveness and ability to thrive in their role. Mastering soft skills is crucial for building strong professional relationships, fostering collaboration, and navigating the complexities of diverse..."
   },
   {
     "id": "2023-03-12-understanding-cypress-synchronousasynchronous-duality",
-    "title": "Understanding Cypress synchronous/asynchronous duality",
+    "title": "Understanding Cypress sync/async duality",
     "date": "2023-03-12",
     "category": "Cypress",
-    "permalink": "/2023/03/understanding-cypress"
+    "permalink": "/2023/03/understanding-cypress",
+    "preview": "Cypress is a widely used end-to-end testing framework for web applications that offers an easy-to-use API and a powerful command-line interface. It enables developers to write tests that mimic end-users' interactions with their applications. Understanding how sync/async works is a crucial concept for developers using Cypress. However, one of the common criticisms leveled against Cypress is its..."
   },
   {
     "id": "2023-03-01-GPT-4-Test-Manifesto",
     "title": "GPT-4 Test Manifesto",
     "date": "2023-03-01",
     "category": "AI",
-    "permalink": "/2023/03/gpt-4-test-manifesto"
+    "permalink": "/2023/03/gpt-4-test-manifesto",
+    "preview": "I am thrilled to share with you the Test Manifesto, a remarkable example of the unparalleled reasoning powers of the latest generation of language models. As a technology enthusiast, I have been utterly blown away by the advanced capabilities and nuanced understanding demonstrated in the creation of this manifesto. In this blog post, I am excited to showcase this impressive AI-generated artifact,..."
   },
   {
     "id": "2023-02-22-revolutionizing-test-engineering-with-chatgpt-exploring-the-possibilities-of-ai-in-testing",
     "title": "Revolutionizing Test Engineering with ChatGPT",
     "date": "2023-02-22",
     "category": "AI",
-    "permalink": "/2023/02/revolutionizing-test-engineering-with"
+    "permalink": "/2023/02/revolutionizing-test-engineering-with",
+    "preview": "The field of test engineering is constantly evolving, with new tools and technologies emerging every day. One such innovation is the use of language models like ChatGPT in test engineering. ChatGPT's ability to generate text based on patterns it has learned from large amounts of training data has the potential to revolutionize the way we approach testing. In this blog post, we will explore the..."
   },
   {
     "id": "2023-02-15-mastering-t-shaped-skills-a-comprehensive-guide-for-software-engineers-in-test",
     "title": "Mastering T-Shaped Skills",
     "date": "2023-02-15",
     "category": "Testing thoughts",
-    "permalink": "/2023/02/mastering-t-shaped-skills-comprehensive"
+    "permalink": "/2023/02/mastering-t-shaped-skills-comprehensive",
+    "preview": "T-shaped skills have become increasingly important for software engineers in test as the role of testing and quality assurance becomes more critical in the software development lifecycle. T-shaped skills refer to a combination of deep technical expertise in a specific area and a broad understanding of other related disciplines. In other words, it is the combination of having a broad skill set and..."
   },
   {
     "id": "2023-01-30-supertest-api-testing-library",
     "title": "Supertest API testing library",
     "date": "2023-01-30",
     "category": "API testing",
-    "permalink": "/2023/01/superest-api-testing-library"
+    "permalink": "/2023/01/superest-api-testing-library",
+    "preview": "Supertest is a popular JavaScript library for testing HTTP APIs. It allows developers to send HTTP requests to their server-side code and assert that the response meets certain criteria. One of the key benefits of using Supertest is that it is built on top of the popular testing library, Superagent. This means that it has a similar syntax and functionality, making it easy for developers who are..."
   },
   {
     "id": "2023-01-22-maximizing-your-employability-as-a-software-engineer-in-test",
     "title": "Maximizing Your Employability as a Software Engineer in Test",
     "date": "2023-01-22",
     "category": "Testing thoughts",
-    "permalink": "/2023/01/maximizing-your-employability-as"
+    "permalink": "/2023/01/maximizing-your-employability-as",
+    "preview": "Employability refers to a person's ability to quickly find an attractive job opportunity that matches their skills and qualifications. Recent layoffs in Big Tech companies such as Twitter, Google, and Spotify have highlighted the importance of employability for IT specialists. These layoffs have shown that even highly skilled and experienced professionals can be affected by changes in the..."
   },
   {
     "id": "2023-01-10-maximizing-performance-with-gatling-a-beginners-guide-to-load-testing",
     "title": "Maximizing Performance with Gatling",
     "date": "2023-01-10",
     "category": "Performance testing",
-    "permalink": "/2023/01/maximizing-performance-with-gatling"
+    "permalink": "/2023/01/maximizing-performance-with-gatling",
+    "preview": "Gatling is a powerful open-source load testing tool designed to help developers and performance engineers test the performance and scalability of their web applications. It's written in Scala and it's based on the Akka toolkit, which means it's highly extensible and easily integrated with other tools. One of the key features of Gatling is its intuitive and easy-to-use DSL (domain-specific..."
   },
   {
     "id": "2022-04-06-pl-performance-tests-in-k6",
     "title": "Performance tests in K6",
     "date": "2022-04-06",
     "category": "Performance testing",
-    "permalink": "/2022/04/pl-performance-tests-in-k6"
+    "permalink": "/2022/04/pl-performance-tests-in-k6",
+    "preview": "I have published new article about performance tests in k6 on testerzy.pl. The article is in polish language...."
   },
   {
     "id": "2020-08-08-appium-up-and-running-working-example-",
     "title": "Appium up and running (working example)",
     "date": "2020-08-08",
     "category": "Mobile testing",
-    "permalink": "/2020/08/appium-up-and-running-working-example"
+    "permalink": "/2020/08/appium-up-and-running-working-example",
+    "preview": "1. Introduction A few weeks ago I introduced you to multiple Android testing tools . One of them (Appium) was listed on top of the pyramid as the most powerful one. You can do almost everything with Appium, which makes it the perfect choice for automating your E2E test regression. In this article, I'd like to introduce you to the Appium setup and show a few examples which were just shared on my..."
   },
   {
     "id": "2020-06-20-best-software-testing-books-2",
     "title": "Best software testing books - 2",
     "date": "2020-06-20",
     "category": "Books",
-    "permalink": "/2020/06/best-software-testing-books-2"
+    "permalink": "/2020/06/best-software-testing-books-2",
+    "preview": "Introduction My first post about the best software testing books introduced you to a few great titles which should be read by every ambitious software tester. After three years of reading, I'd like to expand my list. Before I start a side-note. Don't read only technical or self-improvement non-fiction books. Create a habit of reading every day first and pick serious titles only from time to time...."
   },
   {
     "id": "2020-04-13-android-testing-tools",
     "title": "Android testing tools",
     "date": "2020-04-13",
     "category": "Mobile testing",
-    "permalink": "/2020/04/android-testing-tools"
+    "permalink": "/2020/04/android-testing-tools",
+    "preview": "I'm pretty sure everyone has heard about the test pyramid. Famous Google testing blog article suggests a 70/20/10 split: 70% unit tests, 20% integration tests, and 10% end-to-end (E2E) tests. The question is, how does it map to Android native app testing? In my article, I'll familiarize you with multiple Android tools that may enhance your testing skills. To get the most of them it's important to..."
   },
   {
     "id": "2020-02-12-isolated-cypress-ui-tests",
     "title": "Isolated Cypress UI tests",
     "date": "2020-02-12",
     "category": "Cypress",
-    "permalink": "/2020/02/isolated-cypress-ui-tests"
+    "permalink": "/2020/02/isolated-cypress-ui-tests",
+    "preview": "In my previous post, I described the whole test automation strategy for Spring + React application. One of the items there was isolated Cypress UI tests. In this post, I'd like to describe what isolation means and how to achieve it using Cypress. As usual, the theory will be supported by a practical and working demo. All code on my GitHub is 100% free to use by anyone. Understanding isolation So..."
   },
   {
     "id": "2020-01-29-practical-test-strategy-for-spring-react-application",
     "title": "Practical test strategy for Spring & React application",
     "date": "2020-01-29",
     "category": "Test strategy",
-    "permalink": "/2020/01/practical-test-strategy-for-spring"
+    "permalink": "/2020/01/practical-test-strategy-for-spring",
+    "preview": "There are two leading approaches for tests: isolated and end to end (E2E). As usual, both approaches have upsides and downsides, and it's impossible to say which one is better. Everything is dependent on application context and architecture. There are though few guidelines which can be followed most of the time: high test coverage should be achieved for a single application. Other parts of the..."
   },
   {
     "id": "2019-12-20-testers-toolbox-2-awesome-testing-christmas-edition",
     "title": "Tester's toolbox 2 - Awesome Testing Christmas edition",
     "date": "2019-12-20",
     "category": "Toolbox",
-    "permalink": "/2019/12/testers-toolbox-2-awesome-testing"
+    "permalink": "/2019/12/testers-toolbox-2-awesome-testing",
+    "preview": "It's been more than three years since I released one of my most popular posts - Tester's toolbox - an alternative guide . Today I'd like to share tools and projects created by me for various occasions (public speaking, teaching on Vistula University or just self-learning). All of those repositories are 100% free to use. Selenium starter guide (Java, Maven)..."
   },
   {
     "id": "2019-09-09-continuous-security-take-care-of-your-regression",
     "title": "Continuous Security - take care of your regression",
     "date": "2019-09-09",
     "category": "Security",
-    "permalink": "/2019/09/continuous-security-take-care-of-your"
+    "permalink": "/2019/09/continuous-security-take-care-of-your",
+    "preview": "In my last ' Continuous Security - how to get involved ?' post I showed you quickstart guide on how to start helping your team in reaching the desired security level. The article contained simple OWASP ZAP scanning technique and very easy Rest Assured tests which were ensuring HTTP headers presence. Today I'll focus on yet another avenue where testers can excel: regression testing. Software..."
   },
   {
     "id": "2019-08-09-continuous-security-how-to-get-involved-as-a-tester",
     "title": "Continuous Security - how to get involved as a tester?",
     "date": "2019-08-09",
     "category": "Security",
-    "permalink": "/2019/08/continuous-security-how-to-get-involved"
+    "permalink": "/2019/08/continuous-security-how-to-get-involved",
+    "preview": "Introduction As you may have already noticed I often drift into the security domain. My interests focus mainly on continuous security (i.e. automated security tests). So far I had featured three tools on my blog: OWASP Dependency-Check , OWASP ZAP , and Find-Sec-Bugs and showed how to use Selenium to automate your XSS tests . When I talk to my peers on various testing meetups I'm often surprised..."
   },
   {
     "id": "2019-06-20-throttling-network-in-selenium-tests-using-browsermob-proxy",
     "title": "Throttling network in Selenium tests using BrowserMob Proxy",
     "date": "2019-06-20",
     "category": "Selenium",
-    "permalink": "/2019/06/throttling-network-in-selenium-tests"
+    "permalink": "/2019/06/throttling-network-in-selenium-tests",
+    "preview": "It's a good testing practice to avoid as many external dependencies as possible. We want to run everything on localhost and avoid test failures caused by things outside our application scope (environment issues, network problems, unavailable web services). Unfortunately, our clients don't access applications in a sterile environment. Many of them use rather slow GPRS/3G Internet connection with..."
   },
   {
     "id": "2019-05-22-performance-testing-benchmarking-java-code-with-jmh",
     "title": "Performance testing (benchmarking) Java code with JMH",
     "date": "2019-05-22",
     "category": "Performance testing",
-    "permalink": "/2019/05/performance-testing-benchmarking-java"
+    "permalink": "/2019/05/performance-testing-benchmarking-java",
+    "preview": "As test engineers when we approach performance testing we usually only think about final end-to-end application verification with tools such as JMeter , Locust or Gatling . We know that such tests should run on a separate environment with conditions resembling production as close as possible. Unfortunately in some cases (especially with monolithic architecture) dedicated performance testing..."
   },
   {
     "id": "2019-04-04-headless-browser-testing-with-selenium",
     "title": "Headless Browser Testing with Selenium",
     "date": "2019-04-04",
     "category": "Selenium",
-    "permalink": "/2019/04/headless-browser-testing-with-selenium"
+    "permalink": "/2019/04/headless-browser-testing-with-selenium",
+    "preview": "A headless browser is a very popular term in the testing community which refers to a web browser running without Graphical User Interface (GUI). A headless browser can access any website but unlike normal browsers (which you currently use) nothing will appear on the screen. Everything is done on the backend side invisible to the user. Recent popularity rise of such browsers led to the creation of..."
   },
   {
     "id": "2019-03-30-disabling-javascript-using-selenium",
     "title": "Disabling JavaScript using Selenium",
     "date": "2019-03-30",
     "category": "Selenium",
-    "permalink": "/2019/03/disabling-javascript-using-selenium"
+    "permalink": "/2019/03/disabling-javascript-using-selenium",
+    "preview": "Introduction Some days ago I was looking for an easy way to disable JavaScript using chromedriver. It turned out to be surprisingly hard and once again I had to find proper Chrome preference in the Chromium source code. If you ever wonder how to do something with your Chrome using Selenium I recommend my own Browser Capabilities explained post which has a lot of examples and links where to look..."
   },
   {
     "id": "2019-03-28-selenium-page-object-pattern-how-to-handle-common-components",
     "title": "Selenium Page Object Pattern - how to handle common components?",
     "date": "2019-03-28",
     "category": "Selenium",
-    "permalink": "/2019/03/selenium-page-object-pattern-how-to"
+    "permalink": "/2019/03/selenium-page-object-pattern-how-to",
+    "preview": "Page Object Pattern (POP) is probably the most widely adopted Selenium design pattern in the world. It has one very simple principle: every action (method), field (page element) available for a user on a single page should be implemented in one place (class). This class is popularly called Page Object. Unfortunately, this overly simplified definition often causes confusion because it's..."
   },
   {
     "id": "2019-01-30-measuring-page-load-times-using-selenium",
     "title": "Measuring page load times using Selenium",
     "date": "2019-01-30",
     "category": "Selenium",
-    "permalink": "/2019/01/measuring-page-load-times-using-selenium"
+    "permalink": "/2019/01/measuring-page-load-times-using-selenium",
+    "preview": "Introduction It seems like you really liked my latest post about console errors verification . Today I'd like to share another useful extension for your Selenium scripts - page load time measurements. Performance category is slightly underrepresented so far (only one post about Google Lighthouse ) so it's a perfect opportunity to change it. By the way since my last post about Lighthouse using..."
   },
   {
     "id": "2019-01-08-adding-console-error-log-verification-to-selenium-tests-using-chrome",
     "title": "Adding console error log verification to Selenium tests using Chrome",
     "date": "2019-01-08",
     "category": "Selenium",
-    "permalink": "/2019/01/adding-console-error-log-verification"
+    "permalink": "/2019/01/adding-console-error-log-verification",
+    "preview": "Selenium is an amazing test tool that is used pretty much everywhere these days. People are usually so spoiled by the number of functionalities it provides that they can't hide being surprised when they notice two missing functionalities: ability to assert HTTP requests/responses (like status codes) ability to capture browser console logs Today I'd like to focus on the second topic - browser..."
   },
   {
     "id": "2018-12-15-continuous-security-with-owasp-zap",
     "title": "Continuous Security with OWASP ZAP",
     "date": "2018-12-15",
     "category": "Security",
-    "permalink": "/2018/12/continuous-security-with-owasp-zap"
+    "permalink": "/2018/12/continuous-security-with-owasp-zap",
+    "preview": "Referring nicely to 'continuous' word in the title I'm following up previous posts about OWASP Dependency Checker and Find Sec Bugs by presenting yet another tool which can help ensure security during Continuous Integration (CI) pipeline run - OWASP Zedd Proxy Attack (more popular with OWASP ZAP name). OWASP ZAP is one of the world's most popular free security tools which can help you find..."
   },
   {
     "id": "2018-11-15-continuous-security-with-find-sec-bugs",
     "title": "Continuous Security with Find-Sec-Bugs",
     "date": "2018-11-15",
     "category": "Security",
-    "permalink": "/2018/11/continuous-security-with-find-sec-bugs"
+    "permalink": "/2018/11/continuous-security-with-find-sec-bugs",
+    "preview": "One of the hardest software quality characteristic to cover in automated tests is security. In my Automated testing vs manual testing - security perspective blog I have mentioned that it's almost impossible to rely solely on automation, especially in cases where human factor is involved (phishing, social engineering or plain ignorance). It doesn't change the fact that some aspects of security..."
   },
   {
     "id": "2018-09-25-how-to-speed-up-your-tests-in-one-simple-step",
     "title": "How to speed up your tests in one simple step",
     "date": "2018-09-25",
     "category": "CI/CD",
-    "permalink": "/2018/09/how-to-speed-up-your-tests-in-one"
+    "permalink": "/2018/09/how-to-speed-up-your-tests-in-one",
+    "preview": "Every tester with Continuous Improvement mindset cares about overall test execution time. We aim for quick feedback loops ending before developer switches to another task. This is not always easy as projects becomes bigger and bigger, teams focus on delivering new features and other issues receive higher priority. Today I'd like to present you a very simple way of speeding up your tests. Most of..."
   },
   {
     "id": "2018-08-25-on-being-multiskilled",
     "title": "On being multiskilled",
     "date": "2018-08-25",
     "category": "Testing thoughts",
-    "permalink": "/2018/10/on-being-multiskilled"
+    "permalink": "/2018/10/on-being-multiskilled",
+    "preview": "Introduction One of the simple things you can do to increase your job market value is to acquire skills required for multiple positions. On my blog, I have already promoted such approach (see How to get a first job as a tester? for beginners and Testops - the most antifragile testing role for more experienced testers). Today I'd like to show you how to put it into practice. I have collected a few..."
   },
   {
     "id": "2018-08-04-how-to-get-a-first-job-as-a-software-tester",
     "title": "How to get a first job as a software tester?",
     "date": "2018-08-04",
     "category": "Testing thoughts",
-    "permalink": "/2018/08/how-to-get-first-job-as-software-tester"
+    "permalink": "/2018/08/how-to-get-first-job-as-software-tester",
+    "preview": "Numerous times people ask me how to get first job as a software tester. I have already written very popular ' How to become a software tester ' post, but after many offline discussions I want to change emphasis a bit. Don't get me wrong - those are still good advises. Unfortunately, whether we like it or not, job market is constantly evolving and one particular skill is in top demand now:..."
   },
   {
     "id": "2018-05-16-selenium-vs-fluentlenium",
     "title": "Selenium vs FluentLenium",
     "date": "2018-05-16",
     "category": "Selenium",
-    "permalink": "/2018/05/selenium-vs-fluentlenium"
+    "permalink": "/2018/05/selenium-vs-fluentlenium",
+    "preview": "All my previous posts labeled with Selenium tag featured FluentLenium syntax. Why? Even though I tried to answer it in FluentLenium focused posts ( Introduction & Waiting game ) I never really did full comparison against Selenium. As you probably already figured out reading the title this post will show how FluentLenium can help you write better, shorter and easier to maintain Selenium tests...."
   },
   {
     "id": "2018-04-24-my-road-to-public-speaking-slides-from-engineering-productivity-talk",
     "title": "My road to public speaking + slides from Engineering Productivity talk",
     "date": "2018-04-24",
     "category": "Testing thoughts",
-    "permalink": "/2018/04/my-road-to-public-speaking-slides-from"
+    "permalink": "/2018/04/my-road-to-public-speaking-slides-from",
+    "preview": "In 33 Strategies of War Robert Greene starts with the most important part - self-directed warfare. In order to achieve anything in life we have to conquer own fears first. On Monday (23th of April) I had a privilege to speak about Engineering Productivity during KraQA meetup. To be honest it wasn't easy. It's fair to say that I have conquered myself there. Road The story begins few years ago when..."
   },
   {
     "id": "2018-03-13-how-to-be-a-failure-as-a-software-tester",
     "title": "How to be a failure as a software tester",
     "date": "2018-03-13",
     "category": "Testing thoughts",
-    "permalink": "/2018/03/how-to-be-failure-as-software-tester"
+    "permalink": "/2018/03/how-to-be-failure-as-software-tester",
+    "preview": "There are multiple sources for testers who strive to excellence, but the other perspective hasn't been covered... yet. In my essay I'll try to show you how to make terrible job which can label you, your work and even your team as a FAILURE. The list consist of few points which can't be neglected if you want to achieve miserable results in your profession. Fundamentals - mind & body Every..."
   },
   {
     "id": "2018-03-08-five-minutes-performance-report-with-google-lighthouse",
     "title": "Five minutes performance report with Google Lighthouse",
     "date": "2018-03-08",
     "category": "Performance testing",
-    "permalink": "/2018/03/five-minutes-performance-report-with"
+    "permalink": "/2018/03/five-minutes-performance-report-with",
+    "preview": "With little disappointment I realised today that I haven't done a single post about performance testing (in almost 3 years of blogging!). Today I'd like to change that by introducing you with simple, yet powerful, performance tool called Lighthouse . According to developers: Lighthouse analyzes web apps and web pages, collecting modern performance metrics and insights on developer best practices...."
   },
   {
     "id": "2018-02-02-testops-the-most-antifragile-testing-role",
     "title": "TestOps - the most antifragile testing role",
     "date": "2018-02-02",
     "category": "TestOps",
-    "permalink": "/2018/02/testops-most-antifragile-testing-role"
+    "permalink": "/2018/02/testops-most-antifragile-testing-role",
+    "preview": "I have read many fascinating books in 2017 which influenced me a lot. Among the very best are Nassim Nicholas Taleb's Fooled by Randomness , The Black Swan and Antifragile which is perhaps the most important, although which can't be fully understood without reading the remaining two. Taleb has a very original style which is very unique, but I noticed few similarities to Thinking Fast and Slow..."
   },
   {
     "id": "2018-01-28-how-to-use-automated-functional-tests-to-drive-your-exploratory-security-and-performance-testing-efforts",
     "title": "How to use automated functional tests to drive your exploratory, security and performance testing efforts?",
     "date": "2018-01-28",
     "category": "Security",
-    "permalink": "/2018/01/how-to-use-automated-functional-tests"
+    "permalink": "/2018/01/how-to-use-automated-functional-tests",
+    "preview": "There is a growing need for technical testers who can test applications comprehensively. With such a low amount of top specialists you may have been encouraged to extend your skill set not only in programming domain. Today I'd like to show you how to start with security, performance and exploratory testing in an easy way. What's important my approach is not only easy, but also very effective...."
   },
   {
     "id": "2017-12-30-get-rid-of-your-external-dependencies-with-wiremock",
     "title": "Get rid of your external dependencies with WireMock",
     "date": "2017-12-30",
     "category": "API testing",
-    "permalink": "/2017/12/get-rid-of-your-external-dependencies"
+    "permalink": "/2017/12/get-rid-of-your-external-dependencies",
+    "preview": "So far in my posts focusing on API testing I was using external services only. This isn't particularly bad for higher level tests, but sometimes we would like to work on our localhosts only. This eliminates potential flakiness related to network fluctuations, deployment being in progress or general instability of services we rely on. Today I'd like to recommend you one tool that hugely simplifies..."
   },
   {
     "id": "2017-12-10-what-cia-teaches-us-about-productivity",
     "title": "What CIA teaches us about productivity",
     "date": "2017-12-10",
     "category": "Testing thoughts",
-    "permalink": "/2017/12/what-cia-teaches-us-about-productivity"
+    "permalink": "/2017/12/what-cia-teaches-us-about-productivity",
+    "preview": "I've done lots of code-rich posts this year which may leave some of my readers disappointed. Today there would be no code and the topic would be much broader - productivity. Christmas time favors off-topic so this post (and next one) would showcase useful things that I have read in 2017. I'll be using a CIA document that I'm sure most of you haven't heard of - declassified CIA Simple Sabotage..."
   },
   {
     "id": "2017-11-11-automate-your-xss-tests-with-selenium",
     "title": "Automate your XSS tests with Selenium",
     "date": "2017-11-11",
     "category": "Selenium",
-    "permalink": "/2017/11/automate-your-xss-tests-with-selenium"
+    "permalink": "/2017/11/automate-your-xss-tests-with-selenium",
+    "preview": "We are heading into an era where potential attackers have very easy knowledge access. In some instances proper training isn't even required, because offensive tools are getting better and better. A lot of companies decided that it's better to pay real money for security bugs (see Bug Bounty list ) than take a risk hostile exposure. As testers we shouldn't ignore this trend. This is already..."
   },
   {
     "id": "2017-09-29-firefox-selenium-browser-capabilities-explained",
     "title": "Firefox Selenium Browser Capabilities explained",
     "date": "2017-09-29",
     "category": "Selenium",
-    "permalink": "/2017/09/firefox-selenium-browser-capabilities"
+    "permalink": "/2017/09/firefox-selenium-browser-capabilities",
+    "preview": "Two very important Firefox news related to Selenium were published recently: a) Selenium IDE will no longer be supported in Firefox 55+ ( source ) b) Headless mode is now available ( source ) First news isn't really that bad. Any time invested in IDE is basically wasted time, so I don't think there is too much to worry. Second news is exciting though. I already announced it before in my Headless..."
   },
   {
     "id": "2017-09-08-headless-testing-with-firefox",
     "title": "Headless testing with Firefox",
     "date": "2017-09-08",
     "category": "Selenium",
-    "permalink": "/2017/09/headless-testing-with-firefox"
+    "permalink": "/2017/09/headless-testing-with-firefox",
+    "preview": "Last week I wanted to show you how to run Selenium tests using headless Firefox. Unfortunately my Browser Capabilities turned out to be outdated so I opted for correct Firefox Selenium Browser Capabilities explanation instead. It turned out that most of the work was done already and I just needed few minutes to run Firefox in headless mode. Here is how I did it. Getting started - requirements..."
   },
   {
     "id": "2017-07-05-testops-5-engineering-productivity",
     "title": "TestOps - Engineering Productivity",
     "date": "2017-07-05",
     "category": "TestOps",
-    "permalink": "/2017/07/testops-5-engineering-productivity"
+    "permalink": "/2017/07/testops-5-engineering-productivity",
+    "preview": "Introduction Google has recently surprised everyone by renaming their famous GTAC into Engineering Productivity conference. It means that already complicated and confusing testing dictionary received one more entry ( ISTQB dictionary for instance, fails to explain the meaning of this term). The meaning of Engineering Productivity is very broad, and it's not easy define it in one blog post. With..."
   },
   {
     "id": "2017-06-30-rest-assured-integration-tests-for-jsontestcom",
     "title": "Rest Assured integration tests for jsontest.com",
     "date": "2017-06-30",
     "category": "API testing",
-    "permalink": "/2017/06/rest-assured-integration-tests-for"
+    "permalink": "/2017/06/rest-assured-integration-tests-for",
+    "preview": "In my very popular Tester's toolbox - an alternative guide I listed few examples of free public APIs that can be used for learning Rest Assured. Recently I have found one more site - www.jsontest.com . Having in mind that my last API test post was almost exactly one year ago I decided to utilize my latest finding and show you few examples. JSON Test API has few excellent functionalities for..."
   },
   {
     "id": "2017-05-25-headless-testing-with-google-chrome",
     "title": "Headless testing with Google Chrome",
     "date": "2017-05-25",
     "category": "Selenium",
-    "permalink": "/2017/05/headless-testing-with-google-chrome"
+    "permalink": "/2017/05/headless-testing-with-google-chrome",
+    "preview": "Headless Testing means running a browser UI test without the graphical user interface, i.e. without the head. Such a test requires a headless browser, which (according to Wikipedia ) provides automated control of a web page in an environment similar to popular web browsers, but are executed via a command-line interface or using network communication. They are particularly useful for testing web..."
   },
   {
     "id": "2017-05-22-how-to-find-test-css-selector-using-chrome-devtools",
     "title": "How to find & test CSS Selector using Chrome DevTools",
     "date": "2017-05-22",
     "category": "Selenium",
-    "permalink": "/2017/05/how-to-find-test-cssselector-using"
+    "permalink": "/2017/05/how-to-find-test-cssselector-using",
+    "preview": "I was surprised after seeing a couple of questions regarding selector verification. This triggered me to create this basic tutorial which hopefully would be useful for test automation newcomers. As a prerequisite you need to download & install Google Chrome browser (if not done already). Chrome Developer Tools Throughout this tutorial we would be using Chrome DevTools . In order to access it you..."
   },
   {
     "id": "2017-04-14-best-software-testing-books",
     "title": "Best software testing books",
     "date": "2017-04-14",
     "category": "Books",
-    "permalink": "/2017/04/best-software-testing-books"
+    "permalink": "/2017/04/best-software-testing-books",
+    "preview": "I've been very lucky recently to read quite a few fascinating books (like How to Fail at Almost Everything and Still Win Big, Black Swan or Surely You're Joking Mr Feynman to recommend just a few) which reminded me that I haven't made any software testing books posts yet. I did of course start Awesome Book Reviews blog some time ago, but it failed to gain popularity so I switched full focus here...."
   },
   {
     "id": "2017-03-13-automated-testing-vs-manual-testing-security-perspective",
     "title": "Automated testing vs manual testing - security perspective",
     "date": "2017-03-13",
     "category": "Testing thoughts",
-    "permalink": "/2017/03/automated-testing-vs-manual-testing"
+    "permalink": "/2017/03/automated-testing-vs-manual-testing",
+    "preview": "Throughout this document you will see the term 'pentester'. Precise definitions vary, but at its core a penetration tester's job is to demonstrate and document a flaw in security. In a normal situation, a pentester will perform reconnaissance to find some vulnerabilities, exploit those vulnerabilities to gain access, then possibly extract some small piece of data of value to prove that the system..."
   },
   {
     "id": "2017-03-13-learning-software-testing-checklist-2017-edition",
     "title": "Learning Software Testing Checklist - 2017 edition",
     "date": "2017-03-13",
     "category": "Testing thoughts",
-    "permalink": "/2017/03/learning-software-testing-checklist"
+    "permalink": "/2017/03/learning-software-testing-checklist",
+    "preview": "Time flies quickly, and it's been more than a year since one of my most popular posts - do and don't for testers . I decided to skip dont's this year, because I you follow my advices closely you won't have time for them anyway. If it's possible try to learn mostly at work , solving real issues. Fill your knowledge gap by reading ferociously after work. Do not hesitate to seek mentors in each of..."
   },
   {
     "id": "2017-02-22-mentorship-how-to-skyrocket-your-testing-career",
     "title": "Mentorship - how to skyrocket your testing career",
     "date": "2017-02-22",
     "category": "Testing thoughts",
-    "permalink": "/2017/02/mentorship-how-to-skyrocket-your"
+    "permalink": "/2017/02/mentorship-how-to-skyrocket-your",
+    "preview": "In my recent posts focused on learning I put much attention on mentorship importance. I listed it as one of the points in how to become a software tester and described it as one of the most effective ways of learning how to automate tests . When I was skiing last week in the Alps I decided to explain it in detail. Seeing post picture you probably already know what view triggered that. When kids..."
   },
   {
     "id": "2017-02-12-continuous-security-with-owasp-dependency-check",
     "title": "Continuous Security with OWASP Dependency Check",
     "date": "2017-02-12",
     "category": "Security",
-    "permalink": "/2017/02/continuous-security-with-owasp"
+    "permalink": "/2017/02/continuous-security-with-owasp",
+    "preview": "OWASP Dependency Check as a Continuous Security tool In my Continuous Testing post I introduced you with an idea of Continuous Security. Those are automatic and repeatable tests which look for vulnerabilities in your application. They should be run as often as possible (ideally after each commit). In case of failure build pipeline should be stopped and person who introduced breaking changes..."
   },
   {
     "id": "2017-01-05-testops-4-continuous-improvement",
     "title": "TestOps - Continuous Improvement",
     "date": "2017-01-05",
     "category": "TestOps",
-    "permalink": "/2017/01/testops-4-continuous-improvement"
+    "permalink": "/2017/01/testops-4-continuous-improvement",
+    "preview": "Continuous Improvement / Kaizen introduction According to Wikipedia Continuous Improvement is a never-ending process which focuses on increasing the effectiveness and/or efficiency of an organisation to fulfil its policy and objectives. It was popularised by Lean movement in manufacturing and business. Usually Continuous Improvement efforts include identifying opportunities for streamlining work..."
   },
   {
     "id": "2016-12-29-system-traps-in-software-testing",
     "title": "System traps in software testing",
     "date": "2016-12-29",
     "category": "Testing thoughts",
-    "permalink": "/2016/12/system-traps-in-software-testing"
+    "permalink": "/2016/12/system-traps-in-software-testing",
+    "preview": "I had written several times on this blog that from my perspective majority of testers today lack full Software Engineering Life-Cycle (SDLC) understanding. As a community we should also look at our projects not only through tester's eyes, but also acknowledge stakeholders goals & needs (focusing mostly on customers). In the end our common goal is to make money for the company, not to ship..."
   },
   {
     "id": "2016-12-26-summary-planning-and-more-",
     "title": "2016 Summary, Planning and More :)",
     "date": "2016-12-26",
     "category": "",
-    "permalink": "/2016/12/2016-summary-planning-and-more"
+    "permalink": "/2016/12/2016-summary-planning-and-more",
+    "preview": "I'm happy to announce that I got myself Christmas gift and this blog is available on: www.awesome-testing.com I strongly encourage you to follow me on Feedly or Email . This is very convenient, because you don't have to open this site. Full post is delivered in perfectly formatted way. As I already described in Five benefits of blogging post things looks good here and I'll continue working in..."
   },
   {
     "id": "2016-10-22-browsermob-proxy-selenium-network-performance-extension",
     "title": "BrowserMob Proxy Selenium network performance extension",
     "date": "2016-10-22",
     "category": "Selenium",
-    "permalink": "/2016/10/browsermob-proxy-selenium-network"
+    "permalink": "/2016/10/browsermob-proxy-selenium-network",
+    "preview": "It's been a while since I published some Java code here, but as Dexter Morgan would say: today is the day. If you want me to post Java tests more often please let me know in the comments. BrowserMob Proxy is a very useful tool which 'can capture performance data for web apps (via the HAR format ), as well as manipulate browser behavior and traffic, such as whitelisting and blacklisting content,..."
   },
   {
     "id": "2016-10-20-testops-3-continuous-testing",
     "title": "TestOps - Continuous Testing",
     "date": "2016-10-20",
     "category": "TestOps",
-    "permalink": "/2016/10/testops-3-continuous-testing"
+    "permalink": "/2016/10/testops-3-continuous-testing",
+    "preview": "Part 3 of my TestOps series focuses on an extremely important subject that spans throughout the full Systems development life cycle (SDLC). Some may argue that apart from understanding obvious TestOps benefits it's the key for a successful release and effective development. From what I saw reading various articles and books about the subject no clear Continuous Testing (CT) definition exists. In..."
   },
   {
     "id": "2016-09-21-anniversary-post-five-benefits-of-blogging",
     "title": "Anniversary post - Five benefits of blogging",
     "date": "2016-09-21",
     "category": "Testing thoughts",
-    "permalink": "/2016/09/anniversary-post-five-benefits-of"
+    "permalink": "/2016/09/anniversary-post-five-benefits-of",
+    "preview": "It's been a year already since I started blogging. I'm really happy that both my motivation for writing and new posts ideas haven't depleted (quite contrary actually). Today I'd like to encourage you to write to yourself by presenting five key benefits of blogging. All of them have been taken from my 1-year experience of writing Awesome Testing . Strong encouragement for reading more Robert..."
   },
   {
     "id": "2016-09-09-testops-2-testing-in-production",
     "title": "TestOps - Testing in Production",
     "date": "2016-09-09",
     "category": "TestOps",
-    "permalink": "/2016/09/testops-2-testing-in-production"
+    "permalink": "/2016/09/testops-2-testing-in-production",
+    "preview": "Some time ago I started the TestOps series. I outlined why the topic is important (actually I expect it to be even more important in the nearest future) and listed various topic which I'd like to investigate deeper soon. Today the first from the list: Testing in Production. I'll list prerequisites for successful TiP adoption and give you real-life examples from top companies. Let's begin with a..."
   },
   {
     "id": "2016-08-20-how-to-start-learning-test-automation",
     "title": "How to start learning test automation",
     "date": "2016-08-20",
     "category": "Testing thoughts",
-    "permalink": "/2016/08/how-to-start-learning-test-automation"
+    "permalink": "/2016/08/how-to-start-learning-test-automation",
+    "preview": "In one of my previous posts - How to become a software tester , I gave you 10 practical advice on how to get yourself running in a fascinating software testing industry. On another post - Learning pathways for testers , which was addressed for more experienced engineers, I described how to thrive as a tester not only now, but also in the long run. Today I'd like to describe a topic which places..."
   },
   {
     "id": "2016-08-18-best-complete-testing-suites-available-online",
     "title": "Best complete testing suites available online",
     "date": "2016-08-18",
     "category": "Selenium",
-    "permalink": "/2016/08/best-complete-testing-suites-available"
+    "permalink": "/2016/08/best-complete-testing-suites-available",
+    "preview": "In Testers toolbox - an alternative guide post I listed various sites that you may use for testing skills improvement. Today I'd like to show you something totally different - complete end-to-end testing suites that are open-sourced and freely available for study/fork/reference. They may not be easy to understand at the beginning, but once you delve deeper you will notice how they take advantage..."
   },
   {
     "id": "2016-07-30-restful-api-testing-with-rest-assured-1-",
     "title": "RESTful API Testing with Rest-Assured (1)",
     "date": "2016-07-30",
     "category": "API testing",
-    "permalink": "/2016/07/restful-api-testing-with-rest-assured-1"
+    "permalink": "/2016/07/restful-api-testing-with-rest-assured-1",
+    "preview": "Before I start writing about API testing let me announce the big news. I released all my Selenium related Java code snippets on the Github Awesome Testing project. I will update it with every new technical post (including this one - the Rest-Assured tests were already pushed here ). You can follow it and just type 'git pull' to get the latest code updates. From my experience, it's always better..."
   },
   {
     "id": "2016-07-22-testops-missing-piece-of-puzzle",
     "title": "TestOps - missing piece of puzzle",
     "date": "2016-07-22",
     "category": "TestOps",
-    "permalink": "/2016/07/testops-missing-piece-of-puzzle"
+    "permalink": "/2016/07/testops-missing-piece-of-puzzle",
+    "preview": "Some time ago in my do/don't recommend I encouraged you to take care of your testing environment and learn orchestration tool like Ansible . Somewhere between writing automated tests and implementing Continuous Delivery , I came across interesting concept popularised by Seth Eliot - TestOps . Even though Richard Bradshaw didn't like the name I really think there is something smart in this..."
   },
   {
     "id": "2016-06-29-how-to-download-files-using-selenium-2-",
     "title": "How to Download files using Selenium 2",
     "date": "2016-06-29",
     "category": "Selenium",
-    "permalink": "/2016/06/how-to-download-files-using-selenium-2"
+    "permalink": "/2016/06/how-to-download-files-using-selenium-2",
+    "preview": "In my previous post about Selenium , I explained how can we modify browsers before tests to have the desired configuration. Today I like to discuss a different topic that lacks quality guides - downloading files. Mixing Selenium with AutoIT isn't good, trust me. I'm using FluentLenium syntax to navigate on the page (that would be Micheal Bolton's homepage to be more precise), but it's very..."
   },
   {
     "id": "2016-06-18-how-to-become-software-tester",
     "title": "How to become a software tester",
     "date": "2016-06-18",
     "category": "Testing thoughts",
-    "permalink": "/2016/06/how-to-become-software-tester/"
+    "permalink": "/2016/06/how-to-become-software-tester/",
+    "preview": "Software testing career is very peculiar - you can't just go to university and graduate, as none of them offer this field of study. Maybe because of that I hear a lot of questions like: 'how to become a software tester?'. Today I'd like to answer them and compile good advice (at least in my opinion) in one place. Throughout the post, I'll use a lot of quotes from ' How Google Tests Software '..."
   },
   {
     "id": "2016-05-10-arguing-micheal-boltons-20-statements-about-testing",
     "title": "Arguing Micheal Bolton's 20 statements about testing",
     "date": "2016-05-10",
     "category": "Testing thoughts",
-    "permalink": "/2016/05/arguing-micheal-boltons-20-statements"
+    "permalink": "/2016/05/arguing-micheal-boltons-20-statements",
+    "preview": "Michael Bolton , one of the most recognized testers worldwide (assuming we take into account the number of followers), has recently published 20 very interesting tweets on his account. This leads to a very interesting discussion , which I recommend reading too. Unfortunately, Twitter wasn't designed for such lengthy conversations and it's hard to grasp what's going on there. Don't get me wrong..."
   },
   {
     "id": "2016-05-05-how-to-nail-testing-job-interview",
     "title": "How to nail testing job interview",
     "date": "2016-05-05",
     "category": "Testing thoughts",
-    "permalink": "/2016/05/how-to-nail-testing-job-interview"
+    "permalink": "/2016/05/how-to-nail-testing-job-interview",
+    "preview": "Dan Ashby has recently published a brilliant mind map which he uses for interviewing software testers. Unfortunately, his full talk requires quite an expensive subscription and I wasn't able to watch it. This gave me however an idea to post some original job interview tips, which I believe may strongly supplement typical stuff (like not showing up too early/late, maintaining eye contact and not..."
   },
   {
     "id": "2016-04-14-introducing-fluentlenium-2-selenium-waiting-game",
     "title": "Introducing FluentLenium 2 - Selenium waiting game",
     "date": "2016-04-14",
     "category": "Selenium",
-    "permalink": "/2016/04/introducing-fluentlenium-2-selenium"
+    "permalink": "/2016/04/introducing-fluentlenium-2-selenium",
+    "preview": "Introducing FluentLenium is so far my most popular technical post and I will continue the series today with a very important subject - test waiting. For those who don't know - FluentLenium is an actively developed Selenium extension that simplifies writing GUI tests. Before I delve deeper into FluentLenium powerful waiting methods let me explain why I decided to cover this topic more deeply: a)..."
   },
   {
     "id": "2016-04-04-testers-toolbox-an-alternative-guide",
     "title": "Tester's toolbox - an alternative guide",
     "date": "2016-04-04",
     "category": "Toolbox",
-    "permalink": "/2016/04/testers-toolbox-alternative-guide"
+    "permalink": "/2016/04/testers-toolbox-alternative-guide",
+    "preview": "When you type 'test tools' in Google you can see a lot of links to Selenium, cURL, Cucumber, or even Firefox. I agree they are useful, but we are testers, and we shouldn't test tools, but real systems. Below I give a lot of links to playgrounds when you can train your skills. I hope this will help you to understand that you should always pair 'test tool' with the system you test, not vice-versa...."
   },
   {
     "id": "2016-03-15-mapping-lean-principles-to-testing",
     "title": "Mapping lean principles to testing",
     "date": "2016-03-15",
     "category": "Testing thoughts",
-    "permalink": "/2016/03/mapping-lean-principles-to-testing"
+    "permalink": "/2016/03/mapping-lean-principles-to-testing",
+    "preview": "Do's and don'ts for testers is my most viewed post so far. Because of that (and because it's always better to leave various doors open) I wouldn't focus on technical posts only. Time for something my colleague accurately calls computer science belles-lettres. If you had read my Management 3.0 review you know that I like to get familiar with views on software testing not only from our (QA's) side,..."
   },
   {
     "id": "2016-03-03-learning-pathways-for-testers",
     "title": "Learning pathways for testers",
     "date": "2016-03-03",
     "category": "Testing thoughts",
-    "permalink": "/2016/03/learning-pathways-for-testers"
+    "permalink": "/2016/03/learning-pathways-for-testers",
+    "preview": "Usually, when I look online for learning resources I find a lot of rankings like: Top 10 blogs every tester should follow Top 5 sites every tester should know Top 20 Twitter account for every professional tester Almost always those ranking contain top hits from Google + one entry which happen to be closely related with the ranking source. Associating yourself with the best is really smart from a..."
   },
   {
     "id": "2016-02-22-selenium-browser-capabilities-explained-1-",
     "title": "Selenium - Browser Capabilities explained 1",
     "date": "2016-02-22",
     "category": "Selenium",
-    "permalink": "/2016/02/selenium-browser-capabilities-explained"
+    "permalink": "/2016/02/selenium-browser-capabilities-explained",
+    "preview": "In my first post about Selenium ( FluentLenium series will focus on extension features only), I decided to tackle Chrome & Firefox capabilities which allow us to preconfigure browser settings before tests. This seemed quite easy at the beginning, but I quickly realized that a huge amount of information available via Google is outdated. Hopefully, this post will make things straight. Prerequisite..."
   },
   {
     "id": "2016-02-20-dos-and-donts-for-testers-2016-edition",
     "title": "Do's and don'ts for testers - 2016 edition",
     "date": "2016-02-20",
     "category": "Testing thoughts",
-    "permalink": "/2016/02/dos-and-donts-for-testers-2016-edition"
+    "permalink": "/2016/02/dos-and-donts-for-testers-2016-edition",
+    "preview": "Time is flying pretty fast. Christmas has just finished and we have February already. Probably everyone who wanted to post 2016 testing predictions has already done it. Hopefully, I'm the last one (lots of scientists say it's the best possible scenario ). Before I start I'd like to introduce two controversial definitions, which are not covered in ISTQB Glossary . Quotes from James Bach and..."
   },
   {
     "id": "2016-01-27-introducing-fluentlenium-1-",
     "title": "Introducing FluentLenium 1",
     "date": "2016-01-27",
     "category": "Selenium",
-    "permalink": "/2016/01/introducing-fluentlenium-1"
+    "permalink": "/2016/01/introducing-fluentlenium-1",
+    "preview": "I had started a new initiative recently - Facebook group Technology Books . Feel free to join if you look for reading recommendations or want to share your thoughts. Because of that, I had to accept hundreds of joining requests from many people. (Un)fortunately, repetitive tasks quickly bore me, so I figured out it's the perfect opportunity to not only automate it but also to feature it on this..."
   },
   {
     "id": "2016-01-05-in-famous-testers",
     "title": "(In)famous testers",
     "date": "2016-01-05",
     "category": "Testing thoughts",
-    "permalink": "/2016/01/infamous-testers"
+    "permalink": "/2016/01/infamous-testers",
+    "preview": "img source: http://leitesculinaria.com/recipe-testers So the new year of blogging has just started. I'm really happy about how things stand at the moment (especially after the recent switch to Blogger which cut my maintenance work to a minimum). I'll keep the same frequency of new posts (1-2 per month) on both blogs. It's good to set goals for the new year and write them down in public, so here..."
   },
   {
     "id": "2015-12-13-testing-with-ansible",
     "title": "Testing with Ansible",
     "date": "2015-12-13",
     "category": "TestOps",
-    "permalink": "/2015/12/testing-with-ansible"
+    "permalink": "/2015/12/testing-with-ansible",
+    "preview": "IEEE Spectrum has recently posted an article about Yahoo resigning from the QA team . After that maneuver quality of the final product not only didn't degrade but actually improved. Of course, if we delve deeper into the article we will realize that the products got better after continuous delivery introduction (image credit to www.cloudofit.com ) and the QA team wasn't entirely to blame...."
   },
   {
     "id": "2015-11-22-system-testing",
     "title": "System Testing",
     "date": "2015-11-22",
     "category": "Testing thoughts",
-    "permalink": "/2015/11/system-testing"
+    "permalink": "/2015/11/system-testing",
+    "preview": "More than two years ago I was invited to a System Tester job interview in Motorola. As usual, I wanted to prepare as well as possible and by simple googling, I made a surprising discovery. In the world where almost everything has detailed descriptions available for free, there is serious lack of reliable resources about 'system testing'. For example, on Amazon, there is only one sensible hit ->..."
   },
   {
     "id": "2015-11-11-ideal-tester-equals-3141592",
     "title": "Ideal tester equals 3.141592..",
     "date": "2015-11-11",
     "category": "Testing thoughts",
-    "permalink": "/2015/11/ideal-tester-equals-3141592"
+    "permalink": "/2015/11/ideal-tester-equals-3141592",
+    "preview": "I was reading quite a lot recently about Tester / QA / Software Engineer in Test role in IT. I'd like to continue the discussion which I had started in my previous post - ' Our future as testers '. After publishing this post I came across two very good articles from ThoughtWorks - 'Is QA Dead' and 'QA Role - What Is It Really' . They are definitely worth reading, but I had also found a real gem..."
   },
   {
     "id": "2015-11-11-selenium-maintenance-hell",
     "title": "Selenium maintenance hell",
     "date": "2015-11-11",
     "category": "Selenium",
-    "permalink": "/2015/11/selenium-maintenance-hell"
+    "permalink": "/2015/11/selenium-maintenance-hell",
+    "preview": "So often we find ourselves scratching our heads thinking 'Why did it fail? It works perfectly well locally...'. Timeout or 'Session ID is null' (my favorite) errors can be especially annoying when we are currently working on the most famous testing task: make all test pass. Let's analyze together how to fix this unhealthy situation. First of all, we need to redefine our task with management. Why..."
   },
   {
     "id": "2015-10-20-our-future-as-testers",
     "title": "Our future as testers",
     "date": "2015-10-20",
     "category": "Testing thoughts",
-    "permalink": "/2015/10/our-future-as-testers"
+    "permalink": "/2015/10/our-future-as-testers",
+    "preview": "I got inspired to write this post after watching a youtube video 'Humans need not apply' . The author of this rather one-sided video presents many arguments which should convince us that our jobs would soon be taken by robots and automatons. Of course, the points presented are highly exaggerated (typical media piece these days...), but it's always worth considering if our job has a bright future...."
   },
   {
     "id": "2015-10-11-steps-to-successfully-manage-house-project",
     "title": "11 Steps to successfully manage house project",
     "date": "2015-10-11",
     "category": "IT thoughts",
-    "permalink": "/2015/10/11-steps-to-successfully-manage-house"
+    "permalink": "/2015/10/11-steps-to-successfully-manage-house",
+    "preview": "Recently, I have been preoccupied with the interior finishing of my house. Amidst numerous phone calls and visits to Ikea, it dawned on me that I was essentially taking on the role of a project manager, much like our bosses do in the IT world. As an agile enthusiast, I would like to share 11 lessons I've learned from this experience. 1. Define your objectives Every project begins with ideas or..."
   }
 ]

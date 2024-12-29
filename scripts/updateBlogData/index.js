@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
-import { processContent } from './contentProcessor.js';
+import { processContent, extractPreview } from './contentProcessor.js';
 import './renderer.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -49,6 +49,7 @@ export const updateBlogData = () => {
           fs.writeFileSync(postPath, JSON.stringify(postData, null, 2));
 
           const { content: _, ...indexData } = postData;
+          indexData.preview = extractPreview(htmlContent);
           postsIndex.push(indexData);
         });
 
