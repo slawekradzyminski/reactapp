@@ -17,7 +17,6 @@ interface BlogPostData {
   permalink: string;
 }
 
-// Default implementation of the import function
 const defaultImportPost = async (postId: string) => {
   const postData = await import(`../../data/blog/${postId}.json`);
   return postData.default;
@@ -68,7 +67,7 @@ const BlogPost = ({ importPost = defaultImportPost }: BlogPostProps) => {
   }
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="lg">
       <Paper elevation={3} sx={{ p: 4, mt: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           {post.title}

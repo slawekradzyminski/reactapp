@@ -24,15 +24,15 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
         mb: 2,
       }}
     >
-      <IconButton
-        onClick={() => prevPost && navigate(`${prevPost.permalink}`)}
-        disabled={!prevPost}
-        sx={{ visibility: prevPost ? "visible" : "hidden" }}
-      >
-        <ArrowBackIosNewIcon />
-      </IconButton>
+      <Box sx={{ display: 'flex', alignItems: 'center', flex: 1 }}>
+        <IconButton
+          onClick={() => prevPost && navigate(`${prevPost.permalink}`)}
+          disabled={!prevPost}
+          sx={{ visibility: prevPost ? "visible" : "hidden" }}
+        >
+          <ArrowBackIosNewIcon />
+        </IconButton>
 
-      <Box sx={{ textAlign: "center", maxWidth: "60%" }}>
         {prevPost && (
           <Typography
             variant="body2"
@@ -41,7 +41,7 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
               cursor: "pointer",
               "&:hover": { textDecoration: "underline" },
               display: { xs: "none", sm: "block" },
-              mr: "30px"
+              ml: 1
             }}
             onClick={() => navigate(`${prevPost.permalink}`)}
           >
@@ -50,7 +50,7 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
         )}
       </Box>
 
-      <Box sx={{ textAlign: "center", maxWidth: "60%" }}>
+      <Box sx={{ display: 'flex', alignItems: 'center', flex: 1, justifyContent: 'flex-end' }}>
         {nextPost && (
           <Typography
             variant="body2"
@@ -59,22 +59,22 @@ const BlogPostNavigation = ({ currentPostId }: BlogPostNavigationProps) => {
               cursor: "pointer",
               "&:hover": { textDecoration: "underline" },
               display: { xs: "none", sm: "block" },
-              ml: "30px"
+              mr: 1
             }}
             onClick={() => navigate(`${nextPost.permalink}`)}
           >
             Next: {nextPost.title}
           </Typography>
         )}
-      </Box>
 
-      <IconButton
-        onClick={() => nextPost && navigate(`${nextPost.permalink}`)}
-        disabled={!nextPost}
-        sx={{ visibility: nextPost ? "visible" : "hidden" }}
-      >
-        <ArrowForwardIosIcon />
-      </IconButton>
+        <IconButton
+          onClick={() => nextPost && navigate(`${nextPost.permalink}`)}
+          disabled={!nextPost}
+          sx={{ visibility: nextPost ? "visible" : "hidden" }}
+        >
+          <ArrowForwardIosIcon />
+        </IconButton>
+      </Box>
     </Box>
   );
 };

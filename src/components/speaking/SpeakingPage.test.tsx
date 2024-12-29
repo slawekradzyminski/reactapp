@@ -23,4 +23,16 @@ describe('SpeakingPage', () => {
     expect(iframes[0]).toHaveAttribute('src', 'https://www.youtube.com/embed/i5owU7RdC9g');
     expect(iframes[1]).toHaveAttribute('src', 'https://www.youtube.com/embed/U8iCGim-ro0');
   });
+
+  it('renders correct language flags for each talk', () => {
+    // given
+    render(<SpeakingPage />);
+
+    // then
+    const englishElement = screen.getByText((content) => content.includes('🇬🇧') && content.includes('English'));
+    const polishElement = screen.getByText((content) => content.includes('🇵🇱') && content.includes('Polish'));
+    
+    expect(englishElement).toBeInTheDocument();
+    expect(polishElement).toBeInTheDocument();
+  });
 }); 

@@ -20,9 +20,9 @@ const HomePage = () => {
                 }}
             />
             <Typography variant="body1" gutterBottom sx={{ marginTop: 3 }}>
-                My name is Sławek, and I've created this website to compile and maintain an archive of "Friday Tips for Seniors" (ftfs) that I share on <Link href="https://www.linkedin.com/in/slawekradzyminski/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>. Additionally, I aim to organize my book recommendations in a clear and structured manner. Please feel free to explore and enjoy the site!
+                I'm a seasoned test engineer who's always embraced test automation and CI/CD to help teams deliver high-quality software at speed. As a Senior Staff Test Engineer at Ocado Technology, I stay on the cutting edge of modern development practices, sharing my knowledge and expertise both at work and as a trainer with various companies and universities.
                 <br /><br />
-                Tips can also be accessed directly in Markdown format from the publicly available <Link href="https://github.com/slawekradzyminski/reactapp" target="_blank" rel="noopener noreferrer">React codebase</Link>. You can view a sample tip on <Link href="https://github.com/slawekradzyminski/reactapp/blob/master/src/tips/Visibility.md" target="_blank" rel="noopener noreferrer">Visibility</Link>.
+                When I'm not immersed in code and pipelines, you'll find me enjoying time with my wonderful family, hitting the squash court, exploring new travel destinations, or challenging myself at scrabble. I keep fit with regular gym sessions and wind down by watching TV series with my wife, making sure I strike a balance between professional growth and personal fulfillment.
             </Typography>
         </Paper>
     );
