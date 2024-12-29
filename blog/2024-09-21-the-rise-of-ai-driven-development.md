@@ -20,7 +20,7 @@ In this post, I’ll share my journey toward understanding AI, what I’ve learn
 
 It all started in 2022, when I first began using ChatGPT. I was immediately captivated, and I remember enthusiastically recommending it to my team with a simple Slack message: `Use it, this is the future`. Not everyone shared my excitement, though. Looking back, I realize this was because their initial experiences were different from mine.
 
-My mind tends to connect concepts across [various fields](https://www.ftfs.it/tips/interdisciplinary)—whether it’s software development or military strategy—and generative AI excels at creatively bridging those gaps. However, many people initially approached ChatGPT as more of an interactive knowledge base than a tool for generating novel insights. Even now in 2024, it’s important to note that while AI is powerful, it’s not an oracle.
+My mind tends to connect concepts across [various fields](https://www.awesome-testing.com/tips/interdisciplinary)—whether it’s software development or military strategy—and generative AI excels at creatively bridging those gaps. However, many people initially approached ChatGPT as more of an interactive knowledge base than a tool for generating novel insights. Even now in 2024, it’s important to note that while AI is powerful, it’s not an oracle.
 
 ### Starting point
 
@@ -48,11 +48,11 @@ LLMs also shine when it comes to generating and editing written content. For exa
 
 I started following a few AI experts on Twitter, and one of them mentioned [Cursor](https://www.cursor.com/). I hadn’t heard of it before, but it looked intriguing. So, I created an account—and I was blown away by the user experience. Copy-pasting code into ChatGPT or using [phind.com](https://phind.com) had started to feel tedious, but Cursor was a complete game-changer. It let me chat about my coding challenges in a much more natural, fluid way. At times, using Cursor felt like pair programming with an experienced colleague.
 
-This tool significantly helped me improve my [Dockerized localstack](https://github.com/slawekradzyminski/awesome-localstack) for trainings. I've also created several repositories with tests on various levels, the [ftfs.it](https://www.ftfs.it) website, and even a [personal site](https://gosiaradzyminska.pl/) for my wife. Cursor has become an crucial part of my outside daily work activities.
+This tool significantly helped me improve my [Dockerized localstack](https://github.com/slawekradzyminski/awesome-localstack) for trainings. I've also created several repositories with tests on various levels, the [awesome-testing.com](https://www.awesome-testing.com) website, and even a [personal site](https://gosiaradzyminska.pl/) for my wife. Cursor has become an crucial part of my outside daily work activities.
 
 ### Becoming a teacher
 
-I didn’t stop there. Richard Feynman once said that the [real understanding](https://www.ftfs.it/tips/feynman-technique) comes when you explain a topic to someone else, and that advice stuck with me. As ambitious as it may sound, I decided to run a ChatGPT/AI training session for others, partnering with [testerzy.pl](https://testerzy.pl/szkolenia/praktyka-testowania/efektywne-wykorzystanie-ai-w-testowaniu-od-chatgpt-do-generacji-kodu). I had to build everything from scratch, including the entire course agenda. At first glance, it may not seem like much, but believe me, it was far from easy. Even today, such trainings are rare, so I had to plan every detail myself. I’m really proud of the outcome and grateful for the opportunity to teach others. In fact, the next session has already sold out.
+I didn’t stop there. Richard Feynman once said that the [real understanding](https://www.awesome-testing.com/tips/feynman-technique) comes when you explain a topic to someone else, and that advice stuck with me. As ambitious as it may sound, I decided to run a ChatGPT/AI training session for others, partnering with [testerzy.pl](https://testerzy.pl/szkolenia/praktyka-testowania/efektywne-wykorzystanie-ai-w-testowaniu-od-chatgpt-do-generacji-kodu). I had to build everything from scratch, including the entire course agenda. At first glance, it may not seem like much, but believe me, it was far from easy. Even today, such trainings are rare, so I had to plan every detail myself. I’m really proud of the outcome and grateful for the opportunity to teach others. In fact, the next session has already sold out.
 
 To maintain the momentum, I’ve also spoken at several conferences. Two of my talks were recorded:
 
@@ -162,7 +162,7 @@ Obviously this just an example how AI-rich IDE may work. It is probably smarter 
 
 > Answer a question given in a natural, human-like manner. Avoid words which are associated with AI/robot-like language. If you don't know the answer ask me clarifying questions, do not hallucinate.
 
-**Pro tip**: This is how I configured [Rules for AI](https://docs.cursor.com/context/rules-for-ai) in Cursor for [ftfs.it](https://www.ftfs.it) project:
+**Pro tip**: This is how I configured [Rules for AI](https://docs.cursor.com/context/rules-for-ai) in Cursor for [awesome-testing.com](https://www.awesome-testing.com) project:
 
 > Typescript/JS projects:
 > - I'm using npm
@@ -284,9 +284,9 @@ The last point offers a glimpse into the future of AI-powered development. You a
 
 ### Book renaissance
 
-In the age of AI, we are witnessing a renaissance of deep, structured knowledge—a key reason why [books are more relevant](https://www.ftfs.it/tips/on-reading-regularly) than ever. Since it's crucial to start prompting with the end goal in mind, having extensive knowledge across multiple domains has never been so important. The more you know, the better equipped you are to guide AI toward useful outcomes, avoiding shallow results or errors.
+In the age of AI, we are witnessing a renaissance of deep, structured knowledge—a key reason why [books are more relevant](https://www.awesome-testing.com/tips/on-reading-regularly) than ever. Since it's crucial to start prompting with the end goal in mind, having extensive knowledge across multiple domains has never been so important. The more you know, the better equipped you are to guide AI toward useful outcomes, avoiding shallow results or errors.
 
-Additionally, as linguistic nuances are easily managed by LLMs, engineers should elevate their focus to higher-level, more [strategic matters](https://www.ftfs.it/tips/elevate-your-perspective). Rather than getting bogged down in syntax or language details, the emphasis should shift toward design, architecture, and long-term vision. This shift allows engineers to think big, leveraging AI as a tool for generating code.
+Additionally, as linguistic nuances are easily managed by LLMs, engineers should elevate their focus to higher-level, more [strategic matters](https://www.awesome-testing.com/tips/elevate-your-perspective). Rather than getting bogged down in syntax or language details, the emphasis should shift toward design, architecture, and long-term vision. This shift allows engineers to think big, leveraging AI as a tool for generating code.
 
 ### Testing renaissance
 

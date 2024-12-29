@@ -6,7 +6,7 @@ To develop in programming, it is worthwhile to set two paths for oneself:
 
 - The first should involve our favorite language (e.g., Java). It is useful here to look at a sample job offer for a Java programmer and see what is required. We will probably encounter knowledge of one of the leading frameworks (Spring) and understanding of typically backend mechanisms, such as rate limit.
 
-- The second should focus on learning another language. Here, I recommend JavaScript or Python because of the multitude of things that can be relatively easily created only in these languages. For instance, most things related to AI are in Python (Langchain), and creating my website ftfs.it required knowledge of React and JS.
+- The second should focus on learning another language. Here, I recommend JavaScript or Python because of the multitude of things that can be relatively easily created only in these languages. For instance, most things related to AI are in Python (Langchain), and creating my website awesome-testing.com required knowledge of React and JS.
 
 Programming is also a creative activity. We can create things from scratch, giving us a unique opportunity to make things useful for us or the project. Ideas for learning programming in a tester's job:
 - A service mocking dependencies of 3rd party or other teams’ services
