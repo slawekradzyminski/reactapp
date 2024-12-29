@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import LoadMoreBooks from "./LoadMoreBooks";
 import useBookLoader from "../../hooks/useBookLoader";
-import { Box } from "@mui/material";
-import SearchBookInput from "./SearchBookInput";
+import { Box, Container } from "@mui/material";
+import SearchInput from "../shared/SearchInput";
 import DisplayedBookCards from "./DisplayedBookCards";
 
 const BooksPage = () => {
@@ -14,21 +14,30 @@ const BooksPage = () => {
     loadAllBooks,
     setSearchTerm,
   } = useBookLoader(booksPerLoad);
+  const [searchValue, setSearchValue] = useState('');
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    const newValue = event.target.value;
+    setSearchValue(newValue);
+    setSearchTerm(newValue);
   };
 
   return (
-    <Box>
-      <SearchBookInput onSearchChange={handleSearchChange} />
-      <DisplayedBookCards books={displayedBooks} />
-      <LoadMoreBooks
-        hasMore={hasMore}
-        onLoadMore={loadMoreBooks}
-        onLoadAll={loadAllBooks}
-      />
-    </Box>
+    <Container maxWidth="lg">
+      <Box>
+        <SearchInput 
+          onSearchChange={handleSearchChange} 
+          testId="search-book-input"
+          value={searchValue}
+        />
+        <DisplayedBookCards books={displayedBooks} />
+        <LoadMoreBooks
+          hasMore={hasMore}
+          onLoadMore={loadMoreBooks}
+          onLoadAll={loadAllBooks}
+        />
+      </Box>
+    </Container>
   );
 };
 
