@@ -38,7 +38,7 @@ describe('BlogPagination', () => {
     
     // then
     const currentPageButton = screen.getByRole('button', { name: `page ${currentPage}` });
-    expect(currentPageButton).toHaveAttribute('aria-current', 'true');
+    expect(currentPageButton).toHaveAttribute('aria-current', 'page');
   });
 
   it('calls onPageChange when clicking a page number', async () => {

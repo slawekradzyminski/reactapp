@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from "react-router-dom";
-import { Container, Box, Grid } from "@mui/material";
+import { Container, Box } from "@mui/material";
+import Grid from '@mui/material/Grid2';
 import blogIndex from "../../data/blog/index.json";
 import CategoryFilter from "./CategoryFilter";
 import { useState, useEffect } from "react";
@@ -125,7 +126,7 @@ const BlogList = () => {
       <BlogListHeader searchTerm={searchTerm} onSearchChange={handleSearchChange} />
       
       <Grid container spacing={3}>
-        <Grid item xs={12} md={3} sx={{ order: { xs: 2, md: 1 } }}>
+        <Grid size={{ xs: 12, md: 3 }} sx={{ order: { xs: 2, md: 1 } }}>
           <Box sx={{ position: 'sticky', top: 24 }}>
             <CategoryFilter />
             <Box sx={{ mt: 3 }}>
@@ -138,7 +139,7 @@ const BlogList = () => {
           </Box>
         </Grid>
 
-        <Grid item xs={12} md={9} sx={{ order: { xs: 1, md: 2 } }}>
+        <Grid size={{ xs: 12, md: 9 }} sx={{ order: { xs: 1, md: 2 } }}>
           <Box>
             {currentPosts.length > 0 ? (
               currentPosts.map((post) => (
