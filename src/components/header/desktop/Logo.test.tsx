@@ -30,19 +30,4 @@ describe('Logo', () => {
     expect(mockNavigate).toHaveBeenCalledWith('/');
   });
 
-  it('navigates to home page when logo text is clicked', async () => {
-    // given
-    render(
-      <MemoryRouter>
-        <Logo />
-      </MemoryRouter>
-    );
-
-    // when
-    await userEvent.click(screen.getByText('ftfs.it'));
-
-    // then
-    expect(mockNavigate).toHaveBeenCalledWith('/');
-  });
-
 });

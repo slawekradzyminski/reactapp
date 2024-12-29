@@ -1,1 +1,1 @@
-https://ftfs.it
+https://awesome-testing.com
