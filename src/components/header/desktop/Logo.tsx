@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import AdbIcon from '@mui/icons-material/Adb';
-
+import PestControlIcon from '@mui/icons-material/PestControl';
 const Logo = () => {
   const navigate = useNavigate();
 
@@ -12,7 +10,7 @@ const Logo = () => {
         onClick={() => navigate('/')} 
         style={{ color: 'inherit', textDecoration: 'none' }}
       >
-        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+        <PestControlIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
       </IconButton>
     </>
   );

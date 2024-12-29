@@ -24,10 +24,9 @@ describe('Logo', () => {
     );
 
     // when
-    await userEvent.click(screen.getByTestId('AdbIcon'));
+    await userEvent.click(screen.getByTestId('PestControlIcon'));
 
     // then
     expect(mockNavigate).toHaveBeenCalledWith('/');
   });
-
 });
