@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Paper, Typography, Box, Link as MuiLink } from "@mui/material";
+import { Paper, Typography, Box } from "@mui/material";
 import { Category as CategoryIcon } from "@mui/icons-material";
 
 interface BlogPost {
@@ -12,11 +12,10 @@ interface BlogPost {
 
 interface BlogEntryProps {
   post: BlogPost;
-  preview?: string;
   onCategoryClick: (e: React.MouseEvent, category: string) => void;
 }
 
-export const BlogEntry = ({ post, preview, onCategoryClick }: BlogEntryProps) => {
+export const BlogEntry = ({ post, onCategoryClick }: BlogEntryProps) => {
   return (
     <Link to={post.permalink} style={{ textDecoration: "none" }}>
       <Paper
@@ -41,21 +40,6 @@ export const BlogEntry = ({ post, preview, onCategoryClick }: BlogEntryProps) =>
             day: "numeric",
           })}
         </Typography>
-
-        {preview && (
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            sx={{
-              mt: 2,
-              mb: 2,
-              lineHeight: 1.6,
-              opacity: 0.87,
-            }}
-          >
-            {preview}
-          </Typography>
-        )}
 
         <Box className="blog-entry-meta">
           {post.category && (
