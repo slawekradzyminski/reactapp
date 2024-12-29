@@ -9,8 +9,8 @@ describe('SpeakingPage', () => {
     // then
     expect(screen.getByText('Public Speaking')).toBeInTheDocument();
     expect(screen.getByText('Conference Talks & Presentations')).toBeInTheDocument();
-    expect(screen.getByText('Effective ChatGPT usage: start with understanding')).toBeInTheDocument();
-    expect(screen.getByText('Prompt engineering - the Future of Testing?')).toBeInTheDocument();
+    expect(screen.getByText('[2023] Effective ChatGPT usage: start with understanding')).toBeInTheDocument();
+    expect(screen.getByText('[2023] Prompt engineering - the Future of Testing?')).toBeInTheDocument();
   });
 
   it('renders YouTube iframes for each talk', () => {
