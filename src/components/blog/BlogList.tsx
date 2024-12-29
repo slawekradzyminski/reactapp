@@ -15,17 +15,13 @@ const POSTS_PER_PAGE = 5;
 const MAX_PREVIEW_LENGTH = 400;
 
 const extractPreview = (htmlContent: string): string => {
+  const contentWithoutImages = htmlContent.replace(/<img[^>]*>/g, '');
+  
   const tempDiv = document.createElement("div");
-  tempDiv.innerHTML = htmlContent;
+  tempDiv.innerHTML = contentWithoutImages;
 
-  let preview = "";
-  const firstParagraph = tempDiv.querySelector("p");
-
-  if (firstParagraph) {
-    preview = firstParagraph.textContent || "";
-  } else {
-    preview = tempDiv.textContent || "";
-  }
+  // Get only text content
+  let preview = tempDiv.textContent || "";
 
   if (preview.length > MAX_PREVIEW_LENGTH) {
     preview = preview.substring(0, MAX_PREVIEW_LENGTH).trim() + "...";
