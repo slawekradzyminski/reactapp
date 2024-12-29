@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { Container, Box } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import blogIndex from "../../data/blog/index.json";
@@ -9,6 +9,7 @@ import { BlogEntry } from "./BlogEntry";
 import { BlogPagination } from "./BlogPagination";
 import { NoPostsFound } from "./NoPostsFound";
 import { YearlyArchive } from "./YearlyArchive";
+import { MobileCategoryChip } from "./MobileCategoryChip";
 import "./BlogList.css";
 
 const POSTS_PER_PAGE = 5;
@@ -79,11 +80,23 @@ const BlogList = () => {
     setSearchParams(newSearchParams);
   };
 
+  const clearCategory = () => {
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.delete('category');
+    newSearchParams.set('page', '1');
+    setSearchParams(newSearchParams);
+  };
+
   return (
     <Container maxWidth="lg">
       <BlogListHeader 
         searchTerm={searchTerm} 
         onSearchChange={handleSearchChange}
+      />
+      
+      <MobileCategoryChip 
+        category={currentCategory}
+        onClear={clearCategory}
       />
       
       <Grid container spacing={3}>
