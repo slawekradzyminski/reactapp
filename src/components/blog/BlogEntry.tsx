@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Paper, Typography, Box } from "@mui/material";
+import { Paper, Typography, Box, Tooltip } from "@mui/material";
 import { Category as CategoryIcon } from "@mui/icons-material";
 
 interface BlogPost {
@@ -60,31 +60,33 @@ export const BlogEntry = ({ post, onCategoryClick }: BlogEntryProps) => {
 
         <Box className="blog-entry-meta">
           {post.category && (
-            <Box
-              className="blog-entry-section"
-              component="span"
-              onClick={(e) => {
-                e.preventDefault();
-                onCategoryClick(e, post.category);
-              }}
-              sx={{
-                cursor: "pointer",
-                textDecoration: "none",
-                color: "inherit",
-                display: "flex",
-                alignItems: "center",
-                "&:hover": {
-                  color: "primary.main",
-                  "& .MuiSvgIcon-root": {
+            <Tooltip title="Click to find all posts in this category" arrow>
+              <Box
+                className="blog-entry-section"
+                component="span"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onCategoryClick(e, post.category);
+                }}
+                sx={{
+                  cursor: "pointer",
+                  textDecoration: "none",
+                  color: "inherit",
+                  display: "flex",
+                  alignItems: "center",
+                  "&:hover": {
                     color: "primary.main",
+                    "& .MuiSvgIcon-root": {
+                      color: "primary.main",
+                    },
                   },
-                },
-              }}
-            >
-              <CategoryIcon fontSize="small" color="action" />
-              <span className="blog-entry-section-label">Category:</span>
-              <span>{post.category}</span>
-            </Box>
+                }}
+              >
+                <CategoryIcon fontSize="small" color="action" />
+                <span className="blog-entry-section-label">Category:</span>
+                <span>{post.category}</span>
+              </Box>
+            </Tooltip>
           )}
         </Box>
       </Paper>
