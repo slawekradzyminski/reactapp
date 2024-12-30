@@ -17,7 +17,10 @@ describe('DisplayedBookCards', () => {
       const bookCard = screen.getByText(book.title).closest('[data-testid="book-card"]');
       expect(bookCard).toBeInTheDocument();
       expect(bookCard).toHaveTextContent(book.title);
-      expect(bookCard).toHaveTextContent(book.description);
+      
+      // Check that the description is included in the content
+      const cardText = bookCard?.textContent || '';
+      expect(cardText).toContain(book.description);
     });
   });
 });

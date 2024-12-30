@@ -1,9 +1,13 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 import useBookLoader from './useBookLoader'
 import books from '../data/books.json'
 
 describe('useBookLoader', () => {
+  beforeEach(() => {
+    vi.spyOn(Math, 'random').mockRestore();
+  });
+
   it('should initialize with correct number of books', () => {
     // given
     const { result } = renderHook(() => useBookLoader(10))
@@ -120,4 +124,34 @@ describe('useBookLoader', () => {
     expect(result.current.displayedBooks).toHaveLength(10)
     expect(result.current.hasMore).toBe(true)
   })
+
+  it('should maintain stable order between renders with same search term', () => {
+    // given
+    const { result, rerender } = renderHook(() => useBookLoader(books.length));
+    const firstOrder = result.current.displayedBooks.map(book => book.title);
+    
+    // when
+    rerender();
+    const secondOrder = result.current.displayedBooks.map(book => book.title);
+
+    // then
+    expect(firstOrder).toEqual(secondOrder);
+  });
+
+  it('should potentially reorder books when search term changes', () => {
+    // given
+    const { result } = renderHook(() => useBookLoader(books.length));
+    const initialOrder = result.current.displayedBooks.map(book => book.title);
+    
+    // when - change search term to trigger memoization
+    act(() => {
+      result.current.setSearchTerm('a');
+    });
+    
+    const filteredOrder = result.current.displayedBooks.map(book => book.title);
+    
+    // then - filtered results should be in potentially different order
+    expect(filteredOrder.length).toBeLessThan(initialOrder.length);
+    expect(filteredOrder.every(title => initialOrder.includes(title))).toBe(true);
+  });
 })

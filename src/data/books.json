@@ -346,5 +346,35 @@
     "link": "https://amzn.to/48gtv8l",
     "path": "downloaded_covers/How_Google_Tests_Software.jpg",
     "description": "\"How Google Tests Software\" is a comprehensive guide written by legendary testing expert James Whittaker and two top Google experts. The book provides insights into how Google tests software and offers a plethora of new best practices applicable regardless of your organization's size. From risk analysis and test planning to implementing a variety of testing methods, tracking issues, creating tools and more, you'll discover practical and scalable techniques to streamline your testing process and boost your organization's productivity."
+  },
+  {
+    "title": "AI Engineering: Building Applications with Foundation Models",
+    "link": "https://amzn.to/3PisVyi",
+    "path": "downloaded_covers/AI_Engineering:_Building_Applications_with_Foundation_Models.jpg",
+    "description": "AI Engineering by Chip Huyen offers a comprehensive look into the process of building effective AI applications using readily available foundation models. It explores the divergence from traditional machine learning engineering and underpins the new AI stack. The importance of model evaluations is stressed upon, highlighting potential approaches like the AI-as-a-judge method. It provides a clear roadmap for application developers to navigate in the ever-growing AI landscape, as well as techniques to overcome latency and cost bottlenecks. The book also outlines various model adaptation tactics and their functionality. This informative guide is useful for individuals with or without prior AI experience and complements Huyen's previous book, Designing Machine Learning Systems.\n"
+  },
+  {
+    "title": "Grokking Artificial Intelligence Algorithms",
+    "link": "https://amzn.to/4gTw6IH",
+    "path": "downloaded_covers/Grokking_Artificial_Intelligence_Algorithms:_Understand_and_apply_the_core_algorithms_of_deep_learning_and_artificial_intelligence_in_this_friendly_illustrated_guide_including_exercises_and_examples.jpg",
+    "description": "\"Grokking Artificial Intelligence Algorithms,\" written by tech expert and AI group founder Rishal Hurbans, aims to teach software developers the fundamental concepts of AI. The book communicates essential development comprehension, featuring hands-on coding exercises and illustrations for complete understanding. Developers will learn to utilize different AI algorithms for applications like spotting fraud, interpreting text, and image recognition. Use cases for AI, intelligent search for decision making, biologically inspired algorithms, machine learning, and neural networks are thoroughly discussed, with simple language used to teach these complex concepts. This educational read is meant to guide the journey of aspiring AI application builders with high school-level math skills."
+  },
+  {
+    "title": "Quick Start Guide to Large Language Models: Strategies and Best Practices for Using ChatGPT and Other LLMs (Addison-Wesley Data & Analytics Series)",
+    "link": "https://amzn.to/3W0Mz5X",
+    "path": "downloaded_covers/Quick_Start_Guide_to_Large_Language_Models:_Strategies_and_Best_Practices_for_Using_ChatGPT_and_Other_LLMs_(Addison_Wesley_Data_&_Analytics_Series).jpg",
+    "description": "In \"Quick Start Guide to Large Language Models,\" Sinan Ozdemir provides a comprehensive resource for navigating the world of Large Language Models (LLMs). Despite their complexity, Ozdemir explains how to effectively apply LLMs on a large scale. This easy-to-follow guide provides step-by-step instructions for integrating and deploying LLMs, resources for customization to suit specific requirements, and insight into optimizing performance. This pioneering guide covers key models from OpenAI, Google, EleutherAI, Cohere, and Meta. It not only equips readers with the knowledge needed to understand LLMs' inner workings but also practical application strategies, including creating information retrieval systems, prompt engineering techniques, and aligning LLMs using Reinforcement Learning. Whether you're a beginner or seasoned practitioner, this book serves as an essential tool to leverage the full potential of LLMs."
+  },
+  {
+    "title": "Prompt Engineering for Generative AI: Future-Proof Inputs for Reliable AI Outputs",
+    "link": "https://amzn.to/3VWy4Qo",
+    "path": "downloaded_covers/Prompt_Engineering_for_Generative_AI:_Future_Proof_Inputs_for_Reliable_AI_Outputs.jpg",
+    "description": "This book, authored by James Phoenix and Mike Taylor, offers a comprehensive understanding of generative AI, particularly large language models (LLMs) and diffusion models like ChatGPT and Stable Diffusion. Readers will learn how to leverage these largely unexplored resources and apply them in automation tasks previously not considered suitable for such technology. The authors introduce and detail a set of principles called prompt engineering, enabling developers to optimize AI for their applications efficiently. The book illuminates the working of AI models, from the fundamentals of interaction chains to the transformation of application problems into document completion problems in the training domain. It also covers the impact of LLM and diffusion model architecture and their application in natural language processing, text and image generation, and code."
+  },
+  {
+    "title": "Software Testing with Generative AI",
+    "link": "https://amzn.to/3PfEmXs",
+    "path": "downloaded_covers/Software_Testing_with_Generative_AI.jpg",
+    "description": "\"Software Testing with Generative AI\" is a comprehensive guide by Mark Winteringham that illustrates how to enhance, expand and automate software testing using Large Language Model-based AI tools. The book offers umpteen strategies to improve test capacity, quality, automation, and formulate new ideas during testing. With the use of AI tools such as Copilot, ChatGPT, and OpenAI API, developers, testers and quality engineers can learn to generate synthetic testing data, receive personalized feedback, and customize Large Language Models to suit their business needs. The book includes practical suggestions and exercises, making it a valuable resource for those looking to speed up testing processes and enhance the overall quality of their software."
   }
 ]

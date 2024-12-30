@@ -2,15 +2,25 @@ import { useState, useEffect, useMemo } from "react";
 import books from "../data/books.json";
 import { Book } from "../types/domain";
 
+const shuffleArray = <T>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 const useBookLoader = (booksPerLoad: number) => {
   const [displayedBooks, setDisplayedBooks] = useState<Book[]>([]);
   const [hasMore, setHasMore] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredBooks = useMemo(() => {
-    return books.filter((book) =>
+    const filtered = books.filter((book) =>
       book.title.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    return shuffleArray(filtered);
   }, [searchTerm]);
 
   useEffect(() => {
