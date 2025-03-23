@@ -1,5 +1,13 @@
 [
   {
+    "id": "2025-03-23-testing-localstack",
+    "title": "A Comprehensive Local Testing Stack to Hone Your Skills",
+    "date": "2025-03-23",
+    "category": "Testing",
+    "permalink": "/2025/03/comprehensive-local-testing-stack",
+    "preview": "Among the many tools released in recent years, a robust local environment for testing and experimentation has remained surprisingly elusive. This post introduces a brand-new local testing stack that's both easy to run and advanced enough to challenge testers of all skill levels. One frequent struggle for testers is finding an application that's complex enough to simulate real-world conditions yet..."
+  },
+  {
     "id": "2024-12-08-from-live-suggestions",
     "title": "From Live Suggestions to Agents: Exploring AI-Powered IDEs",
     "date": "2024-12-08",
