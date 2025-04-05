@@ -25,7 +25,8 @@ Thankfully, in Chrome errors can be captured and I encourage you to do it in you
 
 To show this feature in action we need to prepare tests. I'm going to use my own blog as an example of a site not reporting any console errors. In order to make failing example deterministic I created a custom broken site.
 
-{% highlight xml %}
+```xml
+
 <html>
 <head>
     <title>Page</title>
@@ -36,11 +37,13 @@ To show this feature in action we need to prepare tests. I'm going to use my own
 <img src="https://nonexisting.url">
 </body>
 </html>
-{% endhighlight %}
+
+```
 
 As usual, tests are written using [FluentLenium](https://fluentlenium.com/).
 
-{% highlight java %}
+```java
+
 @Test
 public void pageHopefullyWithoutErrors() {
 goTo(awesomeTestingPage);
@@ -50,13 +53,15 @@ goTo(awesomeTestingPage);
     public void pageWithErrors() throws URISyntaxException {
         goToFileInResources("pageWithError.html");
     }
-{% endhighlight %}
+
+```
 
 **Demo**
 
 Capturing console log errors is pretty easy. You only need one method
 
-{% highlight java %}
+```java
+
 
     @After
     public void verifyConsoleErrors() {
@@ -71,7 +76,8 @@ Capturing console log errors is pretty easy. You only need one method
             fail(errorLogs.size() + " Console error found");
         }
     }
-{% endhighlight %}
+
+```
 
 And as you can see on the image below error was reported.
 

@@ -30,7 +30,8 @@ You can write Gatling tests in popular JVM languages (Java, Scala & Kotlin).
 
 Here is an example of a simple load test in Java using Gatling for a REST API endpoint that returns JSON:
 
-{% highlight scala %}
+```scala
+
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
@@ -53,7 +54,8 @@ class SimpleLoadTest extends Simulation {
     ).protocols(httpConf)
   )
 }
-{% endhighlight %}
+
+```
 
 In this example, the test sends a GET request to the endpoint "/api/endpoint" on the localhost at port 8080, and expects a 200 OK response with a JSON body containing a key-value pair where the key is "key" and the value is "value". The test will run for 10 seconds and will gradually ramp up to 10 users per second.
 
@@ -61,7 +63,8 @@ In this example, the test sends a GET request to the endpoint "/api/endpoint" on
 
 Here is an example of a simple load test in Java using Gatling's core API for a REST API endpoint that returns JSON:
 
-{% highlight java %}
+```java
+
 import io.gatling.core.Predef;
 import io.gatling.core.scenario.Simulation;
 import io.gatling.core.structure.ScenarioBuilder;
@@ -87,7 +90,8 @@ public class SimpleLoadTest extends Simulation {
         );
     }
 }
-{% endhighlight %}
+
+```
 
 This test sends a GET request to the endpoint "/api/endpoint" on the localhost at port 8080, and expects a 200 OK response with a JSON body containing a key-value pair where the key is "key" and the value is "value". The test will run for 10 seconds and will gradually ramp up to 10 users per second.
 

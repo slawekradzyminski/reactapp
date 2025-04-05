@@ -57,7 +57,8 @@ For Android I have covered:
 - Text input via classic API and [adb](https://developer.android.com/studio/command-line/adb)
 - Screenshot taking example
 
-{% highlight java %}
+```java
+
 public class AndroidSwiftNotesApp extends ExampleFluentTest {
 
     private static final String SAMPLE_TITLE = "SampleTitle";
@@ -93,7 +94,8 @@ public class AndroidSwiftNotesApp extends ExampleFluentTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 **6\. iOS tests overview**
 
@@ -103,7 +105,8 @@ For iOS I have covered:
 - Text input via classic API
 - Screenshot taking example
 
-{% highlight java %}
+```java
+
 public class IosUITestDemo extends ExampleFluentTest {
 
     @Page
@@ -132,6 +135,7 @@ public class IosUITestDemo extends ExampleFluentTest {
         FileUtils.copyFile(file, new File("Screenshot.jpg"));
     }
 }
-{% endhighlight %}
+
+```
 
 Enjoy and have fun :)

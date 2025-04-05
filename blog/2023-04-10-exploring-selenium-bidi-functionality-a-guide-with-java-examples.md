@@ -59,7 +59,8 @@ These advanced functionalities offered by CDP can provide valuable insights into
 
 The code snippet provided demonstrates how to mock an HTTP request using Selenium, specifically by intercepting a request triggered by clicking on a "here" link in the application being tested. Here's a step-by-step explanation of how the mocking process works in this example:
 
-{% highlight java %}
+```java
+
 @SuppressWarnings("resource")
 private void mockRequestWhichIsTriggeredByClickingOnHereLink() {
     new NetworkInterceptor(
@@ -71,7 +72,8 @@ private void mockRequestWhichIsTriggeredByClickingOnHereLink() {
                 .setContent(utf8String(MOCKED_RESPONSE)))
     );
 }
-{% endhighlight %}
+
+```
 
 a) First, a new instance of _NetworkInterceptor_ is created, which is responsible for intercepting and manipulating network requests and responses in the browser session controlled by the Selenium driver.
 
@@ -87,7 +89,8 @@ When this method is executed, any request matching the specified route will be i
 
 The whole test looks like this:
 
-{% highlight java %}
+```java
+
 public class NetworkInterceptorTest extends LocalTest {
 
     private static final String MOCKED_RESPONSE = "That's mocked response";
@@ -119,13 +122,15 @@ public class NetworkInterceptorTest extends LocalTest {
         );
     }
 }
-{% endhighlight %}
+
+```
 
 ### Listening to javascript errors in console
 
 The code snippet provided demonstrates how to listen for JavaScript errors in the browser console using Selenium and the Chrome DevTools Protocol (CDP). Below is an explanation of each part of the code snippet:
 
-{% highlight java %}
+```java
+
 import static org.awaitility.Awaitility.await;
 
 public class JavascriptExceptionLoggerTest extends LocalTest {
@@ -148,7 +153,8 @@ public class JavascriptExceptionLoggerTest extends LocalTest {
         await().until(() -> jsExceptionsList.size() > 0);
     }
 }
-{% endhighlight %}
+
+```
 
 a) Import the necessary classes and packages, including _org.awaitility.Awaitility.await_ for waiting for a condition to be met before proceeding in the test.
 
@@ -173,7 +179,8 @@ By following these steps, the JavascriptExceptionLoggerTest class will listen fo
 
 The provided code snippet demonstrates how to gather performance metrics for a web application using Selenium and the Chrome DevTools Protocol (CDP). Here's a step-by-step explanation of the code:
 
-{% highlight java %}
+```java
+
 public class PerformanceMetricsTest extends LocalTest {
 
     private List<Metric> metricList;
@@ -200,7 +207,8 @@ public class PerformanceMetricsTest extends LocalTest {
         assertThat(metric.getValue().longValue()).isGreaterThanOrEqualTo(0);
     }
 }
-{% endhighlight %}
+
+```
 
 a) Define a new class called _PerformanceMetricsTest_ that extends a base test class named _LocalTest_. This base class is assumed to set up the Selenium WebDriver and other required configurations.
 
@@ -258,7 +266,8 @@ One notable example of WebDriver BiDi's capabilities is its complete logging API
 
 The following tests show how to do it:
 
-{% highlight java %}
+```java
+
 public class LogInspectorTest extends LocalFirefoxTest {
 
     private static final String SELENIUM_CUSTOM_PAGE = "https://www.selenium.dev/selenium/web/bidi/logEntryAdded.html";
@@ -347,7 +356,8 @@ public class LogInspectorTest extends LocalFirefoxTest {
         assertThat(javascriptLogEntry.getStackTrace().getCallFrames()).hasSize(4);
     }
 }
-{% endhighlight %}
+
+```
 
 The _LogInspectorTest_ class contains four test cases that demonstrate how to listen to and capture different types of log entries in a web application using WebDriver BiDi. The test cases are designed to work with Firefox, as indicated by the LocalFirefoxTest base class. The tests interact with a custom Selenium page containing buttons to trigger different types of log entries.
 

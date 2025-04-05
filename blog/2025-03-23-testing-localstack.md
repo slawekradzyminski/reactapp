@@ -85,9 +85,11 @@ Access the code here: [awesome-localstack](https://github.com/slawekradzyminski/
 
 ### Spin Up the Full Stack
 
-{% highlight bash %}
+```bash
+
 docker compose up
-{% endhighlight %}
+
+```
 
 All containers—backend, frontend, database, broker, monitoring, local language-model service, etc.—will start.
 
@@ -103,9 +105,11 @@ All containers—backend, frontend, database, broker, monitoring, local language
 
 ### Spin Up the Lightweight Stack
 
-{% highlight bash %}
+```bash
+
 docker compose -f lightweight-docker-compose.yml up
-{% endhighlight %}
+
+```
 
 ### Check Your Services
 

@@ -38,7 +38,8 @@ Given the current landscape, it’s unlikely that Sorry Cypress will return. The
 
 With an understanding of how parallel execution works in Cypress Cloud, you can create a custom solution to split tests across multiple jobs. In the example below, we use a custom GitLab CI template to run Cypress tests in two separate jobs. A simple shell script splits the tests into two groups (files starting with `a-n` and `o-z`) and runs them in parallel by passing a custom list of specs to the [Cypress CLI](https://docs.cypress.io/guides/guides/command-line). You can adjust this setup further by splitting tests into more jobs, depending on the number of runners available in your CI environment.
 
-{% highlight yaml %}
+```yaml
+
 .frontend-ui-tests-template:
   image: cypress/base:20.18.0
   stage: test
@@ -63,7 +64,8 @@ frontend UI tests part 2:
   extends: .frontend-ui-tests-template
   variables:
     TEST_PATTERN: "[o-z]"
-{% endhighlight %}
+
+```
 
 The only downside of this approach is the lack of a consolidated test report. If a single report is necessary, consider using the [junit reporter](https://www.browserstack.com/docs/test-management/upload-reports-cli/frameworks/cypress) along with [junit-report-merger](https://www.npmjs.com/package/junit-report-merger) to generate a summary report.
 
@@ -77,7 +79,8 @@ In yet another chapter of the ongoing Cypress drama, the main figure is Gleb Bah
 
 Fortunately for us, Gleb has created a [cypress-split](https://www.npmjs.com/package/cypress-split) plugin, which allows you to split tests into smaller chunks and run them in parallel. The plugin offers similar functionality to the handcrafted spec-splitting example mentioned earlier but is more sophisticated and user-friendly. Here’s how you can configure it in a GitLab CI pipeline:
 
-{% highlight yaml %}
+```yaml
+
 frontend cypress tests:
   image: cypress/base:20.18.0
   stage: test
@@ -91,11 +94,13 @@ frontend cypress tests:
     paths:
       - frontend/cypress/screenshots/*
     expire_in: 4 hours
-{% endhighlight %}
+
+```
 
 The number of code modification is minimal. You just need to install it via `npm i -D cypress-split` and modify `cypress.config.ts` to enable the plugin:
 
-{% highlight javascript %}
+```javascript
+
 const { defineConfig } = require('cypress')
 const cypressSplit = require('cypress-split')
 
@@ -107,7 +112,8 @@ module.exports = defineConfig({
     },
   },
 })
-{% endhighlight %}
+
+```
 
 There are two potential downsides to this approach:
 

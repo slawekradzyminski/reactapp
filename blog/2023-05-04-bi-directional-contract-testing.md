@@ -139,7 +139,8 @@ The CDCT process consists of five distinct phases:
 
 In this phase, consumers create contracts that define their expectations regarding the API they are consuming. This step requires writing custom code in all consumer codebases, which specifies the expected behavior of the provider's API.
 
-{% highlight java %}
+```java
+
 public class BasicOkTest extends AbstractPactTest {
 
     @Override
@@ -173,7 +174,8 @@ public class BasicOkTest extends AbstractPactTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 **2. Publishing the contract to a third-party application - Pact Broker**
 
@@ -187,7 +189,8 @@ The contracts are then shared with the provider, ensuring that both parties have
 
 In this phase, the provider verifies that their implementation meets the expectations outlined in the contract. This step requires writing custom code on the provider side, which validates that the API behaves as expected according to the contract. The contract testing tool utilizes Wiremock to simulate the interactions defined in the contract, allowing the provider to verify the correctness of their implementation.
 
-{% highlight java %}
+```java
+
 @RunWith(SpringRestPactRunner.class)
 @Provider("ExampleProvider")
 @PactBroker(host = "localhost", port = "9292", tags = {"master"})
@@ -211,7 +214,8 @@ public class ProviderContractTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 **5. Publishing the results back to the Pact Broker and verifying the contract**
 
@@ -303,7 +307,8 @@ This demonstrates that BiDirectional Contract Tests have the power to identify b
 
 Provider contract can be uploaded using the [publish-provider-contract](https://docs.pactflow.io/docs/bi-directional-contract-testing/contracts/oas#publishing) Pact CLI command. Pactflow assumes that the Provider OpenAPI specification has been unit tested hence the requirement to provide verification result file.
 
-{% highlight yml %}
+```yml
+
 pactflow publish-provider-contract ./openapi.json \
 --broker-token=TOKEN \
 --broker-base-url=https://awesome-testing.pactflow.io \
@@ -315,7 +320,8 @@ pactflow publish-provider-contract ./openapi.json \
 --verification-success \
 --verifier self-verification \
 --verbose
-{% endhighlight %}
+
+```
 
 ### Consumer
 
@@ -323,7 +329,8 @@ The consumer has been entirely created by me, and the code is available here: [h
 
 I integrate with Bezkoder's Provider using a dummy /all endpoint, which essentially acts as a proxy:
 
-{% highlight java %}
+```java
+
 @RestController
 public class ApiController {
 @Autowired
@@ -334,11 +341,13 @@ TutorialClient tutorialClient;
         return tutorialClient.getAll();
     }
 }
-{% endhighlight %}
+
+```
 
 In order to test this endpoint, I have to use Wiremock to stub Bezkoder's API:
 
-{% highlight java %}
+```java
+
 @Test
 void shouldGeneratePactInTargetPactsFolder() throws Exception {
     wiremock.stubFor(WireMock.get(urlEqualTo("/api/tutorials")).willReturn(aResponse()
@@ -359,23 +368,27 @@ void shouldGeneratePactInTargetPactsFolder() throws Exception {
             .andExpect(jsonPath("$[0].description", is("blablabla")))
             .andExpect(jsonPath("$[0].published", is(true)));
 }
-{% endhighlight %}
+
+```
 
 I assume that your consumers already have similar code (you may mock the HTTP layer using Cypress or Playwright, but the flow is the same).
 
 Now we only need to add the custom Wiremock Pact creator dependency:
 
-{% highlight xml %}
+```xml
+
 <dependency>
     <groupId>com.atlassian.ta</groupId>
     <artifactId>wiremock-pact-generator</artifactId>
     <version>2.5.0</version>
 </dependency>
-{% endhighlight %}
+
+```
 
 And configure a listener for the Wiremock Server:
 
-{% highlight java %}
+```java
+
 @BeforeAll
 static void setupClass() {
     wiremock.addMockServiceRequestListener(
@@ -385,7 +398,8 @@ static void setupClass() {
     );
     wiremock.start();
 }
-{% endhighlight %}
+
+```
 
 At this point, after running the tests, the consumer contract file is created in the `target/pacts` folder. I upload it to Pactflow using the `pact-jvm-provider-maven` library via the `./mvnw pact:publish` command.
 

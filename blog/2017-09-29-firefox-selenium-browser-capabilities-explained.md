@@ -24,7 +24,8 @@ Before I delve deeper into headless mode (which I'll publish this month) let me 
 
 As you probably already know at first you need to [download geckodriver](https://github.com/mozilla/geckodriver/releases). On Mac it can be done be very quickly using [brew](https://brew.sh/index_pl.html).
 
-{% highlight java %}
+```java
+
     private static final String MY_GECKO_PATH = "C:\\drivers\\geckodriver.exe";
 
     @BeforeTest
@@ -33,7 +34,8 @@ As you probably already know at first you need to [download geckodriver](https:/
             System.setProperty("webdriver.gecko.driver", MY_GECKO_PATH);
         }
     }
-{% endhighlight %}
+
+```
 
 Windows users have to also set gecko property (it's done automatically by brew on Mac).
 
@@ -41,7 +43,8 @@ Windows users have to also set gecko property (it's done automatically by brew o
 
 Using Firefox browser capabilities looks exactly as in Chrome. I'm sure my readers are already very familiar with how I handle capabilities. The code almost like copy/paste from my Chrome examples.
 
-{% highlight java %}
+```java
+
     private static final String HOMEPAGE_KEY = "browser.startup.homepage";
     private static final String HOMEPAGE_VALUE = "www.google.pl";
 
@@ -63,7 +66,8 @@ Using Firefox browser capabilities looks exactly as in Chrome. I'm sure my reade
         options.setLogLevel(Level.WARNING);
         return options;
     }
-{% endhighlight %}
+
+```
 
 Thankfully we no longer have to rely on flaky Firefox Profile solution. What's even better, especially comparing to Chrome, is documentation. [GeckoDriver GitHub page](https://github.com/mozilla/geckodriver) have it covered very well. I encourage you to take a look.
 

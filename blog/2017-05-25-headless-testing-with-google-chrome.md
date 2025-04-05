@@ -41,7 +41,8 @@ Turns out, all you need to do is add 'headless' option into Chrome BrowserCapabi
 
 Test:
 
-{% highlight java %}
+```java
+
 public class HeadlessChromeTest extends HeadlessChromeConfig {
 
     private static final String URL = "https://resttesttest.com/";
@@ -66,11 +67,13 @@ public class HeadlessChromeTest extends HeadlessChromeConfig {
     };
 
 }
-{% endhighlight %}
+
+```
 
 ChromeDriver runner:
 
-{% highlight java %}
+```java
+
 public class HeadlessChromeConfig extends FluentTestNg {
 
     private static final String HEADLESS = "headless";
@@ -99,7 +102,8 @@ public class HeadlessChromeConfig extends FluentTestNg {
     }
 
 }
-{% endhighlight %}
+
+```
 
 Try it on your own. You should see no GUI and the test should pass. Now comment out line 24 (adding 'headless' switch) and you should see real Chrome.
 

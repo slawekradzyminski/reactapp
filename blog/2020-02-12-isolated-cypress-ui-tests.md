@@ -41,13 +41,16 @@ We need to do two things:
 
 Cypress seems to be build-in having stubbing in mind. We only need two lines and static object to stub GET requests in cypress:
 
-{% highlight javascript %}
+```javascript
+
 cy.server();
 cy.route('/users/1', firstUser);
 view raw
-{% endhighlight %}
 
-{% highlight javascript %}
+```
+
+```javascript
+
 export const firstUser = {
     "id": 1,
     "firstName": "Slawomir",
@@ -56,7 +59,8 @@ export const firstUser = {
     "salary": 666,
     "age": 66
 };
-{% endhighlight %}
+
+```
 
 cy.server() needs to be called only once. It enables custom cy.route() stubbing for test. As you can see stubbing GET requests requires providing a response body only. Of course, you can also provide custom headers, delays, etc. Details in the [command documentation](https://docs.cypress.io/api/commands/route.html#Options).
 
@@ -66,43 +70,52 @@ I assume you have successfully installed Cypress and [run the first test](https:
 
 So let's get started with my application tests. I usually define the most useful get stubs in custom command and run them before each test:
 
-{% highlight javascript %}
+```javascript
+
     beforeEach(() => {
         cy.prepareBackend();
         cy.visit('/');
     });
-{% endhighlight %}
+
+```
 
 To define your custom commands you need to implement them:
 
-{% highlight javascript %}
+```javascript
+
 Cypress.Commands.add("prepareBackend", () => {
     cy.server();
     cy.route('/users', usersJson);
     cy.route('/users/1', firstUser);
     cy.route('/users/2', secondUser);
 });
-{% endhighlight %}
+
+```
 
 And import in index.js file:
 
-{% highlight javascript %}
+```javascript
+
 import './commands'
-{% endhighlight %}
+
+```
 
 Optionally, for better IDE support, you may want to define this command in index.d.ts TypeScript file.
 
-{% highlight javascript %}
+```javascript
+
 declare namespace Cypress {
     interface Chainable {
         prepareBackend(): Chainable
     }
 }
-{% endhighlight %}
+
+```
 
 Having all that in place we can verify that our front page displays data properly:
 
-{% highlight javascript %}
+```javascript
+
     it('should have proper data displayed', () => {
         const numberOfUsers = usersJson.length;
         for (let i = 0; i < numberOfUsers; i++) {
@@ -115,7 +128,8 @@ Having all that in place we can verify that our front page displays data properl
             })
         }
     });
-{% endhighlight %}
+
+```
 
 ## Demo - asserting outgoing requests
 
@@ -123,18 +137,21 @@ When it comes to asserting that our frontend app builds and sends correct reques
 
 At first, we need to make sure that our fake backend will respond in the desired way (usually HTTP 200). The request should be tagged in .as() so we can access and verify it later.
 
-{% highlight javascript %}
+```javascript
+
         cy.route({
             url: '/users/1',
             method: 'PUT',
             status: 200,
             response: {}
         }).as('updateUser');
-{% endhighlight %}
+
+```
 
 So in a test, we would edit the existing user and override its data to the following:
 
-{% highlight javascript %}
+```javascript
+
     const testData = {
         userName: 'sampleLogin',
         firstName: 'John',
@@ -142,11 +159,13 @@ So in a test, we would edit the existing user and override its data to the follo
         age: 19,
         salary: 99999
     };
-{% endhighlight %}
+
+```
 
 We click on the first edit button, override data and save changes:
 
-{% highlight javascript %}
+```javascript
+
 cy.get('[name=edit] svg').first().click();
 cy.get('[name=userName').clear().type(testData.userName);
 cy.get('[name=firstName').clear().type(testData.firstName);
@@ -154,11 +173,13 @@ cy.get('[name=lastName').clear().type(testData.lastName);
 cy.get('[name=age').clear().type(testData.age);
 cy.get('[name=salary').clear().type(testData.salary);
 cy.get('button.MuiButton-containedPrimary').click();
-{% endhighlight %}
+
+```
 
 And now the clue. Here is how to assert outgoing request:
 
-{% highlight javascript %}
+```javascript
+
         cy.wait('@updateUser').should((xhr) => {
             let body = xhr.request.body;
             expect(body.id).to.equal(firstUser.id);
@@ -168,7 +189,8 @@ And now the clue. Here is how to assert outgoing request:
             expect(body.age).to.equal(testData.age.toString());
             expect(body.salary).to.equal(testData.salary.toString());
         });
-{% endhighlight %}
+
+```
 
 ## Fetch API and Cypress
 
@@ -185,7 +207,8 @@ Your application would think that its making Fetch requests and you will be able
 
 Hack implementation is here:
 
-{% highlight javascript %}
+```javascript
+
 //  See: https://github.com/cypress-io/cypress/issues/95
 enableFetchWorkaround();
 
@@ -205,21 +228,26 @@ function enableFetchWorkaround() {
         win.fetch = win.unfetch
     })
 }
-{% endhighlight %}
+
+```
 
 Now you only need to import this hack in index.js:
 
-{% highlight javascript %}
+```javascript
+
 import './hooks'
-{% endhighlight %}
+
+```
 
 And copy/paste fetch polyfill:
 
-{% highlight javascript %}
+```javascript
+
 // https://unpkg.com/unfetch@4.1.0/dist/unfetch.umd.js
 
 !function(e,n){"object"==typeof exports&&"undefined"!=typeof module?module.exports=n():"function"==typeof define&&define.amd?define(n):e.unfetch=n()}(this,function(){return function(e,n){return n=n||{},new Promise(function(t,o){var r=new XMLHttpRequest,s=[],u=[],i={},f=function(){return{ok:2==(r.status/100|0),statusText:r.statusText,status:r.status,url:r.responseURL,text:function(){return Promise.resolve(r.responseText)},json:function(){return Promise.resolve(JSON.parse(r.responseText))},blob:function(){return Promise.resolve(new Blob([r.response]))},clone:f,headers:{keys:function(){return s},entries:function(){return u},get:function(e){return i[e.toLowerCase()]},has:function(e){return e.toLowerCase()in i}}}};for(var a in r.open(n.method||"get",e,!0),r.onload=function(){r.getAllResponseHeaders().replace(/^(.*?):[^\S\n]*([\s\S]*?)$/gm,function(e,n,t){s.push(n=n.toLowerCase()),u.push([n,t]),i[n]=i[n]?i[n]+","+t:t}),t(f())},r.onerror=o,r.withCredentials="include"==n.credentials,n.headers)r.setRequestHeader(a,n.headers[a]);r.send(n.body||null)})}});
-{% endhighlight %}
+
+```
 
 Working application with the following tests can be found here:
 

@@ -20,7 +20,8 @@ To get started with Supertest, you will first need to install it as a dependency
 
 For example, you can use the **_.get()_** method to send a GET request to your server and assert that the response has the correct status code and contains the expected data.
 
-{% highlight javascript %}
+```javascript
+
 const request = require('supertest');
 const app = require('./app');
 
@@ -32,7 +33,8 @@ describe('GET /', () => {
     expect(res.body).toEqual({ message: 'Welcome to my API!' });
   });
 });
-{% endhighlight %}
+
+```
 
 In this example, the **_request(app)_** function creates a new Supertest object that is bound to our Express app, which allows us to make requests to the app's routes. The **_.get('/')_** method sends a GET request to the root route of the app and returns a promise that resolves to the response object.
 

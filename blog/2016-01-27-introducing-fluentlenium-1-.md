@@ -23,14 +23,16 @@ _As a logged in [Technology Books](https://www.facebook.com/groups/booksIT/) adm
 
 So let's get started. At first, we need to add Maven dependency for our project. I'm going to use TestNG because of it's [powerful annotations](http://www.softwaretestinghelp.com/testng-annotations-in-selenium/):
 
-{% highlight xml %}
+```xml
+
 <dependency>
     <groupId>org.fluentlenium</groupId>
     <artifactId>fluentlenium-testng</artifactId>
     <version>1.0.0</version>
     <scope>test</scope>
 </dependency>
-{% endhighlight %}
+
+```
 
 Having [Page Object Pattern](http://martinfowler.com/bliki/PageObject.html) in mind we need to code the following things:
 
@@ -48,7 +50,8 @@ Having [Page Object Pattern](http://martinfowler.com/bliki/PageObject.html) in m
 
 So FacebookLoggedOutPage.class may look like this:
 
-{% highlight java %}
+```java
+
 package org.fluentlenium.sample.pages;
 
 import org.fluentlenium.core.FluentPage;
@@ -76,18 +79,22 @@ import org.fluentlenium.core.FluentPage;
   }
 
 }
-{% endhighlight %}
+
+```
 
 **2**. Now we need a way to store our user credentials locally. To achieve that we need users.properties file. Obviously, I didn't share my credentials here
 
-{% highlight properties %}
+```properties
+
 email=www.awesome-testing.blogspot.com
 password=wwww.awesome-bookreviews.blogspot.com
-{% endhighlight %}
+
+```
 
 And LoadProperties method which loads them to our code:
 
-{% highlight java %}
+```java
+
 package org.fluentlenium.sample.support;
 
 import java.io.FileInputStream;
@@ -112,14 +119,16 @@ import java.util.Properties;
   }
 
 }
-{% endhighlight %}
+
+```
 
 **3**. We are ready for the authentication method which will log in our admin to Facebook. Note how intuitive the syntax is and how easy the code looks
 
-{% highlight java %}
+```java
+
 
    private FacebookLoggedOutPage fbLogOutPage;
-   
+
    @BeforeMethod
     public void authenticate() {
         fbLogOutPage = createPage(FacebookLoggedOutPage.class);
@@ -127,11 +136,13 @@ import java.util.Properties;
         fbLogOutPage.login(EMAIL, PASSWORD);
         fbLogOutPage.verifySuccessfulLogin();
     }
-{% endhighlight %}
+
+```
 
 **4**. Ok, we are already logged in so we need to go for GroupApprovePage now...
 
-{% highlight java %}
+```java
+
 package org.fluentlenium.sample.pages;
 
 import org.fluentlenium.core.FluentPage;
@@ -161,11 +172,13 @@ import org.fluentlenium.core.FluentPage;
   }
 
 }
-{% endhighlight %}
+
+```
 
 **5**. ...And Accept all requestors. Here is how it looks like finally:
 
-{% highlight java %}
+```java
+
 package org.fluentlenium.sample.tests;
 
 import org.fluentlenium.adapter.FluentTestNg;
@@ -201,7 +214,8 @@ public class FacebookTests extends FluentTestNg {
     }
 
 }
-{% endhighlight %}
+
+```
 
 Please take a closer look at how strong FluentLenium is when it comes to dynamic waiting. This is one of the most important elements when it comes to testing automation projects. There is a lot of bad information about how we should avoid timeout exceptions on public forums and blogs (even on the stack). Please get familiar with Chapter 4 of [Mastering Selenium WebDriver](http://www.amazon.com/Mastering-Selenium-WebDriver-Mark-Collin/dp/1784394351) if you have problems with them. Googling may lead you to adopt bad practices.
 

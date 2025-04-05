@@ -19,7 +19,8 @@ I read once that someone didn't like my Rest Assured post. Reader was claiming t
 
 As usual, we need to add Maven dependency first. I'm including also javax.json library for simple JSON creation, but you can choose what you want here.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>
@@ -37,7 +38,8 @@ As usual, we need to add Maven dependency first. I'm including also javax.json l
             <artifactId>wiremock</artifactId>
             <version>2.12.0</version>
 view raw
-{% endhighlight %}
+
+```
 
 Unfortunately I had also a lot of problem with my classpath. WireMock uses jetty server 9.22 which is pretty old. This generates conflicts with selenium-java so I had to add a lot of ugly exclusions in my pom. See [commit](https://github.com/slawekradzyminski/AwesomeTesting/commit/fec306d18285dc79f6fa24dc80e620c3871d46b4) for details. This may happen for you so get ready to analyse your _mvn dependency:tree_.
 
@@ -57,7 +59,8 @@ There are three methods:
 - We set port for RestAssured baseUrl (it would be http://localhost: + this port)
 - We cleanUp stubs after each test
 
-{% highlight java %}
+```java
+
 public class WireMockTest {
 
     @Rule
@@ -76,7 +79,8 @@ public class WireMockTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 ## Simple examples
 
@@ -86,8 +90,10 @@ For actual request sending I'm using [RestAssured](http://rest-assured.io/) whic
 
 As you can see WireMock allows us to build requests in almost the same way as RestAssured. Those two frameworks make great duo.
 
-{% highlight java %}
+```java
+
 // ... rest of code ...
-{% endhighlight %}
+
+```
 
 // ... remaining code omitted ...

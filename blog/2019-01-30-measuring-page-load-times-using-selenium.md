@@ -40,7 +40,8 @@ As usual, I'm going to [FluentLenium](https://github.com/FluentLenium/FluentLeni
 
 Let's use different browser this time - Microsoft Edge. Here is a simple driver setup.
 
-{% highlight java %}
+```java
+
     private static final String MY_EDGEDRIVER_PATH = "C:\\drivers\\MicrosoftWebDriver.exe";
 
     @Override
@@ -48,11 +49,13 @@ Let's use different browser this time - Microsoft Edge. Here is a simple driver 
         System.setProperty("webdriver.edge.driver", MY_EDGEDRIVER_PATH);
         return new EdgeDriver();
     }
-{% endhighlight %}
+
+```
 
 We may decide to measure different events at some points so let's make their setup easy and extendable in a separate PerformanceEvent enum.
 
-{% highlight java %}
+```java
+
 public enum PerformanceEvent {
 
     LOAD_EVENT_END ("loadEventEnd"),
@@ -69,20 +72,24 @@ public enum PerformanceEvent {
         return this.event;
     }
 }
-{% endhighlight %}
+
+```
 
 So how do we access performance timing metrics in Selenium script? We only need to execute simple javascript and return its value (as long). Method gets PerformanceEvent enum value as a parameter.
 
-{% highlight java %}
+```java
+
     private long getEventValue(PerformanceEvent event) {
         String script = String.format("return window.performance.timing.%s;", event);
         return executeScript(script).getLongResult();
     }
-{% endhighlight %}
+
+```
 
 Now let's move to the most interesting part for every tester - actual Junit implementation. We want to display loading time in seconds on screen and assert that it isn't greater than 3 seconds.
 
-{% highlight java %}
+```java
+
     @Test
     public void loadTimeTest() {
         goTo(awesomeTestingPage);
@@ -99,7 +106,8 @@ Now let's move to the most interesting part for every tester - actual Junit impl
         System.out.println(logBody);
         return loadTimeInSeconds;
     }
-{% endhighlight %}
+
+```
 
 Pretty simple, isn't it? By the way, I checked it on Chrome and loading there is usually ~1 second faster than on Microsoft Edge.
 

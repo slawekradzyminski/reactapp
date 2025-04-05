@@ -24,7 +24,8 @@ Testers who don't understand HTTP protocol usually get stuck with 'Are you sure 
 
 We will not only bypass the browser's download handling mechanism, but we won't use Selenium too. It's just [HttpClient](https://hc.apache.org/httpcomponents-client-ga/tutorial/pdf/httpclient-tutorial.pdf) request and response code verification (we expect 200 -> SC_OK). We don't verify that the user sees the link and can click on it.
 
-{% highlight java %}
+```java
+
     @Test
     public void downloadNoSelenium() throws URISyntaxException, IOException {
         Request request = new Request();
@@ -32,34 +33,43 @@ We will not only bypass the browser's download handling mechanism, but we won't 
         request.setURIToCheck(linkToCheck);
         assertThat(request.getHTTPStatusCodeFromResponse()).isEqualTo(SC_OK);
     }
-{% endhighlight %}
+
+```
 
 And here is HttpClient implementation. Quite a few lines, I know.
 
-{% highlight java %}
+```java
+
 // ... existing code ...
-{% endhighlight %}
+
+```
 
 ## Checking that file is available for real user
 
 Now we would simulate the real user. We are going to get a URL from the existing site selector and add user cookies to HTTP requests. Note that only getUrlFromSite() method uses FluentLenium. That's the class you need to modify to make it work in clean Selenium.
 
-{% highlight java %}
+```java
+
 // ... existing code ...
-{% endhighlight %}
+
+```
 
 ##  Checking that file isn't empty
 
 Now we would download the file and check that it isn't empty. Have in mind that this approach applies to small files.
 
-{% highlight java %}
+```java
+
 // ... existing code ...
-{% endhighlight %}
+
+```
 
 ## Checking that we download the correct file
 
 And finally the most reliable approach. We would not only download the file but also check it's md5 checksum.
 
-{% highlight java %}
+```java
+
 // ... existing code ...
-{% endhighlight %}
+
+```

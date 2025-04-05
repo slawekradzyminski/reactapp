@@ -38,7 +38,8 @@ b) By settings 1Mb/s (1 000 000 bytes/s) download and upload limit
 
 c) By changing HTTP request user agent header to custom value (this simplifies debugging)
 
-{% highlight java %}
+```java
+
     private static final int BROWSER_MOB_PROXY_PORT = 9191;
     private static final String USER_AGENT = "User-Agent";
 
@@ -54,11 +55,13 @@ c) By changing HTTP request user agent header to custom value (this simplifies d
         server.removeHeader(USER_AGENT);
         server.addHeader(USER_AGENT, "Throttled Chrome Selenium Test");
     }
-{% endhighlight %}
+
+```
 
 Next, we need to create a Proxy object that will be used in tests. BrowserMob Proxy gives as a very useful static method createSeleniumProxy() which simplifies setup. Next lines setup proxy IPv4 localhost urls.
 
-{% highlight java %}
+```java
+
     private Proxy getProxy() {
         Proxy seleniumProxy = ClientUtil.createSeleniumProxy(server);
         String hostIp = null;
@@ -74,11 +77,13 @@ Next, we need to create a Proxy object that will be used in tests. BrowserMob Pr
         return seleniumProxy;
     }
 view raw
-{% endhighlight %}
+
+```
 
 Now we just need to modify Selenium Capabilities. Chrome example below.
 
-{% highlight java %}
+```java
+
     public WebDriver newWebDriver() {
         return new ChromeDriver(getChromeOptions());
     }
@@ -88,11 +93,13 @@ Now we just need to modify Selenium Capabilities. Chrome example below.
         options.setProxy(getProxy());
         return options;
     }
-{% endhighlight %}
+
+```
 
 And here is final test that checks my blog with 1Mb/s network bandwidth.
 
-{% highlight java %}
+```java
+
 public class SlowNetworkTest extends ThrottledChrome {
 
     @Page
@@ -104,6 +111,7 @@ public class SlowNetworkTest extends ThrottledChrome {
     }
 
 }
-{% endhighlight %}
+
+```
 
 Happy proxying :)

@@ -27,7 +27,8 @@ In order to give you better view on how it works I prepared complete Continuous 
 
 ### Java example
 
-{% highlight yml %}
+```yml
+
 image: maven:3-jdk-8
 
 stages:
@@ -44,13 +45,14 @@ tests-am:
   script:
     - echo '[A-M] TESTS'
     - mvn -U -B test -Dtest='%regex[.*/[A-M].*Test.class]'
-    
+
 tests-nz:
   stage: test
   script:
     - echo '[N-Z] TESTS'
     - mvn -U -B test -Dtest='%regex[.*/[N-Z].*Test.class]'
-{% endhighlight %}
+
+```
 
 To those unfamiliar with Gitlab CI few words of explanation. This is [YAML](http://yaml.org/) file that stores our Continuous Integration job definition. First line (image) defines Docker container which will be pulled from Docker registry at the beginning. We get official maven image which guarantees us that _mvn_ command is working properly. Next the application code is downloaded inside a container and scipt starts.
 
@@ -60,7 +62,8 @@ If first stage succeeds we move into phase two (test). This time though tasks st
 
 ### Javascript example
 
-{% highlight yml %}
+```yml
+
 image: node:10
 
 stages:
@@ -72,14 +75,15 @@ tests-am:
     - npm install
     - echo '[A-M] TESTS'
     - mocha "server-test/[a-m]*/**/*.js"
-    
+
 tests-nz:
   stage: test
   script:
     - npm install
     - echo '[N-Z] TESTS'
     - mocha "server-test/[n-z]*/**/*.js"
-{% endhighlight %}
+
+```
 
 This time we have only one stage (test). Each one use mocha to run ~50% of tests present in server-test folder.
 

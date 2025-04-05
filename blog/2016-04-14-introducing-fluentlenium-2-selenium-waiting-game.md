@@ -36,9 +36,11 @@ The waiting methods are ordered from the worst one to the best one:
 
 **1\. Sleeping**
 
-{% highlight java %}
+```java
+
 Thread.sleep(3000);
-{% endhighlight %}
+
+```
 
 The most obvious method which you should never, ever use. Probably most of us started our automation journeys with it. Selenium can't find locator so we wait 2 seconds. Then we decide that 4 seconds is necessary. After that our tests become slow so we trim the time to 3 seconds. Then we change machine or run tests on Grid and it's really, really bad.
 
@@ -48,16 +50,20 @@ See characteristics I have listed in point a) - we meet none of them by using Th
 
 The implicitWait is configured globally (i.e. it's declared per driver), and it defines the time before throwing 'No Such Element Exception'. The default is 0 seconds. The line below configures ImplicitWait for 10 seconds.
 
-{% highlight java %}
+```java
+
 driver.manage().timeouts.implicitWait(10,TimeUnit.SECONDS);
-{% endhighlight %}
+
+```
 
 So far it looks good. Now imagine that you want to check if the loading element disappears on the page in 5 seconds time margin. We will stay in clean Selenium and use explicitWait:
 
-{% highlight java %}
+```java
+
 WebDriverWait wait = new WebDriverWait(getDriver(), 5, 500);
 wait.until(not(presenceOfElementLocated(By.id("disappearingelement"))));
-{% endhighlight %}
+
+```
 
 Effect? Element disappears after one second, but the test still waits for something. After 5 seconds test fails with Timeout Exception! Why? Unfortunately, implicitWait is always associated with the driver, and the sequence of events is rather undesired:
 
@@ -79,29 +85,35 @@ Not yet FluentLenium, but we are almost there. Hopefully, you use it already in 
 
 Wait for parameters
 
-{% highlight java %}
+```java
+
 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
         .withTimeout(5, TimeUnit.SECONDS)
         .pollingEvery(500, TimeUnit.MILLISECONDS)
         .ignoring(NoSuchElementException.class)
         .withMessage("Oops, element didn't disappear!");
-{% endhighlight %}
+
+```
 
 Guava Predicate or Function
 
-{% highlight java %}
+```java
+
 Predicate<WebDriver> loadingElementDisappeared = new Predicate<WebDriver>() {
     public boolean apply(WebDriver driver) {
         return driver.findElements(By.id("disappearingelement")).size() = 0;
     }
 };
-{% endhighlight %}
+
+```
 
 Now if we want to wait for our loading element to disappear (assuming implicitWait was removed) we have to write:
 
-{% highlight java %}
+```java
+
 wait.until(loadingElementDisappeared);
-{% endhighlight %}
+
+```
 
 Go back to the good test characteristic I have mentioned in a). There is a big difference in almost every aspect, don't you think?
 
@@ -111,11 +123,13 @@ Finally! :)
 
 After this long entry, you can probably easily understand why FluentLenium await() methods are very useful. They basically wrap all good things from selenium waiting methods and make one-liners. In my previous [FluentLenium post](https://awesome-testing.com/2016/01/introducing-fluentlenium-1.html), I had already used them. This method verifies that the Facebook login was successful.
 
-{% highlight java %}
+```java
+
     public void verifySuccessfulLogin() {
         await().until(WAITER_SELECTOR_AFTER_LOGIN).areDisplayed();
     }
-{% endhighlight %}
+
+```
 
 I love especially await().until(locator).isClickable() method and click() right after it's possible. I will redirect you now to [FluentLenium await() readme](https://github.com/FluentLenium/FluentLenium#wait-for-an-ajax-call) where you can check more examples. No need to be redundant.
 
@@ -123,20 +137,21 @@ I love especially await().until(locator).isClickable() method and click() right 
 
 I'll give you something to play with at the end. This test clearly shows how important waitings are for Selenium. I bet it would be hard for you to make it pass faster :)
 
-{% highlight java %}
+```java
+
    private Predicate<Fluent> ajaxCallCompleted = new Predicate<Fluent>() {
         @Override
         public boolean apply(Fluent fluent) {
             return (Boolean) ((JavascriptExecutor) getDriver()).executeScript("return (window.jQuery != null) && (jQuery.active === 0);");
         }
     }
-    
+
     private static final String URL = "https://resttesttest.com/";
     private static final String SUCCESS_TEXT = "HTTP 200 OK";
-    
+
     private static final String AJAX_BUTTON_CSS = "#submitajax";
     private static final String ALERT_RESULT_CSS = ".alert-success";
-    
+
     @Test
     public void ajaxCallTest() {
         goTo(URL);
@@ -145,7 +160,8 @@ I'll give you something to play with at the end. This test clearly shows how imp
         await().atMost(5000L).untilPredicate(ajaxCallCompleted);
         assertThat(findFirst(ALERT_RESULT_CSS).getText()).isEqualTo(SUCCESS_TEXT);
     }
-{% endhighlight %}
+
+```
 
 PS1
 

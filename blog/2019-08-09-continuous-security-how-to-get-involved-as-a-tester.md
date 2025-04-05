@@ -37,7 +37,8 @@ It's usually a good idea to add a cheap API test just to make sure headers do no
 
 At first, it's good to list application endpoints we want to check. For me, it will be:
 
-{% highlight java %}
+```java
+
 abstract class AbstractSecurityHeaderTest {
 
     static final List<String> CHECKED_URLS = ImmutableList.of(
@@ -48,11 +49,13 @@ abstract class AbstractSecurityHeaderTest {
     );
 
 }
-{% endhighlight %}
+
+```
 
 Test for X-Xss-Protection (header which enables cross-site scripting filtering):
 
-{% highlight java %}
+```java
+
     @Test
     public void shouldHaveXssProtectionHeader() {
         CHECKED_URLS.forEach(url -> {
@@ -68,11 +71,13 @@ Test for X-Xss-Protection (header which enables cross-site scripting filtering):
                     .isEqualTo("1; mode=block");
         });
     }
-{% endhighlight %}
+
+```
 
 And X-Content-Type-Options (header which disables MIME sniffing and forces browser to use the type given in Content-Type):
 
-{% highlight java %}
+```java
+
     @Test
     public void shouldHaveContentTypeHeader() {
         CHECKED_URLS.forEach(url -> {
@@ -88,7 +93,8 @@ And X-Content-Type-Options (header which disables MIME sniffing and forces brows
                     .isEqualTo("nosniff");
         });
     }
-{% endhighlight %}
+
+```
 
 Tests are really simple. If you have trouble understanding them please take a look at my [Rest-Assured](https://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html) introduction.
 
@@ -104,7 +110,8 @@ In TDD fashion, I can start the work with the acceptance test. Developer job to 
 
 a) HSTS
 
-{% highlight java %}
+```java
+
     @Test
     public void shouldHaveHstsHeader() {
         CHECKED_URLS.forEach(url -> {
@@ -120,11 +127,13 @@ a) HSTS
                     .isEqualTo("max-age=31536000; includeSubDomains");
         });
     }
-{% endhighlight %}
+
+```
 
 b) X-Frame-Options
 
-{% highlight java %}
+```java
+
     @Test
     public void shouldHaveXFrameOptionsHeader() {
         CHECKED_URLS.forEach(url -> {
@@ -140,7 +149,8 @@ b) X-Frame-Options
                     .isEqualTo("deny");
         });
     }
-{% endhighlight %}
+
+```
 
 Simple, right? :)
 

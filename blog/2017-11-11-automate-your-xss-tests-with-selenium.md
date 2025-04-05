@@ -37,7 +37,8 @@ This step can be omitted entirely if you are using Firefox. I usually prefer Chr
 
 XSS protection in Google Chrome is disabled by_\--disable-xss-auditor_ option.
 
-{% highlight java %}
+```java
+
 public class XssDisabledChromeConfig extends FluentTestNg {
 
     private static final String DISABLE_XSS_AUDITOR = "--disable-xss-auditor";
@@ -64,7 +65,8 @@ public class XssDisabledChromeConfig extends FluentTestNg {
         chromeSwitches.add(DISABLE_XSS_AUDITOR);
         return chromeSwitches;
     }
-{% endhighlight %}
+
+```
 
 **_Picking a vulnerable page_**
 
@@ -72,7 +74,8 @@ Obviously in order to show you how to test against XSS I had to find a vulnerabl
 
 That's the Page Object implementation using [FluentLenium](https://github.com/FluentLenium/FluentLenium).
 
-{% highlight java %}
+```java
+
 @PageUrl("https://xss-game.appspot.com/level1/frame")
 public class XssGameLevelOnePage extends FluentPage {
 
@@ -95,13 +98,15 @@ public class XssGameLevelOnePage extends FluentPage {
         sarchButton.click();
     }
 }
-{% endhighlight %}
+
+```
 
 **_Test implementation_**
 
 Having Page Object implemented we are ready for testing. Here is complete code of my test:
 
-{% highlight java %}
+```java
+
 public class XssGameTest extends XssDisabledChromeConfig {
 
     private static final String MY_CHROME_PATH = "C:\\drivers\\chromedriver.exe";
@@ -126,21 +131,25 @@ public class XssGameTest extends XssDisabledChromeConfig {
         assertThat(xssGameLevelOnePage.isAlertDisplayed()).isFalse();
     }
 }
-{% endhighlight %}
+
+```
 
 As you can see there is weirdly lookin CSS_CONTENT string which require further explanation:
 
 This is actual XSS. We are searching for something that may lead to client-side code injection on attacked webpage. This particular JavaScript opens only silly alert, but attacker may use it for something more serious.
 
-{% highlight java %}
+```java
+
 XSS_CONTENT = "<script>alert(\"1\");</script>";
-{% endhighlight %}
+
+```
 
 **_Assertion_**
 
 Usually we want our test to have clear success/failure criteria. That's why I implemented the following method in my PageObject:
 
-{% highlight java %}
+```java
+
 public boolean isAlertDisplayed() {
         boolean foundAlert;
         WebDriverWait wait = new WebDriverWait(getDriver(), 2);
@@ -152,7 +161,8 @@ public boolean isAlertDisplayed() {
         }
         return foundAlert;
     }
-{% endhighlight %}
+
+```
 
 This method is returning true if popup is displayed in 2 seconds time.
 

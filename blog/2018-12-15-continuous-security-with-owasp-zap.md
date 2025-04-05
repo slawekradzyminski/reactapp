@@ -49,7 +49,8 @@ Selenium traffic will go through ZAP proxy in order to capture all traffic. It's
 
 After Selenium run spidering, passive & active scanning will be triggered via [ZAP API](https://github.com/zaproxy/zaproxy/wiki/ApiDetails). In order to increase code readability, I created an interface.
 
-{% highlight java %}
+```java
+
 public interface ZapFunctionalities {
 
     void doSpidering() throws ClientApiException, InterruptedException;
@@ -57,7 +58,8 @@ public interface ZapFunctionalities {
     void doActiveScan() throws ClientApiException, InterruptedException;
 
 }
-{% endhighlight %}
+
+```
 
 Before we move on into practice, some necessary theory from [ZAP User Guide](https://github.com/zaproxy/zap-core-help).
 
@@ -79,7 +81,8 @@ In order to use OWASP ZAP, you have to configure a local proxy for functional te
 
 The following snippet shows a brief summary of what needs to be done for Selenium tests using chromedriver. Chrome needs to know about proxy so an additional flag is required.
 
-{% highlight java %}
+```java
+
     public WebDriver newWebDriver() {
         return new ChromeDriver(getChromeOptions());
     }
@@ -96,11 +99,13 @@ The following snippet shows a brief summary of what needs to be done for Seleniu
         chromeSwitches.add("--ignore-certificate-errors");
         return chromeSwitches;
     }
-{% endhighlight %}
+
+```
 
 Seleniums I have written as an example are pretty dumb. They just crawl the page.
 
-{% highlight java %}
+```java
+
 @PageUrl("http://localhost:8080/bodgeit/")
 public class LoggedOutHomePage extends FluentPage {
 
@@ -114,11 +119,13 @@ public class LoggedOutHomePage extends FluentPage {
         el(By.linkText("Search")).click();
     }
 }
-{% endhighlight %}
+
+```
 
 They crawl logged in pages as well.
 
-{% highlight java %}
+```java
+
     @Test
         public void loggedOutCrawl() {
         goTo(loggedOutHomePage).crawlSiteToSimulateSeleniumTraffic();
@@ -130,7 +137,8 @@ They crawl logged in pages as well.
         goTo(loginPage).login(USERNAME, PASSWORD);
         goTo(loggedInHomePage).crawlPageToSimulateSeleniumTraffic();
     }
-{% endhighlight %}
+
+```
 
 If you have done everything right you should now see a couple of requests on ZAP GUI.
 
@@ -140,19 +148,22 @@ If you have done everything right you should now see a couple of requests on ZAP
 
 Time to move on into actual OWASP ZAP stuff. There is Java ZAP API client library available. Add it as a dependency first.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.zaproxy</groupId>
             <artifactId>zap-clientapi</artifactId>
             <version>1.6.0</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 Its syntax is quite lengthy so I decided to create two util classes: one for ZAP tasks (see interface above) and one for API calls.
 
 This is how ZAP task implementation looks like:
 
-{% highlight java %}
+```java
+
     @Override
     public void doActiveScan() throws ClientApiException, InterruptedException {
         System.out.println("Active scanning started.");
@@ -165,24 +176,28 @@ This is how ZAP task implementation looks like:
         } while (progress < 100);
         System.out.println("Active Scan complete");
     }
-{% endhighlight %}
+
+```
 
 As you can see we get taskId from API and then periodically check it's progress. Polling time seems big at first look (5 seconds), but active scanning is a very lengthy process which can take even hours. It's recommended that such security tests should be executed daily during nighttime. Not only time but also the high amount of traffic would quickly discourage you from adding them into a functional regression test suite.
 
 JAVA API client is a bit awkward, but you can always rewrite it to Spring Template and do not use provided library.
 
-{% highlight java %}
+```java
+
     public int getActiveScanProgress(String taskId) throws ClientApiException {
         String status = ((ApiResponseElement) api.ascan.status(taskId)).getValue();
         return Integer.parseInt(status);
     }
-{% endhighlight %}
+
+```
 
 ## Demo
 
 After an extremely long journey with lots of coding and configuration (I even had to enable virtualization in BIOS in order to use Docker in Windows) the security test is ready. It looks nice:
 
-{% highlight java %}
+```java
+
 public class SecurityTest {
 
     private static final String TARGET = "http://localhost:8080/bodgeit";
@@ -201,7 +216,8 @@ public class SecurityTest {
         assertThat(zapApi.getNumberOfAlerts()).isZero();
     }
 }
-{% endhighlight %}
+
+```
 
 It's up to you whether you want to use assertions or simply read the final report.
 

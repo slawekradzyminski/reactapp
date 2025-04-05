@@ -30,7 +30,8 @@ I'll describe only the four most common pitfalls. For a more complete list pleas
 
 JVM is smart enough to detect that certain code is never used. That's why the methods you measure should always return something. Alternatively, you can use JMH consume method which guarantees that consumed code will never be buried by JVM.
 
-{% highlight java %}
+```java
+
     @Benchmark
    public void test(Blackhole blackhole) {
         int a = 2;
@@ -38,13 +39,15 @@ JVM is smart enough to detect that certain code is never used. That's why the me
         int sum = a - b;
         blackhole.consume(sum);
     }
-{% endhighlight %}
+
+```
 
 **_b) Constant folding_**
 
 If JVM realizes the result of the computation is the same no matter what, it can cleverly optimize it. That's why you should act against your IDE suggestion and don't make any fields final.
 
-{% highlight java %}
+```java
+
     private double x = Math.PI;
     private final double wrongX = Math.PI;
 
@@ -57,7 +60,8 @@ If JVM realizes the result of the computation is the same no matter what, it can
     public double right() {
         return Math.log(x);
     }
-{% endhighlight %}
+
+```
 
 _**c) Loop optimizations**_
 
@@ -80,7 +84,8 @@ JMH is very easy to start working with. You can create your own project in a cou
 
 Alternatively, if you want to create tests in existing project, you can follow the same steps I did for my [AwesomeTesting Github](https://github.com/slawekradzyminski/AwesomeTesting) repository. First, add maven dependencies. In a real-world scenario you probably also need to add your application here(in order to call methods you want to measure).
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-core</artifactId>
@@ -91,11 +96,13 @@ Alternatively, if you want to create tests in existing project, you can follow t
             <artifactId>jmh-generator-annprocess</artifactId>
             <version>1.21</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 After that you need to configure maven-shade-plugin which will be responsible for creating an executable jar.
 
-{% highlight xml %}
+```xml
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -131,7 +138,8 @@ After that you need to configure maven-shade-plugin which will be responsible fo
                     </execution>
                 </executions>
             </plugin>
-{% endhighlight %}
+
+```
 
 Now create your jar:
 
@@ -149,20 +157,23 @@ There are three alternative ways of configuring JMH:
 
 You can use Java annotations which is very convenient. That's my favorite type by far because I can easily access nicely written Javadoc for each option. Here is how I configured my demo (each option would be described below):
 
-{% highlight java %}
+```java
+
 @Fork(value = 3, warmups = 0)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)
 @BenchmarkMode(Mode.AverageTime)
 @Warmup(iterations = 5, time = 10)
 @Measurement(iterations = 5, time = 10)
 public class BenchMark {
-{% endhighlight %}
+
+```
 
 **_b) Java API_**
 
 If you prefer Java API you can use builder configuration and run your tests from IDE. That's not recommended because Benchmark should ideally run with every single application closed.
 
-{% highlight java %}
+```java
+
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(BenchMark.class.getSimpleName())
@@ -173,7 +184,8 @@ If you prefer Java API you can use builder configuration and run your tests from
 
         new Runner(opt).run();
     }
-{% endhighlight %}
+
+```
 
 **_c) Command line_**
 
@@ -252,7 +264,8 @@ In order to fully understand @Scope, you need to take a look into an actual exam
 
 Let's suppose we want to measure multiplication in 4 scenarios (1*1, 1*31, 31*1, 31*31). We also want to start each fork with 0 as a result. After each iteration, we want to do garbage collection. Here is how our benchmark should look like:
 
-{% highlight java %}
+```java
+
 public class ExplainingState {
 
     @State(Scope.Thread)
@@ -293,7 +306,8 @@ public class ExplainingState {
         predefinedState.multiplicationResult = predefinedState.a * predefinedState.b;
     }
 }
-{% endhighlight %}
+
+```
 
 If you still don't understand please run the benchmark and analyze console output in order to see what's going on and when.
 
@@ -305,7 +319,8 @@ We have 5 contenders (full credit for problem definition goes to [Modern Java in
 
 **_a) iterativeSum()_**
 
-{% highlight java %}
+```java
+
     @Benchmark
     public long iterativeSum() {
         long result = 0;
@@ -314,22 +329,26 @@ We have 5 contenders (full credit for problem definition goes to [Modern Java in
         }
         return result;
     }
-{% endhighlight %}
+
+```
 
 **_b) sequentialSum()_**
 
-{% highlight java %}
+```java
+
     @Benchmark
     public long sequentialSum() {
         return Stream.iterate(1L, i -> i + 1)
                 .limit(N)
                 .reduce(0L, Long::sum);
     }
-{% endhighlight %}
+
+```
 
 **_c) parallelSum()_**
 
-{% highlight java %}
+```java
+
     @Benchmark
     public long parallelSum() {
         return Stream.iterate(1L, i -> i + 1)
@@ -337,28 +356,33 @@ We have 5 contenders (full credit for problem definition goes to [Modern Java in
                 .limit(N)
                 .reduce(0L, Long::sum);
     }
-{% endhighlight %}
+
+```
 
 **_d) rangedSum()_**
 
-{% highlight java %}
+```java
+
     @Benchmark
     public long rangedSum() {
         return LongStream.rangeClosed(1, N)
                 .reduce(0L, Long::sum);
     }
-{% endhighlight %}
+
+```
 
 **_e) parallelRangedSum()_**
 
-{% highlight java %}
+```java
+
     @Benchmark
     public long parallelRangedSum() {
         return LongStream.rangeClosed(1, N)
                 .parallel()
                 .reduce(0L, Long::sum);
     }
-{% endhighlight %}
+
+```
 
 What do you think which implementation would be the best? We can theorize that implementations 2 and 3 would be slower because of [autoboxing](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html), but let's see!
 

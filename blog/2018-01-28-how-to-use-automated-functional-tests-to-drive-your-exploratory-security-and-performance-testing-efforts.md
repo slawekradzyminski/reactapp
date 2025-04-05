@@ -56,9 +56,11 @@ a) Rest Assured
 
 For our API test we need... 1 line. In this example we have a local proxy running on port 8888.
 
-{% highlight java %}
+```java
+
 RestAssured.proxy = host("localhost").withPort(8888);
-{% endhighlight %}
+
+```
 
 b) Selenium
 
@@ -66,7 +68,8 @@ With Selenium it's a bit more difficult. Let's assume we are using the most stab
 
 Here is the code:
 
-{% highlight java %}
+```java
+
     @Override
     public WebDriver newWebDriver() {
         return new ChromeDriver(getChromeCapabilities());
@@ -90,7 +93,8 @@ Here is the code:
         chromeSwitches.add("--ignore-certificate-errors");
         return chromeSwitches;
     }
-{% endhighlight %}
+
+```
 
 Second switch (`--ignore-certificate-errors`) helps with https/certificate issues.
 

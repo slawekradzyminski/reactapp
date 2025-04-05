@@ -22,7 +22,8 @@ Today I'd like to present you a tool called [Find Security Bugs](https://find-se
 
 Introducing find-sec-bugs plugin into your Maven projects is very simple. Here is the example configuration which you need to add into pom.xml file.
 
-{% highlight xml %}
+```xml
+
     <build>
         <plugins>
             <plugin>
@@ -56,7 +57,8 @@ Introducing find-sec-bugs plugin into your Maven projects is very simple. Here i
             </plugin>
         </plugins>
     </build>
-{% endhighlight %}
+
+```
 
 The configuration is quite long, so let's explain few things. First of all, find-sec-bugs extends Maven extension which is available for quite some time - [SpotBugs Maven Plugin](https://spotbugs.github.io/spotbugs-maven-plugin/). It's a tool that reads your code and looks for bugs (bad practices, too complicated logic, code smells, etc).
 
@@ -66,20 +68,24 @@ The Analysis can be narrowed down to scope which interests us. Here we focus onl
 
 spotbugs-security-include.xml will look like this:
 
-{% highlight xml %}
+```xml
+
 <FindBugsFilter>
     <Match>
         <Bug category="SECURITY"/>
     </Match>
 </FindBugsFilter>
-{% endhighlight %}
+
+```
 
 And spotbugs-security-exclude.xml will look like this:
 
-{% highlight xml %}
+```xml
+
 <FindBugsFilter>
 </FindBugsFilter>
-{% endhighlight %}
+
+```
 
 Finally, there is findsecbugs-plugin which we trigger in the following way:
 

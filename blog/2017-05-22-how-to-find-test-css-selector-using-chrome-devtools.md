@@ -73,7 +73,8 @@ There is good and free tutorial available on w3schools site. It's extremely impo
 
 I have prepared working demo for my readers. You can find it on my GitHub [Awesome Testing project.](https://github.com/slawekradzyminski/AwesomeTesting)I'm using FluentLenium and Page Object Pattern framework. That's how the HomePage class would look like.
 
-{% highlight java %}
+```java
+
 @PageUrl("http://www.awesome-testing.com/")
 public class HomePage extends FluentPage {
 
@@ -91,11 +92,13 @@ public class HomePage extends FluentPage {
         assertThat(pageTitles).hasSize(numberOfTitles);
     }
 }
-{% endhighlight %}
+
+```
 
 And two simple tests. You should understand them instantly (at least that was my aim).
 
-{% highlight java %}
+```java
+
 public class BlogTest extends FluentTestNg {
 
     private static final int EXPECTED_NUMBER_OF_POSTS = 5;
@@ -121,4 +124,5 @@ public class BlogTest extends FluentTestNg {
     }
 
 }
-{% endhighlight %}
+
+```

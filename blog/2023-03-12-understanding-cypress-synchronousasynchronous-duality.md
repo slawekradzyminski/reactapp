@@ -26,11 +26,13 @@ JavaScript is a versatile programming language used for building web application
 
 Synchronous JavaScript is straightforward to understand as it operates in a blocking or synchronous manner. This means that when a piece of code executes, the next line of code will not execute until the current line has finished executing. For example, consider the following code:
 
-{% highlight javascript %}
+```javascript
+
 console.log('start');
 console.log('middle');
 console.log('end');
-{% endhighlight %}
+
+```
 
 This code will output:
 
@@ -44,13 +46,15 @@ In synchronous JavaScript, each console.log statement executes in order, and the
 
 Asynchronous JavaScript is different from synchronous JavaScript because it operates in a non-blocking or asynchronous manner. This means that when a piece of code executes, the next line of code can execute before the current line has finished executing. For example, consider the following code:
 
-{% highlight javascript %}
+```javascript
+
 console.log('start');
 setTimeout(() => {
   console.log('middle');
 }, 1000);
 console.log('end');
-{% endhighlight %}
+
+```
 
 This code will output:
 
@@ -74,7 +78,8 @@ Cypress test steps are inherently asynchronous, but the framework includes an en
 
 To illustrate how Cypress command chaining works using promises, consider the following test example:
 
-{% highlight javascript %}
+```javascript
+
 /// <reference types="cypress" />
 
 describe('Awesome tests', () => {
@@ -89,11 +94,13 @@ describe('Awesome tests', () => {
     })
 
 })
-{% endhighlight %}
+
+```
 
 Effectively, this is the JavaScript code that is executed in the browser (the details may vary but it's a chain of promises):
 
-{% highlight javascript %}
+```javascript
+
 /// <reference types="cypress" />
 
 describe('Awesome tests', () => {
@@ -114,7 +121,8 @@ describe('Awesome tests', () => {
     })
 
 })
-{% endhighlight %}
+
+```
 
 Note: there is [special logic](https://docs.cypress.io/api/commands/should#Differences) for handling .should() hence the last line is simplified.
 
@@ -126,7 +134,8 @@ One thing which complicates the picture even more is [Mocha](https://mochajs.org
 
 Described behaviour has very significant impact on [debugging](https://docs.cypress.io/guides/guides/debugging). Consider the following example:
 
-{% highlight javascript %}
+```javascript
+
 /// <reference types="cypress" />
 
 describe('Awesome tests', () => {
@@ -152,7 +161,8 @@ describe('Awesome tests', () => {
     })
 
 })
-{% endhighlight %}
+
+```
 
 The order of execution is as follows:
 

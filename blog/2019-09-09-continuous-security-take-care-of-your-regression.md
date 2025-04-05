@@ -35,7 +35,8 @@ b) [Jackson](https://github.com/FasterXML/jackson) for Java JSON serialization
 
 c) [JSON-Java](https://github.com/stleary/JSON-java)
 
-{% highlight xml %}
+```xml
+
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-web</artifactId>
@@ -60,11 +61,13 @@ c) [JSON-Java](https://github.com/stleary/JSON-java)
     <version>20190722</version>
 </dependency>
 
-{% endhighlight %}
+
+```
 
 Each test will require simple setup. Juice Shop runs on default port 3000.
 
-{% highlight java %}
+```java
+
 private RestTemplate restTemplate;
 
     @Before
@@ -74,7 +77,8 @@ private RestTemplate restTemplate;
                 new DefaultUriBuilderFactory("http://localhost:3000"));
     }
 
-{% endhighlight %}
+
+```
 
 ## Vulnerability a - client-side error
 
@@ -82,7 +86,8 @@ The secure application should never show internal errors to end-user. It does no
 
 When we try to log in as an inexisting user we receive HTTP 401 which is correct.
 
-{% highlight java %}
+```java
+
 @Test
 public void shouldNotBeAbleToLoginOnInexisingUser() {
     LoginDto loginDto = new LoginDto(INVALID_LOGIN, PASSWORD);
@@ -91,7 +96,8 @@ public void shouldNotBeAbleToLoginOnInexisingUser() {
         .isInstanceOf(HttpClientErrorException.class)
         .hasMessageContaining("401 Unauthorized");
 }
-{% endhighlight %} 
+
+``` 
 
 However when we use ' as login server responds with HTTP 500 and exposes implementation details.
 
@@ -99,7 +105,8 @@ However when we use ' as login server responds with HTTP 500 and exposes impleme
 
 The following test reproduces this vulnerability:
 
-{% highlight java %}
+```java
+
 private static final String REDIRECTION_URL = "https://awesome-testing.com";
 
     @Test
@@ -115,13 +122,15 @@ private static final String REDIRECTION_URL = "https://awesome-testing.com";
             "/redirect?to=%s?pwned=https://github.com/bkimminich/juice-shop", REDIRECTION_URL);
     }
 
-{% endhighlight %}
+
+```
 
 ## Vulnerability b - open redirect
 
 Juice shop allows for redirection on a whitelisted [GitHub page](https://github.com/bkimminich/juice-shop). When we try to change this URL application correctly blocks us with HTTP 406.
 
-{% highlight java %}
+```java
+
 private static final String REDIRECTION_URL = "https://awesome-testing.com";
 
     @Test
@@ -131,18 +140,20 @@ private static final String REDIRECTION_URL = "https://awesome-testing.com";
                 .isInstanceOf(HttpClientErrorException.class)
                 .hasMessageContaining("406 Not Acceptable");
     }
-    
+
     private String getRedirectionUrl() {
         return String.format("/redirect?to=%s", REDIRECTION_URL);
     }
 
-{% endhighlight %}
+
+```
 
 Unfortunately whitelisting isn't implemented on _to_ parameter but on any of them. Adding a dummy parameter meeting whitelisting criteria results in redirection to any website.
 
 The following test reproduces this vulnerability:
 
-{% highlight java %}
+```java
+
 private static final String REDIRECTION_URL = "https://awesome-testing.com";
 
     @Test
@@ -158,13 +169,15 @@ private static final String REDIRECTION_URL = "https://awesome-testing.com";
             "/redirect?to=%s?pwned=https://github.com/bkimminich/juice-shop", REDIRECTION_URL);
     }
 
-{% endhighlight %}
+
+```
 
 ## Vulnerability 3 - admin access
 
 The last vulnerability is probably the worst one. An attacker can prepare JSON request which will register him as shop admin. Only a couple of Java code lines are required!
 
-{% highlight java %}
+```java
+
 @Test
 public void shouldNotBeAbleToRegisterAsAdmin() {
     AdminRegisterDto adminRegisterDto = new AdminRegisterDto();
@@ -180,7 +193,8 @@ public void shouldNotBeAbleToRegisterAsAdmin() {
             .hasMessageContaining("401 Unauthorized");
     }
 
-{% endhighlight %}
+
+```
 
 ## Summary
 

@@ -23,7 +23,8 @@ In my first post about Selenium ([FluentLenium](http://awesome-testing.blogspot.
 
 Only this [piece of the documentation](https://sites.google.com/a/chromium.org/chromedriver/capabilities)tells us how to properly configure the browser before running tests. It's done via [Chrome Options](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java). Due to legacy reasons, desiredCapabilities still has to be initialized, which makes the code somehow weird. Here it is (with my formatting):
 
-{% highlight java %}
+```java
+
 private static final String PREFS = "prefs";
 
     @Override
@@ -43,7 +44,8 @@ private static final String PREFS = "prefs";
         options.setExperimentalOption(PREFS, getChromePrefs());
         return options;
     }
-{% endhighlight %}
+
+```
 
 As you can see above two methods preconfigure our Chrome (description via [Javadoc](https://github.com/SeleniumHQ/selenium/blob/master/java/client/src/org/openqa/selenium/chrome/ChromeOptions.java)):
 
@@ -61,19 +63,22 @@ This is when the easy part ends and Googling begins. For unknown reasons lists o
 
 My implementation with example values - feel free to do some code review :)
 
-{% highlight java %}
+```java
+
 public interface ChromeSwitchesInt {
     String START_FULLSCREEN = "start-fullscreen";
     String ALLOW_INSECURE_CONTENT = "allow-running-insecure-content";
     String INCOGNITO = "incognito";
     String IGNORE_CERTIFICATE_ERRORS = "--ignore-certificate-errors";
 }
-{% endhighlight %}
 
-{% highlight java %}
+```
+
+```java
+
     private static final String BROWSER_NOTIFICATIONS = "profile.managed_default_content_settings.notifications";
     private static final short DISABLED = 2;
- 
+
     /**
      * Full list of available prefs - https://src.chromium.org/viewvc/chrome/trunk/src/chrome/common/pref_names.cc?view=markup
      *
@@ -98,15 +103,18 @@ public interface ChromeSwitchesInt {
         chromeSwitches.add(ChromeSwitchesInt.START_FULLSCREEN);
         return chromeSwitches;
     }
-{% endhighlight %}
+
+```
 
 ## Demo
 
 Comment this line & Try running my [FluentLenium](http://awesome-testing.blogspot.com/2016/01/introducing-fluentlenium-1.html) test (or just log in on Facebook via Selenium).
 
-{% highlight java %}
+```java
+
 chromePrefs.put(BROWSER_NOTIFICATIONS, DISABLED);
-{% endhighlight %}
+
+```
 
 You should see this popup/notification and test failure. An experimental option from above solves this problem.
 

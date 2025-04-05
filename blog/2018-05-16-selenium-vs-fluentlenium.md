@@ -29,7 +29,8 @@ I chose to verify comment section, because it's loaded dynamically by Blogger. A
 
 Our obvious first step is adding Selenium dependency into pom.xml. I'm using 3.9.1 version here:
 
-{% highlight xml %}
+```xml
+
          <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
@@ -47,11 +48,13 @@ Our obvious first step is adding Selenium dependency into pom.xml. I'm using 3.9
             <artifactId>selenium-java</artifactId>
             <version>3.9.1</version>
          </dependency>
-{% endhighlight %}
+
+```
 
 We need some properties next. I'm writing those words on Windows so I have to define driver paths. Let's implement the simplest possible class that handles it:
 
-{% highlight java %}
+```java
+
 public class MyProperties {
 
     private Properties properties;
@@ -74,18 +77,22 @@ public class MyProperties {
         return properties.getProperty(property);
     }
 }
-{% endhighlight %}
+
+```
 
 And next we need user.properties file in test resources folder:
 
-{% highlight properties %}
+```properties
+
 my_chrome_path=C:\\drivers\\chromedriver.exe
 my_gecko_path=C:\\drivers\\geckodriver.exe
-{% endhighlight %}
+
+```
 
 So far so good. We are ready to start defining tests. Let's create a top level test class responsible for driver handling first. It will be our baseline. Normally I don't include imports in my snippets, but this Apache Commons entry is necessary for easy understanding of if in setUp() section. I have Mac with chrome driver system property already set by Brew and this line ensures that it will work on it without any changes. I'm using JUnit btw.
 
-{% highlight java %}
+```java
+
 import static org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS;
 
 public class SeleniumTest {
@@ -107,11 +114,13 @@ public class SeleniumTest {
         driver.close();
     }
 }
-{% endhighlight %}
+
+```
 
 Now we need baseline for page objects. I don't want to load elements from @FindBy annotation every single time, so I'm coding it on top level class.
 
-{% highlight java %}
+```java
+
 public class PageObject {
     protected WebDriver driver;
 
@@ -120,11 +129,13 @@ public class PageObject {
         PageFactory.initElements(driver, this);
     }
 }
-{% endhighlight %}
+
+```
 
 Framework is ready so we can implement our page objects. Main blog page is obvious place to begin. I'm adding two methods, one to make sure we are indeed on correct page and the second one to use search functionality.
 
-{% highlight java %}
+```java
+
 public class MainPage extends PageObject {
 
     @FindBy(css = "input.gsc-input")
@@ -152,11 +163,13 @@ public class MainPage extends PageObject {
     }
 
 }
-{% endhighlight %}
+
+```
 
 Next in flow is search results page. This time I'm adding two assertions (are we on correct page? are posts displayed?) and method which clicks on first post title.
 
-{% highlight java %}
+```java
+
 public class SearchResultsPage extends PageObject {
 
     @FindBy(className = "status-msg-wrap")
@@ -183,11 +196,13 @@ public class SearchResultsPage extends PageObject {
     }
 
 }
-{% endhighlight %}
+
+```
 
 And finally we are on post page. Comment section is not only in an iframe, but it also loads dynamically. In order to handle it I had to implement fancy wait, which polls every 500 milliseconds maximum 10 times. Element is not there at first, but we ignore NoSuchElementException and poll again.
 
-{% highlight java %}
+```java
+
 public class PostPage extends PageObject {
 
     @FindBy(id = "comment-editor")
@@ -213,11 +228,13 @@ public class PostPage extends PageObject {
             .withMessage("Oops, element didn't appear!");
 
 }
-{% endhighlight %}
+
+```
 
 Having all pieces implemented we can write a pure Selenium test.
 
-{% highlight java %}
+```java
+
 public class SearchTest extends SeleniumTest {
 
     private static final String BLOG = "https://www.awesome-testing.com";
@@ -237,7 +254,8 @@ public class SearchTest extends SeleniumTest {
         postPage.checkCommentsSectionPresence();
     }
 }
-{% endhighlight %}
+
+```
 
 ## FluentLenium
 
@@ -245,7 +263,8 @@ Now we will write the same test using FluentLenium. Spoiler alert: it will be ea
 
 As usual, we start with dependencies in pom.xml.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.fluentlenium</groupId>
             <artifactId>fluentlenium-core</artifactId>
@@ -264,11 +283,13 @@ As usual, we start with dependencies in pom.xml.
             <artifactId>fluentlenium-junit</artifactId>
             <version>3.5.1</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 Driver handling is already taken care of by FluentLenium (FluentTest class). I want my tests to work both on Windows and Mac, so I'm adding a little extension. FluentLenium also allows to store driver names in human friendly way so I have added driver=chrome property. MyProperties class can be found above.
 
-{% highlight java %}
+```java
+
 import static org.apache.commons.lang3.SystemUtils.IS_OS_WINDOWS;
 
 public class FluentLeniumTest extends FluentTest {
@@ -289,13 +310,15 @@ public class FluentLeniumTest extends FluentTest {
         return myProperties.getProperty("driver");
     }
 }
-{% endhighlight %}
+
+```
 
 In Selenium section I have implemented PageObject class for framework preparations. It isn't required in FluentLenium. It's already handled by FluentPage class.
 
 We can proceed to Page Object definition now. Let's start with Main Page. @PageUrl annotation is used to tell driver where to go. newInstance() method creates new page object class and isAt() is used for 'am I on correct page?' verification.
 
-{% highlight java %}
+```java
+
 @PageUrl("https://www.awesome-testing.com")
 public class MainPage extends FluentPage {
 
@@ -319,11 +342,13 @@ public class MainPage extends FluentPage {
         return newInstance(SearchResultsPage.class);
     }
 }
-{% endhighlight %}
+
+```
 
 Now search result page with similar methods. Please take a look into @FindBy support for lists. Such feature isn't implemented in pure Selenium. It really helps to write easy to maintain code.
 
-{% highlight java %}
+```java
+
 public class SearchResultsPage extends FluentPage {
 
     @FindBy(className = "status-msg-wrap")
@@ -346,11 +371,13 @@ public class SearchResultsPage extends FluentPage {
         return newInstance(PostPage.class);
     }
 }
-{% endhighlight %}
+
+```
 
 Finally, post page. You can see how useful await() methods are. Instead of defining separate Wait object we can use intuitive syntax. Also NoSuchElementExceptions are ignored by default. We have also very handy switchTo() method which changes context into iframe.
 
-{% highlight java %}
+```java
+
 public class PostPage extends FluentPage {
 
     @FindBy(id = "comment-editor")
@@ -368,11 +395,13 @@ public class PostPage extends FluentPage {
         await().atMost(5, TimeUnit.SECONDS).until(commentBody).displayed();
     }
 }
-{% endhighlight %}
+
+```
 
 Having all pieces ready let's take a look at our final creation - a FluentLenium test. @Page is pseudo injection - it allow us to predefine pages used in test.
 
-{% highlight java %}
+```java
+
 public class SearchTest extends FluentLeniumTest {
 
     @Page
@@ -398,7 +427,8 @@ public class SearchTest extends FluentLeniumTest {
         postPage.checkCommentsSectionPresence();
     }
 }
-{% endhighlight %}
+
+```
 
 ## Conclusion
 

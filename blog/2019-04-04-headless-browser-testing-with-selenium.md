@@ -52,7 +52,8 @@ Each headless driver would run the following scenario:
 
 Inheritance will be used to make this method available for each headless test.
 
-{% highlight java %}
+```java
+
 abstract class AbstractHeadlessTest {
 
     MyProperties myProperties = new MyProperties();
@@ -67,22 +68,26 @@ abstract class AbstractHeadlessTest {
                 .assertThatCommentSectionIsDisplayed();
     }
 }
-{% endhighlight %}
+
+```
 
 Just for reference here is how search method implementation looks like.
 
-{% highlight java %}
+```java
+
     public SearchResultsPage searchFor(String searchTerm) {
         searchBar.clear();
         searchBar.sendKeys(searchTerm);
         searchButton.click();
         return new SearchResultsPage(driver);
     }
-{% endhighlight %}
+
+```
 
 And final assertion...
 
-{% highlight java %}
+```java
+
     public void assertThatCommentSectionIsDisplayed() {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("comments")));
     }
@@ -92,23 +97,27 @@ And final assertion...
             .pollingEvery(Duration.ofMillis(500))
             .ignoring(NoSuchElementException.class)
             .withMessage("Oops, element didn't appear!");
-{% endhighlight %}
+
+```
 
 ## Chrome
 
 Google Chrome is perhaps the most popular headless browser. In order to use ChromeDriver, the following dependency is required.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>3.141.59</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 Setup requires adding two chrome switches into Chrome options: `--headless, --disable-gpu`
 
-{% highlight java %}
+```java
+
 public class HeadlessChromeTest extends AbstractHeadlessTest {
 
     private WebDriver driver;
@@ -140,7 +149,8 @@ public class HeadlessChromeTest extends AbstractHeadlessTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 For details and FluentLenium example, please refer to my [Headless Chrome](https://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html) post.
 
@@ -148,17 +158,20 @@ For details and FluentLenium example, please refer to my [Headless Chrome](https
 
 Firefox browser doesn't require an introduction as well. In order to use FirefoxDriver, the following dependency is required.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-firefox-driver</artifactId>
             <version>3.141.59</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 Setup requires adding one argument into Firefox: `--headless`
 
-{% highlight java %}
+```java
+
 public class HeadlessFirefoxTest extends AbstractHeadlessTest {
 
     private WebDriver driver;
@@ -187,7 +200,8 @@ public class HeadlessFirefoxTest extends AbstractHeadlessTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 For details and FluentLenium example, please refer to my[Headless Firefox](https://www.awesome-testing.com/2017/09/headless-testing-with-firefox.html)post.
 
@@ -197,17 +211,20 @@ For details and FluentLenium example, please refer to my[Headless Firefox](https
 
 The following dependency is needed.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>htmlunit-driver</artifactId>
             <version>2.34.0</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 HtmlUnitDriver doesn't require to install any browser or set a path to driver executable. It's the most lightweight solution of all presented here. This test will work on every platform without any configuration efforts.
 
-{% highlight java %}
+```java
+
 public class HeadlessHtmlUnitTest extends AbstractHeadlessTest {
 
     private WebDriver driver;
@@ -228,7 +245,8 @@ public class HeadlessHtmlUnitTest extends AbstractHeadlessTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 ## JBrowser
 
@@ -236,17 +254,20 @@ public class HeadlessHtmlUnitTest extends AbstractHeadlessTest {
 
 The following dependency is required.
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>com.machinepublishers</groupId>
             <artifactId>jbrowserdriver</artifactId>
             <version>1.0.1</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 Unfortunately, jBrowserDriver is the only driver which failed my test so I'm a bit worried about its stability. There are also no guarantees that it will be supported in the long term. For example, it still doesn't work with Java 11.
 
-{% highlight java %}
+```java
+
 public class HeadlessJBrowserTest extends AbstractHeadlessTest {
 
     private WebDriver driver;
@@ -268,7 +289,8 @@ public class HeadlessJBrowserTest extends AbstractHeadlessTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 ## PhantomJS
 
@@ -276,17 +298,20 @@ public class HeadlessJBrowserTest extends AbstractHeadlessTest {
 
 Dependency:
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>phantomjsdriver</artifactId>
             <version>1.4.4</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 And test...
 
-{% highlight java %}
+```java
+
 public class HeadlessPhantomJsTest extends AbstractHeadlessTest {
 
     private WebDriver driver;
@@ -309,7 +334,8 @@ public class HeadlessPhantomJsTest extends AbstractHeadlessTest {
     }
 
 }
-{% endhighlight %}
+
+```
 
 ## Summary
 

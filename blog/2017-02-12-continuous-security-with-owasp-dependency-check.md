@@ -30,7 +30,8 @@ Let's get down to business. I'll show you how to integrate OWASP Dependency Chec
 
 All you need to do is to add Dependency Check to your pom and run one command. For a start it's better to not integrate it into Continuous Delivery pipeline. That's why I'm keeping it in separate _security_ profile.
 
-{% highlight xml %}
+```xml
+
         <profile>
             <id>security</id>
             <build>
@@ -50,7 +51,8 @@ All you need to do is to add Dependency Check to your pom and run one command. F
                 </plugins>
             </build>
         </profile>
-{% endhighlight %}
+
+```
 
 In order to start scanning run:
 
@@ -58,7 +60,8 @@ In order to start scanning run:
 
 This is how console output should look like (first run would be significantly longer, because whole database of [National Vulnerability Database](https://web.nvd.nist.gov/) has to be downloaded).
 
-{% highlight txt %}
+```txt
+
 s.radzyminski@ ~/I/s/AwesomeTestingBlog> mvn -P security dependency-check:check
 [INFO] Scanning for projects...
 [INFO] ------------------------------------------------------------------------
@@ -113,7 +116,8 @@ See the dependency-check report for more details.
 [INFO] Finished at: 2017-02-02T18:10:24+01:00
 [INFO] Final Memory: 31M/1337M
 [INFO] ------------------------------------------------------------------------
-{% endhighlight %}
+
+```
 
 As you can see few libraries I use in a project have known vulnerabilities. In addition, OWASP Dependency Check creates
 nicely formatted .html report which you can see in full
@@ -134,7 +138,8 @@ library. Here are two simple steps to ignore commons-collections 3.1 from report
 a) You need to create ignore file (it's created automatically by clicking suppress
 on [.html report](http://htmlpreview.github.io/?https://github.com/slawekradzyminski/AwesomeTesting/blob/master/dependency-check-report.html))
 
-{% highlight xml %}
+```xml
+
 <?xml version="1.0" encoding="UTF-8"?>
 <suppressions xmlns="https://www.owasp.org/index.php/OWASP_Dependency_Check_Suppression"
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -147,11 +152,13 @@ on [.html report](http://htmlpreview.github.io/?https://github.com/slawekradzymi
         <cve>CVE-2015-6420</cve>
     </suppress>
 </suppressions>
-{% endhighlight %}
+
+```
 
 b) Provide a path in pom.xml
 
-{% highlight xml %}
+```xml
+
                     <plugin>
                         <groupId>org.owasp</groupId>
                         <artifactId>dependency-check-maven</artifactId>
@@ -167,7 +174,8 @@ b) Provide a path in pom.xml
                             </execution>
                         </executions>
                     </plugin>
-{% endhighlight %}
+
+```
 
 ## OWASP Dependency Check in Continuous Integration
 
@@ -176,7 +184,8 @@ into Continuous Delivery pipeline. Let's say you want to be notified if new vuln
 _mvn dependency-check:check_as a build step and set failBuildOnCVSS value. Build would now fail if something new pops
 out.
 
-{% highlight xml %}
+```xml
+
                     <plugin>
                         <groupId>org.owasp</groupId>
                         <artifactId>dependency-check-maven</artifactId>
@@ -193,7 +202,8 @@ out.
                             </execution>
                         </executions>
                     </plugin>
-{% endhighlight %}
+
+```
 
 [Visual .html](http://htmlpreview.github.io/?https://github.com/slawekradzyminski/AwesomeTesting/blob/master/dependency-check-report.html)
 reporting can be nicely integrated into your CI tool. Here is example screenshot from TeamCity.

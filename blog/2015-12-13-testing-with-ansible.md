@@ -20,7 +20,8 @@ IEEE Spectrum has recently posted an article about [Yahoo resigning from the QA 
 
 One of my favorite tools that support Continuous Delivery (or Deployment if we assume what deploy to production is automatic) is [Ansible](http://www.ansible.com/how-ansible-works). This simple automation agent allows us to execute commands on external hosts via plays, which can later be organized to playbooks (list of plays). This is how example playbook looks like:
 
-{% highlight yml %}
+```yml
+
 - hosts: droplets
   tasks:
     - name: Installs nginx web server
@@ -28,19 +29,22 @@ One of my favorite tools that support Continuous Delivery (or Deployment if we a
 
     - name: start nginx
       service: name=nginx state=started
-{% endhighlight %}
+
+```
 
 What is this playbook doing?
 
 a) it checks hosts file for `[droplets]` string and connects to IP addresses below. Hosts file example:
 
-{% highlight yml %}
+```yml
+
 [droplets]
 192.168.0.2
 192.168.0.3
 [webservers]
 192.168.3.222
-{% endhighlight %}
+
+```
 
 b) apt-get update is called (`update_cache=true`)  
 
@@ -53,26 +57,31 @@ With very few lines we were able to install the necessary applications on two ho
 * Environment setup (see example above)  
 * Updating app configuration on all testing servers  
 
-{% highlight yml %}
+```yml
+
 - hosts: test_machines
   tasks:
     - name: Update config
       template: src=config.xml.j2 dest={{ app_folder }}/config.xml
-{% endhighlight %}
+
+```
 
 * Jenkins / Selenium Grid / Selenium nodes auto-configuration
 * Smoke tests after prod deployment
 
-{% highlight yml %}
+```yml
+
 - hosts: PROD_machines
   tasks:
     - name: Check service
       service: name=vsftpd state=started
-{% endhighlight %}
+
+```
 
 * Running commands and checking the output 
 
-{% highlight yml %}
+```yml
+
 - hosts: test_machines
   tasks:
     - name: Run X
@@ -81,7 +90,8 @@ With very few lines we were able to install the necessary applications on two ho
 
     - name: assert results
       that: "not ready not in cmd_result.stderr"
-{% endhighlight %}
+
+```
 
 Free knowledge:  
 

@@ -28,9 +28,11 @@ Rest-Assured tests follow Behaviour-Driven Development _given, when, then_ appro
 
 To use Rest-Assured, you need to add the following libraries to your project.
 
-{% highlight xml %}
+```xml
 
-{% endhighlight %}
+
+
+```
 
 ## Writing the first test
 
@@ -44,7 +46,8 @@ This approach nicely separates the setup and assertion phase. You don't have to 
 
 Here is how to code looks like
 
-{% highlight java %}
+```java
+
     private static final String URL = "http://jsonplaceholder.typicode.com";
 
     public Response getPostContent(int postNumber) {
@@ -54,9 +57,11 @@ Here is how to code looks like
                 .when()
                 .get(format("%s/posts/%s", URL, Integer.toString(postNumber)));
     }
-{% endhighlight %}
 
-{% highlight java %}
+```
+
+```java
+
     private JsonPlaceholderAPI jsonPlaceholderAPI = new JsonPlaceholderAPI();
 
     @Test
@@ -66,7 +71,8 @@ Here is how to code looks like
                 .then()
                 .body("title", equalTo("sunt aut facere repellat provident occaecati excepturi optio reprehenderit"));
     }
-{% endhighlight %}
+
+```
 
 We are checking here that get a request for [http://jsonplaceholder.typicode.com/posts/1](http://jsonplaceholder.typicode.com/posts/1) gives us the correct title. As you can see that's indeed the case.
 
@@ -76,7 +82,8 @@ Rest-Assured uses [Hamcrest matchers](http://www.vogella.com/tutorials/Hamcrest/
 
 Sometimes you may not want to assert details. You care more about the response types and structure. Rest-Assured supports this approach nicely with [Schema Validation](https://github.com/rest-assured/rest-assured/wiki/Usage#json-schema-validation). [SchemaValidationTest](https://github.com/slawekradzyminski/AwesomeTesting/blob/master/src/test/java/restassuredjsonplaceholder/tests/SchemaValidationTest.java) shows you how it works:
 
-{% highlight java %}
+```java
+
     private JsonPlaceholderAPI jsonPlaceholderAPI = new JsonPlaceholderAPI();
 
     @Test
@@ -86,11 +93,13 @@ Sometimes you may not want to assert details. You care more about the response t
                 .then()
                 .body(matchesJsonSchemaInClasspath("jsonplaceholder-posts-schema.json"));
     }
-{% endhighlight %}
+
+```
 
 You just need to define the schema:
 
-{% highlight json %}
+```json
+
 {
   "title": "Posts schema",
   "type": "object",
@@ -110,13 +119,15 @@ You just need to define the schema:
   },
   "required": ["userId", "id", "title", "body"]
 }
-{% endhighlight %}
+
+```
 
 ## Other methods
 
 Obviously, Rest-Assured isn't limited to get method only. You can add data as well. Let me show how you can simulate a user adding something to your forum. Jsonplaceholder requires UTF-8 encoding, so I needed to modify it.
 
-{% highlight java %}
+```java
+
     private final RestAssuredConfig restAssuredConfig = RestAssured.config()
         .encoderConfig(encoderConfig()
         .defaultContentCharset("UTF-8"));
@@ -130,11 +141,13 @@ Obviously, Rest-Assured isn't limited to get method only. You can add data as we
                 .when()
                 .put(format("%s/posts/%s", URL, Integer.toString(postNumber)));
     }
-{% endhighlight %}
+
+```
 
 Here is the test:
 
-{% highlight java %}
+```java
+
     private JsonPlaceholderAPI jsonPlaceholderAPI = new JsonPlaceholderAPI();
 
     @Test
@@ -145,11 +158,13 @@ Here is the test:
                 .then()
                 .statusCode(SC_OK);
     }
-{% endhighlight %}
+
+```
 
 You may wonder if you have to write a custom JSON parser. Fortunately, Rest-Assured does all the work for us, and you just have to specify basic class:
 
-{% highlight java %}
+```java
+
 public class User {
 
     private int id;
@@ -164,6 +179,7 @@ public class User {
         this.userId = userId;
     }
 }
-{% endhighlight %}
+
+```
 
 All tests are available for download on my [GitHub project](https://github.com/slawekradzyminski/AwesomeTesting).

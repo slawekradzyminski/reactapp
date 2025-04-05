@@ -14,19 +14,22 @@ In my very popular [Tester's toolbox - an alternative guide](http://www.awesome-
 
 In order to use Rest Assured in your Maven project add this dependency:
 
-{% highlight xml %}
+```xml
+
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>3.0.3</version>
         </dependency>
-{% endhighlight %}
+
+```
 
 ## Rest Assured GET examples
 
 As a nice beginning I suggest to test [ip.jsontest.com](http://ip.jsontest.com/). This endpoint prints your current IP address. Here is simple test case that looks pretty much like copy/paste from excellent [getting started guide](https://github.com/rest-assured/rest-assured/wiki/GettingStarted). Please note that you would most likely have to update partOfMyIp String.
 
-{% highlight java %}
+```java
+
     @Test
     public void ipTest() {
         String partOfMyIp = "142";
@@ -36,11 +39,13 @@ As a nice beginning I suggest to test [ip.jsontest.com](http://ip.jsontest.com/)
                 .then()
                 .body("ip", containsString(partOfMyIp));
     }
-{% endhighlight %}
+
+```
 
 Second endpoint - [date.jsontest.com](http://date.jsontest.com/)returns date in three formats. Dealing with a time in tests can be tricky (flaky) so I decided to assert only date in MM-dd-yyyy format.
 
-{% highlight java %}
+```java
+
     @Test
     public void dateTest() {
 
@@ -52,11 +57,13 @@ Second endpoint - [date.jsontest.com](http://date.jsontest.com/)returns date in 
                 .then()
                 .body("date", equalTo(dateMMddyyyy));
     }
-{% endhighlight %}
+
+```
 
 There is also [echo.jsontest.com/key/value/one/two](http://echo.jsontest.com/key/value/one/two)endpoint that gets the values from URL.
 
-{% highlight java %}
+```java
+
     @Test
     public void mirrorTest() {
 
@@ -73,11 +80,13 @@ There is also [echo.jsontest.com/key/value/one/two](http://echo.jsontest.com/key
                 .body(firstKey, equalTo(firstValue))
                 .body(secondKey, equalTo(secondValue));
     }
-{% endhighlight %}
+
+```
 
 Another endpoint - [cookie.jsontest.com](http://cookie.jsontest.com/)sets the cookie as response. Here is the test that asserts if the cookie was set.
 
-{% highlight java %}
+```java
+
     @Test
     public void cookieTest() {
         given().contentType(JSON)
@@ -85,11 +94,13 @@ Another endpoint - [cookie.jsontest.com](http://cookie.jsontest.com/)sets the co
                 .then()
                 .cookie("jsontestdotcom", is(notNullValue()));
     }
-{% endhighlight %}
+
+```
 
 The most fun you may get from [headers.jsontest.com](http://headers.jsontest.com/). This endpoint reads headers from your request and prints them in response. I decided to send XML with UTF-8 enconding and assert Content Type.
 
-{% highlight java %}
+```java
+
     @Test
     public void printSentHeaders() {
 
@@ -102,7 +113,8 @@ The most fun you may get from [headers.jsontest.com](http://headers.jsontest.com
                 .then()
                 .body("Content-Type", equalTo("application/xml; charset=UTF-8"));
     }
-{% endhighlight %}
+
+```
 
 ## Rest Assured POST examples
 
@@ -110,7 +122,8 @@ Those were GET examples. Now we would use POST method and send some data. Please
 
 First endpoint -[md5.jsontest.com/?text=text](http://md5.jsontest.com/?text=text)takes your text and returns it together with calculated md5 checksum.
 
-{% highlight java %}
+```java
+
     @Test
     public void shouldPrintMd5() {
         String myRandomText = "My random text";
@@ -123,11 +136,13 @@ First endpoint -[md5.jsontest.com/?text=text](http://md5.jsontest.com/?text=text
                 .body("md5", equalTo(md5))
                 .body("original", equalTo(myRandomText));
     }
-{% endhighlight %}
+
+```
 
 Final endpoint which I decided to test is[validate.jsontest.com](http://validate.jsontest.com/). It takes 'json' queryParam value and validates if it's parse-able (i.e. if it's correctly formatted json). Below is simple happy path:
 
-{% highlight java %}
+```java
+
     @Test
     public void postSuccessfulBasicValidationTest() {
         String parsableJson = "{\"key\":\"value\"}";
@@ -138,11 +153,13 @@ Final endpoint which I decided to test is[validate.jsontest.com](http://validate
                 .then()
                 .body("validate", equalTo(true));
     }
-{% endhighlight %}
+
+```
 
 And negative path:
 
-{% highlight java %}
+```java
+
     @Test
     public void postFailedValidationTest() {
         String nonParsableJson = "{\"key\":\"value";
@@ -153,6 +170,7 @@ And negative path:
                 .then()
                 .body("validate", equalTo(false));
     }
-{% endhighlight %}
+
+```
 
 As usual all code from this post (+1 extra test) and from my previous [Rest Assured Post ](http://www.awesome-testing.com/2016/07/restful-api-testing-with-rest-assured-1.html)is available on my [GitHub project](https://github.com/slawekradzyminski/AwesomeTesting).

@@ -48,7 +48,8 @@ Even if we decide that we don't support our site with JS disabled we should grac
 
 As I mentioned above I wasn't able to disable JavaScript in Chrome using any obvious methods (like setters etc.). I had to pass a map of preferences with magic `profile.managed_default_content_settings.javascript`. I assume that the code is easy to understand. For details please take a look at my [Desired Capabilities explained](https://www.awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html) post
 
-{% highlight java %}
+```java
+
 private static final String PREFS = "prefs";
 private static final String JAVASCRIPT_SETTINGS = "profile.managed_default_content_settings.javascript";
 private static final short DISABLED = 2;
@@ -70,13 +71,15 @@ private static final short DISABLED = 2;
         return chromePrefs;
     }
 
-{% endhighlight %}
+
+```
 
 The test is pretty straightforward. We go to main Facebook page and wait until URL is updated with `?_fb_noscript=1`. This is how FB detects users who have disabled JS.
 
 I'm using [FluentLenium](https://github.com/FluentLenium/FluentLenium/) syntax.
 
-{% highlight java %}
+```java
+
 private static final String FACEBOOK_NO_JS_URL = "https://www.facebook.com/?_fb_noscript=1";
 
     @Page
@@ -93,13 +96,15 @@ private static final String FACEBOOK_NO_JS_URL = "https://www.facebook.com/?_fb_
                 () -> getDriver().getCurrentUrl().equals(FACEBOOK_NO_JS_URL));
     }
 
-{% endhighlight %}
+
+```
 
 ## Firefox
 
 Firefox setup is much easier. Only one flag has to be set to false: _javascript.enabled_.
 
-{% highlight java %}
+```java
+
 private static final String JAVASCRIPT_ENABLED = "javascript.enabled";
 
     @Override
@@ -113,7 +118,8 @@ private static final String JAVASCRIPT_ENABLED = "javascript.enabled";
         return options;
     }
 
-{% endhighlight %}
+
+```
 
 The complete code can be found on my [GitHub project](https://github.com/slawekradzyminski/AwesomeTesting/commit/68cdb2c98a8282e8b48d79fcbcc8ced3b12def92).
 

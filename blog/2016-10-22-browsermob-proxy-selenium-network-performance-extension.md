@@ -25,17 +25,20 @@ Those are just a few things that come to my mind right now, the full list of Bro
 
 In order to start using BrowserMob Proxy add this Maven dependency to your project:
 
-{% highlight xml %}
+```xml
+
 <dependency>
 <groupId>net.lightbody.bmp</groupId>
 <artifactId>browsermob-core</artifactId>
 <version>2.1.2</version>
 </dependency>
-{% endhighlight %}
+
+```
 
 Now BrowserMob Proxy can be run using simple methods. I'm using TestNG annotation to start it before the tests, and close just after all of them finish. As you can see I capture all HTTP traffic headers here.
 
-{% highlight java %}
+```java
+
 private static final int BROWSER_MOB_PROXY_PORT = 9191;
 
     protected BrowserMobProxyServer server;
@@ -52,11 +55,13 @@ private static final int BROWSER_MOB_PROXY_PORT = 9191;
         server.stop();
     }
 }
-{% endhighlight %}
+
+```
 
 And this Gist shows how to add proxy settings to ChromeDriver. See my [Browser capabilities explained](https://awesome-testing.com/2016/02/selenium-browser-capabilities-explained.html) post for a more thorough description of browser configuration.
 
-{% highlight java %}
+```java
+
 @Override
 public WebDriver getDefaultDriver() {
 return new ChromeDriver(getChromeCapabilities());
@@ -71,11 +76,13 @@ return new ChromeDriver(getChromeCapabilities());
     private Proxy getChromeProxySettings() {
         return ClientUtil.createSeleniumProxy(server);
     }
-{% endhighlight %}
+
+```
 
 Now the most important thing - actual tests. As you can see I'm starting new Har capture on BrowserMob Proxy server before each test (it's called 'Awesome Testing Only Test' or 'Google Awesome Testing Test'). After the last test step ends network traffic is saved to \*.har file. I'm using [FluentLenium](https://awesome-testing.com/2016/01/introducing-fluentlenium-1.html) syntax. Page Objects code can be found on my [Github project](https://github.com/slawekradzyminski/AwesomeTesting/tree/master/src/test/java/gui/browsermobproxy/pages). Hopefully, you have no problem understanding what the tests do :)
 
-{% highlight java %}
+```java
+
 public class BrowserMobChromeTest extends BrowserMobChrome {
 
     private static final String AWESOME_TESTING = "Awesome Testing";
@@ -110,7 +117,8 @@ public class BrowserMobChromeTest extends BrowserMobChrome {
     }
 
 }
-{% endhighlight %}
+
+```
 
 Our quest for obtaining \*.har network traffic file is completed. The screenshot below shows how does it look like in [Google HTTP Archive Viewer](https://chrome.google.com/webstore/detail/http-archive-viewer/ebbdbdmhegaoooipfnjikefdpeoaidml/related?hl=en) extension. It took 239 requests and 9.59 seconds to successfully Google my blog.
 
@@ -118,7 +126,8 @@ Our quest for obtaining \*.har network traffic file is completed. The screenshot
 
 The file can also be accessed using external libraries. In the code below, I convert it JSON format using [HarReader](https://github.com/sdstoehr/har-reader). It's not exactly part of the test so I put it in external class.
 
-{% highlight java %}
+```java
+
 public static void main(String[] args) throws HarReaderException, IOException {
 String pathToFile = "at.har";
 
@@ -131,6 +140,7 @@ String pathToFile = "at.har";
             writer.write(gson.toJson(harEntryList));
         }
     }
-{% endhighlight %}
+
+```
 
 Remember: Complete Java code of this post (and every other) can be found on my [Github project](https://github.com/slawekradzyminski/AwesomeTesting/tree/master/src/test/java/gui/browsermobproxy).

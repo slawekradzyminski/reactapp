@@ -24,7 +24,8 @@ I'm currently using Windows, so I had to download [Firefox 56 beta](https://www.
 
 My code from last week was almost sufficient. I only needed to add one option (--headless). Configuration is almost identical as in [Chrome](http://www.awesome-testing.com/2017/05/headless-testing-with-google-chrome.html).
 
-{% highlight java %}
+```java
+
     @Override
         public WebDriver newWebDriver() {
         return new FirefoxDriver(getFirefoxCapabilities());
@@ -41,7 +42,8 @@ My code from last week was almost sufficient. I only needed to add one option (-
         options.addArguments("--headless");
         return options;
     }
-{% endhighlight %}
+
+```
 
 ## Demo
 
@@ -51,7 +53,8 @@ Demo is testing that only 5 posts is displayed on my homepage.
 
 PageObject code:
 
-{% highlight java %}
+```java
+
 @PageUrl("http://www.awesome-testing.com")
 public class AwesomeTestingPage extends FluentPage {
 
@@ -71,11 +74,13 @@ public class AwesomeTestingPage extends FluentPage {
         assertThat(postTitle.size()).isEqualTo(numberOfPosts);
     }
 }
-{% endhighlight %}
+
+```
 
 Class in which I configure Firefox browser:
 
-{% highlight java %}
+```java
+
 public class FirefoxManipulator extends FluentTestNg {
 
     private static final String MY_GECKO_PATH = "C:\\drivers\\geckodriver.exe";
@@ -104,11 +109,13 @@ public class FirefoxManipulator extends FluentTestNg {
         return options;
     }
 }
-{% endhighlight %}
+
+```
 
 Actual test code:
 
-{% highlight java %}
+```java
+
 public class HeadlessFirefoxDemoTest extends FirefoxManipulator {
 
     private static final int EXPECTED_NUMBER_OF_POSTS = 5;
@@ -123,6 +130,7 @@ public class HeadlessFirefoxDemoTest extends FirefoxManipulator {
     }
 
 }
-{% endhighlight %}
+
+```
 
 As usual, I posted all the code from above in my[GitHub Awesome Testing project](https://github.com/slawekradzyminski/AwesomeTesting).

@@ -60,7 +60,8 @@ Since Robolectric 4.0, Espresso APIs are now supported in Robolectric tests. Eve
 
 Below you can find an example non-instrumented Roboelectric test:
 
-{% highlight kotlin %}
+```kotlin
+
 import androidx.test.espresso.Espresso.onView
 
 @RunWith(AndroidJUnit4::class)
@@ -82,7 +83,8 @@ class AddContactActivityTest {
         onView(withId(R.id.contact_name_text)).check(matches(withText(contactName)))
      }
 }
-{% endhighlight %}
+
+```
 
 It looks pretty much like Espresso test, isn't it?
 
@@ -105,7 +107,8 @@ What if our app integrates with other apps via Implicit Intents? They can be eas
 
 Below you can find an example of Espresso test which mocks Intents:
 
-{% highlight kotlin %}
+```kotlin
+
 @Test fun activityResult_DisplaysContactsPhoneNumber() {
 // Build the result to return when the activity is launched.
 val resultData = Intent()
@@ -123,7 +126,8 @@ val result = Instrumentation.ActivityResult(Activity.RESULT_OK, resultData)
     // Assert that the data we set up above is shown.
     onView(withId(R.id.phoneNumber)).check(matches(withText(phoneNumber)))
 }
-{% endhighlight %}
+
+```
 
 What to do when we want to control a device and use multiple apps? Use UI Automator or Appium.
 
@@ -148,17 +152,20 @@ Unfortunately, Appium tests are slow. So what are the use cases for them?
 * we prefer it ahead of UI Automator in E2E scenarios described in section 8
 * we can reuse Web/Native Android/Native iOS/Native Windows automation code (see snippet below)
 
-{% highlight java %}
+```java
+
 @FindBy(css = ".myClass")
 @WindowsFindBy(id = "windowsId")
 @AndroidFindBy(accessibility = "android")
 @iOSXCUITFindBy(tagName = "ios")
 private FluentWebElement multiPlatformElement;
-{% endhighlight %}
+
+```
 
 Here is the proof that the Appium test looks pretty much like Selenium:
 
-{% highlight java %}
+```java
+
 private static final String SAMPLE_TITLE = "SampleTitle";
 private static final String SAMPLE_BODY = "SampleBody";
 
@@ -179,7 +186,8 @@ private static final String SAMPLE_BODY = "SampleBody";
                 .verifyIfIsLoaded()
                 .verifyNoteCount(2);
     }
-{% endhighlight %}
+
+```
 
 More Appium examples can be found in [FluentLenium project](https://github.com/FluentLenium/FluentLenium/tree/develop/examples/appium).
 
