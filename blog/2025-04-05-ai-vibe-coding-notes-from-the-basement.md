@@ -206,13 +206,13 @@ I use [gitingest](https://gitingest.com/) to flatten the codebase into a single 
 
 When working with larger projects that don’t fit within the model’s context window, I exclude files strategically—for example, skipping E2E tests or page objects. This is one of the reasons why AI excels with smaller, modular projects.
 
-Some enterprise-level codebases may bemonoliths. They often lack separation of concerns, and their test suites are slow, making the feedback loop longer and more fragile. In such environments, LLMs struggle to connect related classes or features, especially when those connections aren’t explicit.
+Some enterprise-level codebases may be monoliths. They often lack separation of concerns, and their test suites are slow, making the feedback loop longer and more fragile. In such environments, LLMs struggle to connect related classes or features, especially when those connections aren’t explicit.
 
 It’s not uncommon to see posts on X or Reddit where someone is initially amazed by AI, only to get frustrated as their codebase grows. Once the repo no longer fits inside Cursor Sonnet’s 50k token window, things start to fall apart. Poor directory structure and misplaced files—usually from less experienced devs—lead to confusion, and the agent fails. That’s when people start claiming that “Cursor has been nerfed.” In reality, they’ve hit the limitations of context management.
 
 ### Step 3: Ask a Thinking Model for a Detailed Implementation Plan
 
-This is arguably the most important step. Use a model with strong reasoning capabilities and a sufficiently large context window. I personally use o1 and keep an eye on the [Tracking AI leaderboard](https://www.trackingai.org/home to pick top-performing models for planning tasks.
+This is arguably the most important step. Use a model with strong reasoning capabilities and a sufficiently large context window. I personally use o1 and keep an eye on the [Tracking AI leaderboard](https://www.trackingai.org/home) to pick top-performing models for planning tasks.
 
 Example prompt:
 
